@@ -1,0 +1,68 @@
+ <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Haiti Crisis Map</title>
+    <meta name="description" content=" " />
+    <meta name="keywords" content=" " />
+    <meta name="robots" content="index, follow" /> 
+    <link rel="shortcut icon" href="/media/images/favicon.ico" />
+
+    
+    
+    <link href="./css/haiti.css" rel="stylesheet" media="screen" type="text/css" />
+    
+    <script type="text/javascript" src="http://extjs.cachefly.net/builds/ext-cdn-2060.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-2.3.0/resources/css/ext-all.css" />
+    <script type="text/javascript" src="http://openlayers.org/api/2.8/OpenLayers.js"></script> 
+    <script type="text/javascript" src="http://dev.geoext.org/trunk/geoext/lib/GeoExt.js"></script> 
+
+    <!link rel="stylesheet" type="text/css" href="/media/css/nms_ol.css" /> 
+    
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAjpkAC9ePGem0lIq5XcMiuhR47L9og-HSYk0UoXCUW6-5fDOYwxSxq7h8RIm-n4C3Nw6W
+toGeRVUtow"></script>
+
+
+    <script type="text/javascript">
+           var base_wms = 'http://hypercube.telascience.org/cgi-bin/mapserv?map=/home/racicot/haiti/mapfiles/basedata.map&';
+    </script>
+
+    <script type="text/javascript" src="./js/haiti.js"></script> 
+    <script type="text/javascript">
+      function setMapCenter() {
+        HAITI.map.setCenter(new OpenLayers.LonLat(-72.2, 19.0).transform(new OpenLayers.Projection("EPSG:4326"),
+                          new OpenLayers.Projection("EPSG:900913")),9);
+      }
+    </script> 
+
+
+    
+    
+
+  </head>
+  
+  <body >
+
+    
+        <div id="title" class="title1">
+            <center><h1><b>Haiti Crisis Map</b></h1></center>
+
+        </div>
+
+        <div id="mappanel"></div>
+        <div id="tree"></div>
+        <div id="west"></div>
+        <div id="west-panel"></div>
+        <div id="description"></div>
+	<div id="query-win" class="x-hidden">
+	  <div class="x-window-header">Query Results</div>
+
+	    <div id="query-tree">
+	      </div>
+	      </div>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,234 @@
+body {
+    color: white;
+    background-color: white;
+    font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular;
+    }
+p {
+    color: black;
+    font-style: normal;
+    font-size: 14px;
+    
+    }
+.nav {
+    color: navy;
+    font-size: 10pt;
+    font-weight: bold
+    }
+.nav:link {
+    color: navy;
+    font-size: 10pt;
+    font-weight: bold
+    }
+.nav:visited {
+    color: navy;
+    font-size: 10pt;
+    font-weight: bold
+    }
+.nav:hover {
+    color: navy;
+    font-size: 10pt;
+    font-weight: bold
+    }
+.nav:active {
+    color: navy;
+    font-size: 10pt;
+    font-weight: bold
+    }
+.bread {
+    color: maroon;
+    font-size: 12pt;
+    font-weight: bold;
+    text-decoration: underline
+    }
+.bread:link {
+    color: maroon;
+    font-size: 12pt;
+    font-weight: bold;
+    text-decoration: underline
+    }
+.bread:visited {
+    color: maroon;
+    font-size: 12pt;
+    font-weight: bold;
+    text-decoration: underline
+    }
+.bread:hover {
+    color: maroon;
+    font-size: 12pt;
+    font-weight: bold;
+    text-decoration: underline
+    }
+.bread:active {
+    color: maroon;
+    font-size: 12pt;
+    font-weight: bold;
+    text-decoration: underline
+    }
+A.line1:active {
+    font-weight: normal;
+    font-size: 14px;
+    text-decoration: underline
+    }
+A.line1:link {
+    font-weight: normal;
+    font-size: 14px;
+    text-decoration: underline
+    }
+A.line1:visited {
+    font-weight: normal;
+    font-size: 14px;
+    text-decoration: underline
+    }
+A.line2:active {
+    font-weight: normal;
+    font-size: 13px;
+    text-decoration: underline
+    }
+A.line2:link {
+    font-weight: normal;
+    font-size: 13px;
+    text-decoration: underline
+    }
+A.line2:visited {
+    font-weight: normal;
+    font-size: 13px;
+    text-decoration: underline
+    }
+A:link {
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: underline
+    }
+A:visited {
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: underline
+    }
+A:hover {
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: underline
+    }
+A:active {
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: underline
+    }
+.title1 {
+    color: black;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bold
+    }
+.title2 {
+    color: black;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bold
+    }
+.line1 {
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    }
+.line2 {
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    }
+.caption {
+    color: black;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center
+    }
+.caption2 {
+    color: black;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left
+    }
+A.caption2:link {
+    color: blue;
+    font-size: 12px;
+    text-decoration: underline
+    }
+A.caption2:visited {
+    color: blue;
+    font-size: 12px;
+    text-decoration: underline
+    }
+A.caption2:hover {
+    color: blue;
+    font-size: 12px;
+    text-decoration: underline
+    }
+A.caption2:active {
+    color: blue;
+    font-size: 12px;
+    text-decoration: underline
+    }
+td {
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    }
+div {
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    }
+h3 {
+    color: maroon;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    }
+h4 {
+    color: black;
+    font-size: 14px;
+    font-family: Arial;
+    font-style: italic
+    }
+h2 {
+    color: maroon;
+    font-size: 12pt;
+    font-style: normal;
+    font-weight: bold
+    }
+h1 {
+    color: black;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold
+    }
+.menu2 {
+    color: #666;
+    font-size: 8pt;
+    font-weight: bold
+    }
+li {
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    }
+ul {
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    }
+ol {
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    }
+
