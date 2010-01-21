@@ -1,0 +1,1808 @@
+<osm version='0.5'>
+<node id='-1' lon='-72.7250182543' lat='18.4250191533' />
+<node id='-2' lon='-72.6999777158' lat='18.4250191533' />
+<node id='-3' lon='-72.6999777158' lat='18.3999786148' />
+<node id='-4' lon='-72.7250182543' lat='18.3999786148' />
+<way id='-5'>
+<nd ref='-1' />
+<nd ref='-2' />
+<nd ref='-3' />
+<nd ref='-4' />
+<nd ref='-1' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W072_7124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-6' lon='-72.775018483' lat='18.4250191533' />
+<node id='-7' lon='-72.7499779445' lat='18.4250191533' />
+<node id='-8' lon='-72.7499779445' lat='18.3999786148' />
+<node id='-9' lon='-72.775018483' lat='18.3999786148' />
+<way id='-10'>
+<nd ref='-6' />
+<nd ref='-7' />
+<nd ref='-8' />
+<nd ref='-9' />
+<nd ref='-6' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W072_7624982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-11' lon='-72.7500183687' lat='18.4250191533' />
+<node id='-12' lon='-72.7249778301' lat='18.4250191533' />
+<node id='-13' lon='-72.7249778301' lat='18.3999786148' />
+<node id='-14' lon='-72.7500183687' lat='18.3999786148' />
+<way id='-15'>
+<nd ref='-11' />
+<nd ref='-12' />
+<nd ref='-13' />
+<nd ref='-14' />
+<nd ref='-11' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W072_7374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-16' lon='-72.8000185974' lat='18.4250191533' />
+<node id='-17' lon='-72.7749780588' lat='18.4250191533' />
+<node id='-18' lon='-72.7749780588' lat='18.3999786148' />
+<node id='-19' lon='-72.8000185974' lat='18.3999786148' />
+<way id='-20'>
+<nd ref='-16' />
+<nd ref='-17' />
+<nd ref='-18' />
+<nd ref='-19' />
+<nd ref='-16' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W072_7874982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-21' lon='-72.8250187117' lat='18.4250191533' />
+<node id='-22' lon='-72.7999781732' lat='18.4250191533' />
+<node id='-23' lon='-72.7999781732' lat='18.3999786148' />
+<node id='-24' lon='-72.8250187117' lat='18.3999786148' />
+<way id='-25'>
+<nd ref='-21' />
+<nd ref='-22' />
+<nd ref='-23' />
+<nd ref='-24' />
+<nd ref='-21' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W072_8124982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-26' lon='-72.8500188261' lat='18.4250191533' />
+<node id='-27' lon='-72.8249782875' lat='18.4250191533' />
+<node id='-28' lon='-72.8249782875' lat='18.3999786148' />
+<node id='-29' lon='-72.8500188261' lat='18.3999786148' />
+<way id='-30'>
+<nd ref='-26' />
+<nd ref='-27' />
+<nd ref='-28' />
+<nd ref='-29' />
+<nd ref='-26' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W072_8374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-31' lon='-72.8750189404' lat='18.4250191533' />
+<node id='-32' lon='-72.8499784019' lat='18.4250191533' />
+<node id='-33' lon='-72.8499784019' lat='18.3999786148' />
+<node id='-34' lon='-72.8750189404' lat='18.3999786148' />
+<way id='-35'>
+<nd ref='-31' />
+<nd ref='-32' />
+<nd ref='-33' />
+<nd ref='-34' />
+<nd ref='-31' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W072_8624982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-36' lon='-72.9250191692' lat='18.4250191533' />
+<node id='-37' lon='-72.8999786306' lat='18.4250191533' />
+<node id='-38' lon='-72.8999786306' lat='18.3999786148' />
+<node id='-39' lon='-72.9250191692' lat='18.3999786148' />
+<way id='-40'>
+<nd ref='-36' />
+<nd ref='-37' />
+<nd ref='-38' />
+<nd ref='-39' />
+<nd ref='-36' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W072_9124982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-41' lon='-73.0250196266' lat='18.4250191533' />
+<node id='-42' lon='-72.999979088' lat='18.4250191533' />
+<node id='-43' lon='-72.999979088' lat='18.3999786148' />
+<node id='-44' lon='-73.0250196266' lat='18.3999786148' />
+<way id='-45'>
+<nd ref='-41' />
+<nd ref='-42' />
+<nd ref='-43' />
+<nd ref='-44' />
+<nd ref='-41' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W073_0124992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-46' lon='-73.0500197409' lat='18.4250191533' />
+<node id='-47' lon='-73.0249792024' lat='18.4250191533' />
+<node id='-48' lon='-73.0249792024' lat='18.3999786148' />
+<node id='-49' lon='-73.0500197409' lat='18.3999786148' />
+<way id='-50'>
+<nd ref='-46' />
+<nd ref='-47' />
+<nd ref='-48' />
+<nd ref='-49' />
+<nd ref='-46' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W073_0374992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-51' lon='-72.9000190548' lat='18.4250191533' />
+<node id='-52' lon='-72.8749785163' lat='18.4250191533' />
+<node id='-53' lon='-72.8749785163' lat='18.3999786148' />
+<node id='-54' lon='-72.9000190548' lat='18.3999786148' />
+<way id='-55'>
+<nd ref='-51' />
+<nd ref='-52' />
+<nd ref='-53' />
+<nd ref='-54' />
+<nd ref='-51' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W072_8874982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-56' lon='-72.9750193979' lat='18.4250191533' />
+<node id='-57' lon='-72.9499788593' lat='18.4250191533' />
+<node id='-58' lon='-72.9499788593' lat='18.3999786148' />
+<node id='-59' lon='-72.9750193979' lat='18.3999786148' />
+<way id='-60'>
+<nd ref='-56' />
+<nd ref='-57' />
+<nd ref='-58' />
+<nd ref='-59' />
+<nd ref='-56' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W072_9624992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-61' lon='-73.0000195122' lat='18.4250191533' />
+<node id='-62' lon='-72.9749789737' lat='18.4250191533' />
+<node id='-63' lon='-72.9749789737' lat='18.3999786148' />
+<node id='-64' lon='-73.0000195122' lat='18.3999786148' />
+<way id='-65'>
+<nd ref='-61' />
+<nd ref='-62' />
+<nd ref='-63' />
+<nd ref='-64' />
+<nd ref='-61' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W072_9874992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-66' lon='-72.9500192835' lat='18.4250191533' />
+<node id='-67' lon='-72.924978745' lat='18.4250191533' />
+<node id='-68' lon='-72.924978745' lat='18.3999786148' />
+<node id='-69' lon='-72.9500192835' lat='18.3999786148' />
+<way id='-70'>
+<nd ref='-66' />
+<nd ref='-67' />
+<nd ref='-68' />
+<nd ref='-69' />
+<nd ref='-66' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W072_9374992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-71' lon='-73.0750198553' lat='18.4250191533' />
+<node id='-72' lon='-73.0499793168' lat='18.4250191533' />
+<node id='-73' lon='-73.0499793168' lat='18.3999786148' />
+<node id='-74' lon='-73.0750198553' lat='18.3999786148' />
+<way id='-75'>
+<nd ref='-71' />
+<nd ref='-72' />
+<nd ref='-73' />
+<nd ref='-74' />
+<nd ref='-71' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W073_0624992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-76' lon='-73.1000199697' lat='18.4250191533' />
+<node id='-77' lon='-73.0749794311' lat='18.4250191533' />
+<node id='-78' lon='-73.0749794311' lat='18.3999786148' />
+<node id='-79' lon='-73.1000199697' lat='18.3999786148' />
+<way id='-80'>
+<nd ref='-76' />
+<nd ref='-77' />
+<nd ref='-78' />
+<nd ref='-79' />
+<nd ref='-76' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_412498W073_0874992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-81' lon='-72.575019814' lat='18.4500192676' />
+<node id='-82' lon='-72.5499792754' lat='18.4500192676' />
+<node id='-83' lon='-72.5499792754' lat='18.4249787291' />
+<node id='-84' lon='-72.575019814' lat='18.4249787291' />
+<way id='-85'>
+<nd ref='-81' />
+<nd ref='-82' />
+<nd ref='-83' />
+<nd ref='-84' />
+<nd ref='-81' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_5624992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-86' lon='-72.6250177969' lat='18.4500192676' />
+<node id='-87' lon='-72.5999772584' lat='18.4500192676' />
+<node id='-88' lon='-72.5999772584' lat='18.4249787291' />
+<node id='-89' lon='-72.6250177969' lat='18.4249787291' />
+<way id='-90'>
+<nd ref='-86' />
+<nd ref='-87' />
+<nd ref='-88' />
+<nd ref='-89' />
+<nd ref='-86' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_6124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-91' lon='-72.6000199283' lat='18.4500192676' />
+<node id='-92' lon='-72.5749793898' lat='18.4500192676' />
+<node id='-93' lon='-72.5749793898' lat='18.4249787291' />
+<node id='-94' lon='-72.6000199283' lat='18.4249787291' />
+<way id='-95'>
+<nd ref='-91' />
+<nd ref='-92' />
+<nd ref='-93' />
+<nd ref='-94' />
+<nd ref='-91' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_5874992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-96' lon='-72.6500179113' lat='18.4500192676' />
+<node id='-97' lon='-72.6249773727' lat='18.4500192676' />
+<node id='-98' lon='-72.6249773727' lat='18.4249787291' />
+<node id='-99' lon='-72.6500179113' lat='18.4249787291' />
+<way id='-100'>
+<nd ref='-96' />
+<nd ref='-97' />
+<nd ref='-98' />
+<nd ref='-99' />
+<nd ref='-96' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_6374972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-101' lon='-73.0000195122' lat='18.4500192676' />
+<node id='-102' lon='-72.9749789737' lat='18.4500192676' />
+<node id='-103' lon='-72.9749789737' lat='18.4249787291' />
+<node id='-104' lon='-73.0000195122' lat='18.4249787291' />
+<way id='-105'>
+<nd ref='-101' />
+<nd ref='-102' />
+<nd ref='-103' />
+<nd ref='-104' />
+<nd ref='-101' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_9874992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-106' lon='-72.6500179113' lat='18.475019382' />
+<node id='-107' lon='-72.6249773727' lat='18.475019382' />
+<node id='-108' lon='-72.6249773727' lat='18.4499788435' />
+<node id='-109' lon='-72.6500179113' lat='18.4499788435' />
+<way id='-110'>
+<nd ref='-106' />
+<nd ref='-107' />
+<nd ref='-108' />
+<nd ref='-109' />
+<nd ref='-106' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_462499W072_6374972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-111' lon='-72.575019814' lat='18.475019382' />
+<node id='-112' lon='-72.5499792754' lat='18.475019382' />
+<node id='-113' lon='-72.5499792754' lat='18.4499788435' />
+<node id='-114' lon='-72.575019814' lat='18.4499788435' />
+<way id='-115'>
+<nd ref='-111' />
+<nd ref='-112' />
+<nd ref='-113' />
+<nd ref='-114' />
+<nd ref='-111' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_462499W072_5624992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-116' lon='-72.7500183687' lat='18.4500192676' />
+<node id='-117' lon='-72.7249778301' lat='18.4500192676' />
+<node id='-118' lon='-72.7249778301' lat='18.4249787291' />
+<node id='-119' lon='-72.7500183687' lat='18.4249787291' />
+<way id='-120'>
+<nd ref='-116' />
+<nd ref='-117' />
+<nd ref='-118' />
+<nd ref='-119' />
+<nd ref='-116' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_7374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-121' lon='-72.8750189404' lat='18.475019382' />
+<node id='-122' lon='-72.8499784019' lat='18.475019382' />
+<node id='-123' lon='-72.8499784019' lat='18.4499788435' />
+<node id='-124' lon='-72.8750189404' lat='18.4499788435' />
+<way id='-125'>
+<nd ref='-121' />
+<nd ref='-122' />
+<nd ref='-123' />
+<nd ref='-124' />
+<nd ref='-121' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_462499W072_8624982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-126' lon='-72.9500192835' lat='18.4500192676' />
+<node id='-127' lon='-72.924978745' lat='18.4500192676' />
+<node id='-128' lon='-72.924978745' lat='18.4249787291' />
+<node id='-129' lon='-72.9500192835' lat='18.4249787291' />
+<way id='-130'>
+<nd ref='-126' />
+<nd ref='-127' />
+<nd ref='-128' />
+<nd ref='-129' />
+<nd ref='-126' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_9374992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-131' lon='-72.70001814' lat='18.475019382' />
+<node id='-132' lon='-72.6749776014' lat='18.475019382' />
+<node id='-133' lon='-72.6749776014' lat='18.4499788435' />
+<node id='-134' lon='-72.70001814' lat='18.4499788435' />
+<way id='-135'>
+<nd ref='-131' />
+<nd ref='-132' />
+<nd ref='-133' />
+<nd ref='-134' />
+<nd ref='-131' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_462499W072_6874972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-136' lon='-72.8000185974' lat='18.4500192676' />
+<node id='-137' lon='-72.7749780588' lat='18.4500192676' />
+<node id='-138' lon='-72.7749780588' lat='18.4249787291' />
+<node id='-139' lon='-72.8000185974' lat='18.4249787291' />
+<way id='-140'>
+<nd ref='-136' />
+<nd ref='-137' />
+<nd ref='-138' />
+<nd ref='-139' />
+<nd ref='-136' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_7874982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-141' lon='-72.9750193979' lat='18.4500192676' />
+<node id='-142' lon='-72.9499788593' lat='18.4500192676' />
+<node id='-143' lon='-72.9499788593' lat='18.4249787291' />
+<node id='-144' lon='-72.9750193979' lat='18.4249787291' />
+<way id='-145'>
+<nd ref='-141' />
+<nd ref='-142' />
+<nd ref='-143' />
+<nd ref='-144' />
+<nd ref='-141' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_9624992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-146' lon='-72.6000199283' lat='18.475019382' />
+<node id='-147' lon='-72.5749793898' lat='18.475019382' />
+<node id='-148' lon='-72.5749793898' lat='18.4499788435' />
+<node id='-149' lon='-72.6000199283' lat='18.4499788435' />
+<way id='-150'>
+<nd ref='-146' />
+<nd ref='-147' />
+<nd ref='-148' />
+<nd ref='-149' />
+<nd ref='-146' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_462499W072_5874992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-151' lon='-72.6250177969' lat='18.475019382' />
+<node id='-152' lon='-72.5999772584' lat='18.475019382' />
+<node id='-153' lon='-72.5999772584' lat='18.4499788435' />
+<node id='-154' lon='-72.6250177969' lat='18.4499788435' />
+<way id='-155'>
+<nd ref='-151' />
+<nd ref='-152' />
+<nd ref='-153' />
+<nd ref='-154' />
+<nd ref='-151' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_462499W072_6124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-156' lon='-72.8500188261' lat='18.475019382' />
+<node id='-157' lon='-72.8249782875' lat='18.475019382' />
+<node id='-158' lon='-72.8249782875' lat='18.4499788435' />
+<node id='-159' lon='-72.8500188261' lat='18.4499788435' />
+<way id='-160'>
+<nd ref='-156' />
+<nd ref='-157' />
+<nd ref='-158' />
+<nd ref='-159' />
+<nd ref='-156' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_462499W072_8374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-161' lon='-72.775018483' lat='18.4500192676' />
+<node id='-162' lon='-72.7499779445' lat='18.4500192676' />
+<node id='-163' lon='-72.7499779445' lat='18.4249787291' />
+<node id='-164' lon='-72.775018483' lat='18.4249787291' />
+<way id='-165'>
+<nd ref='-161' />
+<nd ref='-162' />
+<nd ref='-163' />
+<nd ref='-164' />
+<nd ref='-161' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_7624982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-166' lon='-72.6750180256' lat='18.475019382' />
+<node id='-167' lon='-72.6499774871' lat='18.475019382' />
+<node id='-168' lon='-72.6499774871' lat='18.4499788435' />
+<node id='-169' lon='-72.6750180256' lat='18.4499788435' />
+<way id='-170'>
+<nd ref='-166' />
+<nd ref='-167' />
+<nd ref='-168' />
+<nd ref='-169' />
+<nd ref='-166' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_462499W072_6624972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-171' lon='-72.8500188261' lat='18.4500192677' />
+<node id='-172' lon='-72.8249782875' lat='18.4500192677' />
+<node id='-173' lon='-72.8249782875' lat='18.4249787291' />
+<node id='-174' lon='-72.8500188261' lat='18.4249787291' />
+<way id='-175'>
+<nd ref='-171' />
+<nd ref='-172' />
+<nd ref='-173' />
+<nd ref='-174' />
+<nd ref='-171' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_8374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-176' lon='-73.0500197409' lat='18.4500192676' />
+<node id='-177' lon='-73.0249792024' lat='18.4500192676' />
+<node id='-178' lon='-73.0249792024' lat='18.4249787291' />
+<node id='-179' lon='-73.0500197409' lat='18.4249787291' />
+<way id='-180'>
+<nd ref='-176' />
+<nd ref='-177' />
+<nd ref='-178' />
+<nd ref='-179' />
+<nd ref='-176' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W073_0374992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-181' lon='-72.6750180256' lat='18.4500192676' />
+<node id='-182' lon='-72.6499774871' lat='18.4500192676' />
+<node id='-183' lon='-72.6499774871' lat='18.4249787291' />
+<node id='-184' lon='-72.6750180256' lat='18.4249787291' />
+<way id='-185'>
+<nd ref='-181' />
+<nd ref='-182' />
+<nd ref='-183' />
+<nd ref='-184' />
+<nd ref='-181' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_6624972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-186' lon='-72.7250182543' lat='18.4500192677' />
+<node id='-187' lon='-72.6999777158' lat='18.4500192677' />
+<node id='-188' lon='-72.6999777158' lat='18.4249787291' />
+<node id='-189' lon='-72.7250182543' lat='18.4249787291' />
+<way id='-190'>
+<nd ref='-186' />
+<nd ref='-187' />
+<nd ref='-188' />
+<nd ref='-189' />
+<nd ref='-186' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_7124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-191' lon='-72.9000190548' lat='18.4500192677' />
+<node id='-192' lon='-72.8749785163' lat='18.4500192677' />
+<node id='-193' lon='-72.8749785163' lat='18.4249787291' />
+<node id='-194' lon='-72.9000190548' lat='18.4249787291' />
+<way id='-195'>
+<nd ref='-191' />
+<nd ref='-192' />
+<nd ref='-193' />
+<nd ref='-194' />
+<nd ref='-191' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_8874982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-196' lon='-73.1250178382' lat='18.4500192676' />
+<node id='-197' lon='-73.0999772997' lat='18.4500192676' />
+<node id='-198' lon='-73.0999772997' lat='18.4249787291' />
+<node id='-199' lon='-73.1250178382' lat='18.4249787291' />
+<way id='-200'>
+<nd ref='-196' />
+<nd ref='-197' />
+<nd ref='-198' />
+<nd ref='-199' />
+<nd ref='-196' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W073_1124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-201' lon='-73.1000199697' lat='18.4500192676' />
+<node id='-202' lon='-73.0749794311' lat='18.4500192676' />
+<node id='-203' lon='-73.0749794311' lat='18.4249787291' />
+<node id='-204' lon='-73.1000199697' lat='18.4249787291' />
+<way id='-205'>
+<nd ref='-201' />
+<nd ref='-202' />
+<nd ref='-203' />
+<nd ref='-204' />
+<nd ref='-201' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W073_0874992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-206' lon='-72.70001814' lat='18.4500192677' />
+<node id='-207' lon='-72.6749776014' lat='18.4500192677' />
+<node id='-208' lon='-72.6749776014' lat='18.4249787291' />
+<node id='-209' lon='-72.70001814' lat='18.4249787291' />
+<way id='-210'>
+<nd ref='-206' />
+<nd ref='-207' />
+<nd ref='-208' />
+<nd ref='-209' />
+<nd ref='-206' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_6874972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-211' lon='-72.8250187117' lat='18.4500192677' />
+<node id='-212' lon='-72.7999781732' lat='18.4500192677' />
+<node id='-213' lon='-72.7999781732' lat='18.4249787291' />
+<node id='-214' lon='-72.8250187117' lat='18.4249787291' />
+<way id='-215'>
+<nd ref='-211' />
+<nd ref='-212' />
+<nd ref='-213' />
+<nd ref='-214' />
+<nd ref='-211' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_8124982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-216' lon='-73.0750198553' lat='18.4500192676' />
+<node id='-217' lon='-73.0499793168' lat='18.4500192676' />
+<node id='-218' lon='-73.0499793168' lat='18.4249787291' />
+<node id='-219' lon='-73.0750198553' lat='18.4249787291' />
+<way id='-220'>
+<nd ref='-216' />
+<nd ref='-217' />
+<nd ref='-218' />
+<nd ref='-219' />
+<nd ref='-216' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W073_0624992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-221' lon='-73.0250196266' lat='18.4500192676' />
+<node id='-222' lon='-72.999979088' lat='18.4500192676' />
+<node id='-223' lon='-72.999979088' lat='18.4249787291' />
+<node id='-224' lon='-73.0250196266' lat='18.4249787291' />
+<way id='-225'>
+<nd ref='-221' />
+<nd ref='-222' />
+<nd ref='-223' />
+<nd ref='-224' />
+<nd ref='-221' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W073_0124992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-226' lon='-72.8750189404' lat='18.4500192677' />
+<node id='-227' lon='-72.8499784019' lat='18.4500192677' />
+<node id='-228' lon='-72.8499784019' lat='18.4249787291' />
+<node id='-229' lon='-72.8750189404' lat='18.4249787291' />
+<way id='-230'>
+<nd ref='-226' />
+<nd ref='-227' />
+<nd ref='-228' />
+<nd ref='-229' />
+<nd ref='-226' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_8624982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-231' lon='-72.9250191692' lat='18.4500192676' />
+<node id='-232' lon='-72.8999786306' lat='18.4500192676' />
+<node id='-233' lon='-72.8999786306' lat='18.4249787291' />
+<node id='-234' lon='-72.9250191692' lat='18.4249787291' />
+<way id='-235'>
+<nd ref='-231' />
+<nd ref='-232' />
+<nd ref='-233' />
+<nd ref='-234' />
+<nd ref='-231' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_437498W072_9124982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-236' lon='-72.575019814' lat='18.5000194964' />
+<node id='-237' lon='-72.5499792754' lat='18.5000194964' />
+<node id='-238' lon='-72.5499792754' lat='18.4749789578' />
+<node id='-239' lon='-72.575019814' lat='18.4749789578' />
+<way id='-240'>
+<nd ref='-236' />
+<nd ref='-237' />
+<nd ref='-238' />
+<nd ref='-239' />
+<nd ref='-236' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_487499W072_5624992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-241' lon='-72.225018213' lat='18.5000194964' />
+<node id='-242' lon='-72.1999776745' lat='18.5000194964' />
+<node id='-243' lon='-72.1999776745' lat='18.4749789578' />
+<node id='-244' lon='-72.225018213' lat='18.4749789578' />
+<way id='-245'>
+<nd ref='-241' />
+<nd ref='-242' />
+<nd ref='-243' />
+<nd ref='-244' />
+<nd ref='-241' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_487499W072_2124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-246' lon='-72.6750180256' lat='18.5500197251' />
+<node id='-247' lon='-72.6499774871' lat='18.5500197251' />
+<node id='-248' lon='-72.6499774871' lat='18.5249791865' />
+<node id='-249' lon='-72.6750180256' lat='18.5249791865' />
+<way id='-250'>
+<nd ref='-246' />
+<nd ref='-247' />
+<nd ref='-248' />
+<nd ref='-249' />
+<nd ref='-246' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_6624972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-251' lon='-72.3725417947' lat='18.5742742377' />
+<node id='-252' lon='-72.272056247' lat='18.5742742377' />
+<node id='-253' lon='-72.272056247' lat='18.5483421213' />
+<node id='-254' lon='-72.3725417947' lat='18.5483421213' />
+<way id='-255'>
+<nd ref='-251' />
+<nd ref='-252' />
+<nd ref='-253' />
+<nd ref='-254' />
+<nd ref='-251' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_561308W072_3222992010011700000000MS01_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-256' lon='-72.4000190135' lat='18.5250196107' />
+<node id='-257' lon='-72.3749784749' lat='18.5250196107' />
+<node id='-258' lon='-72.3749784749' lat='18.4999790722' />
+<node id='-259' lon='-72.4000190135' lat='18.4999790722' />
+<way id='-260'>
+<nd ref='-256' />
+<nd ref='-257' />
+<nd ref='-258' />
+<nd ref='-259' />
+<nd ref='-256' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_3874982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-261' lon='-72.5500196996' lat='18.5500197251' />
+<node id='-262' lon='-72.5249791611' lat='18.5500197251' />
+<node id='-263' lon='-72.5249791611' lat='18.5249791865' />
+<node id='-264' lon='-72.5500196996' lat='18.5249791865' />
+<way id='-265'>
+<nd ref='-261' />
+<nd ref='-262' />
+<nd ref='-263' />
+<nd ref='-264' />
+<nd ref='-261' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_5374992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-266' lon='-72.6250177969' lat='18.5750198394' />
+<node id='-267' lon='-72.5999772583' lat='18.5750198394' />
+<node id='-268' lon='-72.5999772583' lat='18.5499793009' />
+<node id='-269' lon='-72.6250177969' lat='18.5499793009' />
+<way id='-270'>
+<nd ref='-266' />
+<nd ref='-267' />
+<nd ref='-268' />
+<nd ref='-269' />
+<nd ref='-266' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_6124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-271' lon='-72.6500179113' lat='18.5000194964' />
+<node id='-272' lon='-72.6249773727' lat='18.5000194964' />
+<node id='-273' lon='-72.6249773727' lat='18.4749789578' />
+<node id='-274' lon='-72.6500179113' lat='18.4749789578' />
+<way id='-275'>
+<nd ref='-271' />
+<nd ref='-272' />
+<nd ref='-273' />
+<nd ref='-274' />
+<nd ref='-271' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_487499W072_6374972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-276' lon='-72.4250191278' lat='18.5250196107' />
+<node id='-277' lon='-72.3999785893' lat='18.5250196107' />
+<node id='-278' lon='-72.3999785893' lat='18.4999790722' />
+<node id='-279' lon='-72.4250191278' lat='18.4999790722' />
+<way id='-280'>
+<nd ref='-276' />
+<nd ref='-277' />
+<nd ref='-278' />
+<nd ref='-279' />
+<nd ref='-276' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_4124982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-281' lon='-73.0750198553' lat='18.475019382' />
+<node id='-282' lon='-73.0499793168' lat='18.475019382' />
+<node id='-283' lon='-73.0499793168' lat='18.4499788435' />
+<node id='-284' lon='-73.0750198553' lat='18.4499788435' />
+<way id='-285'>
+<nd ref='-281' />
+<nd ref='-282' />
+<nd ref='-283' />
+<nd ref='-284' />
+<nd ref='-281' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_462499W073_0624992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-286' lon='-72.6250177969' lat='18.5500197251' />
+<node id='-287' lon='-72.5999772583' lat='18.5500197251' />
+<node id='-288' lon='-72.5999772583' lat='18.5249791865' />
+<node id='-289' lon='-72.6250177969' lat='18.5249791865' />
+<way id='-290'>
+<nd ref='-286' />
+<nd ref='-287' />
+<nd ref='-288' />
+<nd ref='-289' />
+<nd ref='-286' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_6124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-291' lon='-72.5500196996' lat='18.5750198394' />
+<node id='-292' lon='-72.5249791611' lat='18.5750198394' />
+<node id='-293' lon='-72.5249791611' lat='18.5499793009' />
+<node id='-294' lon='-72.5500196996' lat='18.5499793009' />
+<way id='-295'>
+<nd ref='-291' />
+<nd ref='-292' />
+<nd ref='-293' />
+<nd ref='-294' />
+<nd ref='-291' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_5374992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-296' lon='-72.3000185561' lat='18.5250196107' />
+<node id='-297' lon='-72.2749780175' lat='18.5250196107' />
+<node id='-298' lon='-72.2749780175' lat='18.4999790722' />
+<node id='-299' lon='-72.3000185561' lat='18.4999790722' />
+<way id='-300'>
+<nd ref='-296' />
+<nd ref='-297' />
+<nd ref='-298' />
+<nd ref='-299' />
+<nd ref='-296' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_2874982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-301' lon='-72.6000199283' lat='18.5500197251' />
+<node id='-302' lon='-72.5749793898' lat='18.5500197251' />
+<node id='-303' lon='-72.5749793898' lat='18.5249791865' />
+<node id='-304' lon='-72.6000199283' lat='18.5249791865' />
+<way id='-305'>
+<nd ref='-301' />
+<nd ref='-302' />
+<nd ref='-303' />
+<nd ref='-304' />
+<nd ref='-301' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_5874992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-306' lon='-72.70001814' lat='18.5000194964' />
+<node id='-307' lon='-72.6749776014' lat='18.5000194964' />
+<node id='-308' lon='-72.6749776014' lat='18.4749789578' />
+<node id='-309' lon='-72.70001814' lat='18.4749789578' />
+<way id='-310'>
+<nd ref='-306' />
+<nd ref='-307' />
+<nd ref='-308' />
+<nd ref='-309' />
+<nd ref='-306' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_487499W072_6874972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-311' lon='-72.5000194709' lat='18.5750198394' />
+<node id='-312' lon='-72.4749789324' lat='18.5750198394' />
+<node id='-313' lon='-72.4749789324' lat='18.5499793009' />
+<node id='-314' lon='-72.5000194709' lat='18.5499793009' />
+<way id='-315'>
+<nd ref='-311' />
+<nd ref='-312' />
+<nd ref='-313' />
+<nd ref='-314' />
+<nd ref='-311' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_4874992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-316' lon='-72.3500187848' lat='18.5250196107' />
+<node id='-317' lon='-72.3249782462' lat='18.5250196107' />
+<node id='-318' lon='-72.3249782462' lat='18.4999790722' />
+<node id='-319' lon='-72.3500187848' lat='18.4999790722' />
+<way id='-320'>
+<nd ref='-316' />
+<nd ref='-317' />
+<nd ref='-318' />
+<nd ref='-319' />
+<nd ref='-316' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_3374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-321' lon='-72.6000199283' lat='18.5750198394' />
+<node id='-322' lon='-72.5749793898' lat='18.5750198394' />
+<node id='-323' lon='-72.5749793898' lat='18.5499793009' />
+<node id='-324' lon='-72.6000199283' lat='18.5499793009' />
+<way id='-325'>
+<nd ref='-321' />
+<nd ref='-322' />
+<nd ref='-323' />
+<nd ref='-324' />
+<nd ref='-321' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_5874992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-326' lon='-73.1500179526' lat='18.475019382' />
+<node id='-327' lon='-73.124977414' lat='18.475019382' />
+<node id='-328' lon='-73.124977414' lat='18.4499788435' />
+<node id='-329' lon='-73.1500179526' lat='18.4499788435' />
+<way id='-330'>
+<nd ref='-326' />
+<nd ref='-327' />
+<nd ref='-328' />
+<nd ref='-329' />
+<nd ref='-326' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_462499W073_1374972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-331' lon='-72.2750790779' lat='18.6006397913' />
+<node id='-332' lon='-72.1968515372' lat='18.6006397913' />
+<node id='-333' lon='-72.1968515372' lat='18.5725472266' />
+<node id='-334' lon='-72.2750790779' lat='18.5725472266' />
+<way id='-335'>
+<nd ref='-331' />
+<nd ref='-332' />
+<nd ref='-333' />
+<nd ref='-334' />
+<nd ref='-331' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_586593W072_2359652010011700000000MS01_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-336' lon='-72.2500183274' lat='18.5250196107' />
+<node id='-337' lon='-72.2249777888' lat='18.5250196107' />
+<node id='-338' lon='-72.2249777888' lat='18.4999790722' />
+<node id='-339' lon='-72.2500183274' lat='18.4999790722' />
+<way id='-340'>
+<nd ref='-336' />
+<nd ref='-337' />
+<nd ref='-338' />
+<nd ref='-339' />
+<nd ref='-336' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_2374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-341' lon='-72.5000194709' lat='18.5500197251' />
+<node id='-342' lon='-72.4749789324' lat='18.5500197251' />
+<node id='-343' lon='-72.4749789324' lat='18.5249791865' />
+<node id='-344' lon='-72.5000194709' lat='18.5249791865' />
+<way id='-345'>
+<nd ref='-341' />
+<nd ref='-342' />
+<nd ref='-343' />
+<nd ref='-344' />
+<nd ref='-341' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_4874992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-346' lon='-72.3250186704' lat='18.5250196107' />
+<node id='-347' lon='-72.2999781319' lat='18.5250196107' />
+<node id='-348' lon='-72.2999781319' lat='18.4999790722' />
+<node id='-349' lon='-72.3250186704' lat='18.4999790722' />
+<way id='-350'>
+<nd ref='-346' />
+<nd ref='-347' />
+<nd ref='-348' />
+<nd ref='-349' />
+<nd ref='-346' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_3124982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-351' lon='-72.2750184417' lat='18.5250196107' />
+<node id='-352' lon='-72.2499779032' lat='18.5250196107' />
+<node id='-353' lon='-72.2499779032' lat='18.4999790722' />
+<node id='-354' lon='-72.2750184417' lat='18.4999790722' />
+<way id='-355'>
+<nd ref='-351' />
+<nd ref='-352' />
+<nd ref='-353' />
+<nd ref='-354' />
+<nd ref='-351' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_2624982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-356' lon='-72.6000199283' lat='18.5000194964' />
+<node id='-357' lon='-72.5749793898' lat='18.5000194964' />
+<node id='-358' lon='-72.5749793898' lat='18.4749789578' />
+<node id='-359' lon='-72.6000199283' lat='18.4749789578' />
+<way id='-360'>
+<nd ref='-356' />
+<nd ref='-357' />
+<nd ref='-358' />
+<nd ref='-359' />
+<nd ref='-356' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_487499W072_5874992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-361' lon='-73.1250178382' lat='18.475019382' />
+<node id='-362' lon='-73.0999772997' lat='18.475019382' />
+<node id='-363' lon='-73.0999772997' lat='18.4499788435' />
+<node id='-364' lon='-73.1250178382' lat='18.4499788435' />
+<way id='-365'>
+<nd ref='-361' />
+<nd ref='-362' />
+<nd ref='-363' />
+<nd ref='-364' />
+<nd ref='-361' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_462499W073_1124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-366' lon='-72.3750188991' lat='18.5250196107' />
+<node id='-367' lon='-72.3499783606' lat='18.5250196107' />
+<node id='-368' lon='-72.3499783606' lat='18.4999790722' />
+<node id='-369' lon='-72.3750188991' lat='18.4999790722' />
+<way id='-370'>
+<nd ref='-366' />
+<nd ref='-367' />
+<nd ref='-368' />
+<nd ref='-369' />
+<nd ref='-366' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_3624982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-371' lon='-73.1250178382' lat='18.5000194964' />
+<node id='-372' lon='-73.0999772997' lat='18.5000194964' />
+<node id='-373' lon='-73.0999772997' lat='18.4749789578' />
+<node id='-374' lon='-73.1250178382' lat='18.4749789578' />
+<way id='-375'>
+<nd ref='-371' />
+<nd ref='-372' />
+<nd ref='-373' />
+<nd ref='-374' />
+<nd ref='-371' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_487499W073_1124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-376' lon='-73.1000199697' lat='18.475019382' />
+<node id='-377' lon='-73.0749794311' lat='18.475019382' />
+<node id='-378' lon='-73.0749794311' lat='18.4499788435' />
+<node id='-379' lon='-73.1000199697' lat='18.4499788435' />
+<way id='-380'>
+<nd ref='-376' />
+<nd ref='-377' />
+<nd ref='-378' />
+<nd ref='-379' />
+<nd ref='-376' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_462499W073_0874992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-381' lon='-72.225018213' lat='18.5750198394' />
+<node id='-382' lon='-72.1999776745' lat='18.5750198394' />
+<node id='-383' lon='-72.1999776745' lat='18.5499793009' />
+<node id='-384' lon='-72.225018213' lat='18.5499793009' />
+<way id='-385'>
+<nd ref='-381' />
+<nd ref='-382' />
+<nd ref='-383' />
+<nd ref='-384' />
+<nd ref='-381' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_2124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-386' lon='-72.575019814' lat='18.5750198394' />
+<node id='-387' lon='-72.5499792754' lat='18.5750198394' />
+<node id='-388' lon='-72.5499792754' lat='18.5499793009' />
+<node id='-389' lon='-72.575019814' lat='18.5499793009' />
+<way id='-390'>
+<nd ref='-386' />
+<nd ref='-387' />
+<nd ref='-388' />
+<nd ref='-389' />
+<nd ref='-386' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_5624992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-391' lon='-72.3299683876' lat='18.5005876808' />
+<node id='-392' lon='-72.2478511417' lat='18.5005876808' />
+<node id='-393' lon='-72.2478511417' lat='18.4839486359' />
+<node id='-394' lon='-72.3299683876' lat='18.4839486359' />
+<way id='-395'>
+<nd ref='-391' />
+<nd ref='-392' />
+<nd ref='-393' />
+<nd ref='-394' />
+<nd ref='-391' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_492268W072_2889092010011700000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-396' lon='-72.4750193565' lat='18.5500197251' />
+<node id='-397' lon='-72.449978818' lat='18.5500197251' />
+<node id='-398' lon='-72.449978818' lat='18.5249791865' />
+<node id='-399' lon='-72.4750193565' lat='18.5249791865' />
+<way id='-400'>
+<nd ref='-396' />
+<nd ref='-397' />
+<nd ref='-398' />
+<nd ref='-399' />
+<nd ref='-396' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_4624992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-401' lon='-72.6250177969' lat='18.5000194964' />
+<node id='-402' lon='-72.5999772584' lat='18.5000194964' />
+<node id='-403' lon='-72.5999772584' lat='18.4749789578' />
+<node id='-404' lon='-72.6250177969' lat='18.4749789578' />
+<way id='-405'>
+<nd ref='-401' />
+<nd ref='-402' />
+<nd ref='-403' />
+<nd ref='-404' />
+<nd ref='-401' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_487499W072_6124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-406' lon='-72.4500192422' lat='18.5250196107' />
+<node id='-407' lon='-72.4249787037' lat='18.5250196107' />
+<node id='-408' lon='-72.4249787037' lat='18.4999790722' />
+<node id='-409' lon='-72.4500192422' lat='18.4999790722' />
+<way id='-410'>
+<nd ref='-406' />
+<nd ref='-407' />
+<nd ref='-408' />
+<nd ref='-409' />
+<nd ref='-406' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_4374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-411' lon='-72.5250195853' lat='18.5500197251' />
+<node id='-412' lon='-72.4999790467' lat='18.5500197251' />
+<node id='-413' lon='-72.4999790467' lat='18.5249791865' />
+<node id='-414' lon='-72.5250195853' lat='18.5249791865' />
+<way id='-415'>
+<nd ref='-411' />
+<nd ref='-412' />
+<nd ref='-413' />
+<nd ref='-414' />
+<nd ref='-411' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_5124992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-416' lon='-72.6500179112' lat='18.5750198394' />
+<node id='-417' lon='-72.6249773727' lat='18.5750198394' />
+<node id='-418' lon='-72.6249773727' lat='18.5499793009' />
+<node id='-419' lon='-72.6500179112' lat='18.5499793009' />
+<way id='-420'>
+<nd ref='-416' />
+<nd ref='-417' />
+<nd ref='-418' />
+<nd ref='-419' />
+<nd ref='-416' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_6374972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-421' lon='-72.3301839833' lat='18.5247882945' />
+<node id='-422' lon='-72.2463374804' lat='18.5247882945' />
+<node id='-423' lon='-72.2463374804' lat='18.4973447626' />
+<node id='-424' lon='-72.3301839833' lat='18.4973447626' />
+<way id='-425'>
+<nd ref='-421' />
+<nd ref='-422' />
+<nd ref='-423' />
+<nd ref='-424' />
+<nd ref='-421' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_511066W072_2882602010011700000000MS01_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-426' lon='-72.225018213' lat='18.5500197251' />
+<node id='-427' lon='-72.1999776745' lat='18.5500197251' />
+<node id='-428' lon='-72.1999776745' lat='18.5249791865' />
+<node id='-429' lon='-72.225018213' lat='18.5249791865' />
+<way id='-430'>
+<nd ref='-426' />
+<nd ref='-427' />
+<nd ref='-428' />
+<nd ref='-429' />
+<nd ref='-426' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_2124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-431' lon='-72.575019814' lat='18.5500197251' />
+<node id='-432' lon='-72.5499792754' lat='18.5500197251' />
+<node id='-433' lon='-72.5499792754' lat='18.5249791865' />
+<node id='-434' lon='-72.575019814' lat='18.5249791865' />
+<way id='-435'>
+<nd ref='-431' />
+<nd ref='-432' />
+<nd ref='-433' />
+<nd ref='-434' />
+<nd ref='-431' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_5624992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-436' lon='-72.6750180256' lat='18.5000194964' />
+<node id='-437' lon='-72.6499774871' lat='18.5000194964' />
+<node id='-438' lon='-72.6499774871' lat='18.4749789578' />
+<node id='-439' lon='-72.6750180256' lat='18.4749789578' />
+<way id='-440'>
+<nd ref='-436' />
+<nd ref='-437' />
+<nd ref='-438' />
+<nd ref='-439' />
+<nd ref='-436' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_487499W072_6624972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-441' lon='-72.3699456635' lat='18.6239802682' />
+<node id='-442' lon='-72.2735654167' lat='18.6239802682' />
+<node id='-443' lon='-72.2735654167' lat='18.5986971845' />
+<node id='-444' lon='-72.3699456635' lat='18.5986971845' />
+<way id='-445'>
+<nd ref='-441' />
+<nd ref='-442' />
+<nd ref='-443' />
+<nd ref='-444' />
+<nd ref='-441' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_611338W072_3217552010011700000000MS02_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-446' lon='-72.4750193565' lat='18.5750198394' />
+<node id='-447' lon='-72.449978818' lat='18.5750198394' />
+<node id='-448' lon='-72.449978818' lat='18.5499793009' />
+<node id='-449' lon='-72.4750193565' lat='18.5499793009' />
+<way id='-450'>
+<nd ref='-446' />
+<nd ref='-447' />
+<nd ref='-448' />
+<nd ref='-449' />
+<nd ref='-446' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_4624992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-451' lon='-72.6500179112' lat='18.5500197251' />
+<node id='-452' lon='-72.6249773727' lat='18.5500197251' />
+<node id='-453' lon='-72.6249773727' lat='18.5249791865' />
+<node id='-454' lon='-72.6500179112' lat='18.5249791865' />
+<way id='-455'>
+<nd ref='-451' />
+<nd ref='-452' />
+<nd ref='-453' />
+<nd ref='-454' />
+<nd ref='-451' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_6374972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-456' lon='-72.5250195853' lat='18.5750198394' />
+<node id='-457' lon='-72.4999790467' lat='18.5750198394' />
+<node id='-458' lon='-72.4999790467' lat='18.5499793009' />
+<node id='-459' lon='-72.5250195853' lat='18.5499793009' />
+<way id='-460'>
+<nd ref='-456' />
+<nd ref='-457' />
+<nd ref='-458' />
+<nd ref='-459' />
+<nd ref='-456' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_5124992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-461' lon='-72.3727551446' lat='18.6429976028' />
+<node id='-462' lon='-72.2731342254' lat='18.6429976028' />
+<node id='-463' lon='-72.2731342254' lat='18.6224688527' />
+<node id='-464' lon='-72.3727551446' lat='18.6224688527' />
+<way id='-465'>
+<nd ref='-461' />
+<nd ref='-462' />
+<nd ref='-463' />
+<nd ref='-464' />
+<nd ref='-461' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_632733W072_3229442010011700000000MS02_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-466' lon='-72.2750184417' lat='18.5500197251' />
+<node id='-467' lon='-72.2499779032' lat='18.5500197251' />
+<node id='-468' lon='-72.2499779032' lat='18.5249791865' />
+<node id='-469' lon='-72.2750184417' lat='18.5249791865' />
+<way id='-470'>
+<nd ref='-466' />
+<nd ref='-467' />
+<nd ref='-468' />
+<nd ref='-469' />
+<nd ref='-466' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_2624982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-471' lon='-72.3250186704' lat='18.5500197251' />
+<node id='-472' lon='-72.2999781319' lat='18.5500197251' />
+<node id='-473' lon='-72.2999781319' lat='18.5249791865' />
+<node id='-474' lon='-72.3250186704' lat='18.5249791865' />
+<way id='-475'>
+<nd ref='-471' />
+<nd ref='-472' />
+<nd ref='-473' />
+<nd ref='-474' />
+<nd ref='-471' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_3124982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-476' lon='-72.2500183274' lat='18.5000194964' />
+<node id='-477' lon='-72.2249777888' lat='18.5000194964' />
+<node id='-478' lon='-72.2249777888' lat='18.4749789578' />
+<node id='-479' lon='-72.2500183274' lat='18.4749789578' />
+<way id='-480'>
+<nd ref='-476' />
+<nd ref='-477' />
+<nd ref='-478' />
+<nd ref='-479' />
+<nd ref='-476' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_487499W072_2374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-481' lon='-72.3750188991' lat='18.5750198394' />
+<node id='-482' lon='-72.3499783606' lat='18.5750198394' />
+<node id='-483' lon='-72.3499783606' lat='18.5499793009' />
+<node id='-484' lon='-72.3750188991' lat='18.5499793009' />
+<way id='-485'>
+<nd ref='-481' />
+<nd ref='-482' />
+<nd ref='-483' />
+<nd ref='-484' />
+<nd ref='-481' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_3624982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-486' lon='-72.2750184417' lat='18.5750198394' />
+<node id='-487' lon='-72.2499779032' lat='18.5750198394' />
+<node id='-488' lon='-72.2499779032' lat='18.5499793009' />
+<node id='-489' lon='-72.2750184417' lat='18.5499793009' />
+<way id='-490'>
+<nd ref='-486' />
+<nd ref='-487' />
+<nd ref='-488' />
+<nd ref='-489' />
+<nd ref='-486' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_2624982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-491' lon='-72.3500187848' lat='18.5000194964' />
+<node id='-492' lon='-72.3249782462' lat='18.5000194964' />
+<node id='-493' lon='-72.3249782462' lat='18.4749789578' />
+<node id='-494' lon='-72.3500187848' lat='18.4749789578' />
+<way id='-495'>
+<nd ref='-491' />
+<nd ref='-492' />
+<nd ref='-493' />
+<nd ref='-494' />
+<nd ref='-491' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_487499W072_3374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-496' lon='-72.3250186704' lat='18.5750198394' />
+<node id='-497' lon='-72.2999781319' lat='18.5750198394' />
+<node id='-498' lon='-72.2999781319' lat='18.5499793009' />
+<node id='-499' lon='-72.3250186704' lat='18.5499793009' />
+<way id='-500'>
+<nd ref='-496' />
+<nd ref='-497' />
+<nd ref='-498' />
+<nd ref='-499' />
+<nd ref='-496' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_3124982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-501' lon='-72.370163505' lat='18.599561813' />
+<node id='-502' lon='-72.2729186297' lat='18.599561813' />
+<node id='-503' lon='-72.2729186297' lat='18.5725494724' />
+<node id='-504' lon='-72.370163505' lat='18.5725494724' />
+<way id='-505'>
+<nd ref='-501' />
+<nd ref='-502' />
+<nd ref='-503' />
+<nd ref='-504' />
+<nd ref='-501' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_586055W072_3215412010011700000000MS01_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-506' lon='-72.3750188991' lat='18.5500197251' />
+<node id='-507' lon='-72.3499783606' lat='18.5500197251' />
+<node id='-508' lon='-72.3499783606' lat='18.5249791865' />
+<node id='-509' lon='-72.3750188991' lat='18.5249791865' />
+<way id='-510'>
+<nd ref='-506' />
+<nd ref='-507' />
+<nd ref='-508' />
+<nd ref='-509' />
+<nd ref='-506' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_3624982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-511' lon='-72.3000185561' lat='18.5000194964' />
+<node id='-512' lon='-72.2749780175' lat='18.5000194964' />
+<node id='-513' lon='-72.2749780175' lat='18.4749789578' />
+<node id='-514' lon='-72.3000185561' lat='18.4749789578' />
+<way id='-515'>
+<nd ref='-511' />
+<nd ref='-512' />
+<nd ref='-513' />
+<nd ref='-514' />
+<nd ref='-511' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_487499W072_2874982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-516' lon='-72.4500192422' lat='18.5500197251' />
+<node id='-517' lon='-72.4249787037' lat='18.5500197251' />
+<node id='-518' lon='-72.4249787037' lat='18.5249791865' />
+<node id='-519' lon='-72.4500192422' lat='18.5249791865' />
+<way id='-520'>
+<nd ref='-516' />
+<nd ref='-517' />
+<nd ref='-518' />
+<nd ref='-519' />
+<nd ref='-516' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_4374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-521' lon='-72.3731885817' lat='18.5502892197' />
+<node id='-522' lon='-72.2718384056' lat='18.5502892197' />
+<node id='-523' lon='-72.2718384056' lat='18.5228456877' />
+<node id='-524' lon='-72.3731885817' lat='18.5228456877' />
+<way id='-525'>
+<nd ref='-521' />
+<nd ref='-522' />
+<nd ref='-523' />
+<nd ref='-524' />
+<nd ref='-521' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_536567W072_3225132010011700000000MS02_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-526' lon='-72.2752969194' lat='18.574494325' />
+<node id='-527' lon='-72.1962047502' lat='18.574494325' />
+<node id='-528' lon='-72.1962047502' lat='18.5483466129' />
+<node id='-529' lon='-72.2752969194' lat='18.5483466129' />
+<way id='-530'>
+<nd ref='-526' />
+<nd ref='-527' />
+<nd ref='-528' />
+<nd ref='-529' />
+<nd ref='-526' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_561420W072_2357502010011700000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-531' lon='-72.6500179113' lat='18.5250196107' />
+<node id='-532' lon='-72.6249773727' lat='18.5250196107' />
+<node id='-533' lon='-72.6249773727' lat='18.4999790722' />
+<node id='-534' lon='-72.6500179113' lat='18.4999790722' />
+<way id='-535'>
+<nd ref='-531' />
+<nd ref='-532' />
+<nd ref='-533' />
+<nd ref='-534' />
+<nd ref='-531' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_6374972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-536' lon='-72.4500192422' lat='18.5750198394' />
+<node id='-537' lon='-72.4249787037' lat='18.5750198394' />
+<node id='-538' lon='-72.4249787037' lat='18.5499793009' />
+<node id='-539' lon='-72.4500192422' lat='18.5499793009' />
+<way id='-540'>
+<nd ref='-536' />
+<nd ref='-537' />
+<nd ref='-538' />
+<nd ref='-539' />
+<nd ref='-536' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_4374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-541' lon='-72.2744300451' lat='18.550073624' />
+<node id='-542' lon='-72.1977139199' lat='18.550073624' />
+<node id='-543' lon='-72.1977139199' lat='18.5237103162' />
+<node id='-544' lon='-72.2744300451' lat='18.5237103162' />
+<way id='-545'>
+<nd ref='-541' />
+<nd ref='-542' />
+<nd ref='-543' />
+<nd ref='-544' />
+<nd ref='-541' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_536891W072_2360712010011700000000MS02_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-546' lon='-72.575019814' lat='18.5250196107' />
+<node id='-547' lon='-72.5499792754' lat='18.5250196107' />
+<node id='-548' lon='-72.5499792754' lat='18.4999790722' />
+<node id='-549' lon='-72.575019814' lat='18.4999790722' />
+<way id='-550'>
+<nd ref='-546' />
+<nd ref='-547' />
+<nd ref='-548' />
+<nd ref='-549' />
+<nd ref='-546' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_5624992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-551' lon='-72.225018213' lat='18.5250196107' />
+<node id='-552' lon='-72.1999776745' lat='18.5250196107' />
+<node id='-553' lon='-72.1999776745' lat='18.4999790722' />
+<node id='-554' lon='-72.225018213' lat='18.4999790722' />
+<way id='-555'>
+<nd ref='-551' />
+<nd ref='-552' />
+<nd ref='-553' />
+<nd ref='-554' />
+<nd ref='-551' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_2124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-556' lon='-72.277888559' lat='18.6427775155' />
+<node id='-557' lon='-72.1970671329' lat='18.6427775155' />
+<node id='-558' lon='-72.1970671329' lat='18.6224643612' />
+<node id='-559' lon='-72.277888559' lat='18.6224643612' />
+<way id='-560'>
+<nd ref='-556' />
+<nd ref='-557' />
+<nd ref='-558' />
+<nd ref='-559' />
+<nd ref='-556' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_632620W072_2374772010011700000000MS02_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-561' lon='-72.3000185561' lat='18.5750198394' />
+<node id='-562' lon='-72.2749780175' lat='18.5750198394' />
+<node id='-563' lon='-72.2749780175' lat='18.5499793009' />
+<node id='-564' lon='-72.3000185561' lat='18.5499793009' />
+<way id='-565'>
+<nd ref='-561' />
+<nd ref='-562' />
+<nd ref='-563' />
+<nd ref='-564' />
+<nd ref='-561' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_2874982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-566' lon='-72.4250191278' lat='18.5500197251' />
+<node id='-567' lon='-72.3999785893' lat='18.5500197251' />
+<node id='-568' lon='-72.3999785893' lat='18.5249791865' />
+<node id='-569' lon='-72.4250191278' lat='18.5249791865' />
+<way id='-570'>
+<nd ref='-566' />
+<nd ref='-567' />
+<nd ref='-568' />
+<nd ref='-569' />
+<nd ref='-566' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_4124982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-571' lon='-72.4000190135' lat='18.5500197251' />
+<node id='-572' lon='-72.3749784749' lat='18.5500197251' />
+<node id='-573' lon='-72.3749784749' lat='18.5249791865' />
+<node id='-574' lon='-72.4000190135' lat='18.5249791865' />
+<way id='-575'>
+<nd ref='-571' />
+<nd ref='-572' />
+<nd ref='-573' />
+<nd ref='-574' />
+<nd ref='-571' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_3874982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-576' lon='-72.6750180256' lat='18.5250196107' />
+<node id='-577' lon='-72.6499774871' lat='18.5250196107' />
+<node id='-578' lon='-72.6499774871' lat='18.4999790722' />
+<node id='-579' lon='-72.6750180256' lat='18.4999790722' />
+<way id='-580'>
+<nd ref='-576' />
+<nd ref='-577' />
+<nd ref='-578' />
+<nd ref='-579' />
+<nd ref='-576' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_6624972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-581' lon='-72.4250191278' lat='18.5750198394' />
+<node id='-582' lon='-72.3999785893' lat='18.5750198394' />
+<node id='-583' lon='-72.3999785893' lat='18.5499793009' />
+<node id='-584' lon='-72.4250191278' lat='18.5499793009' />
+<way id='-585'>
+<nd ref='-581' />
+<nd ref='-582' />
+<nd ref='-583' />
+<nd ref='-584' />
+<nd ref='-581' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_4124982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-586' lon='-72.3000185561' lat='18.5500197251' />
+<node id='-587' lon='-72.2749780175' lat='18.5500197251' />
+<node id='-588' lon='-72.2749780175' lat='18.5249791865' />
+<node id='-589' lon='-72.3000185561' lat='18.5249791865' />
+<way id='-590'>
+<nd ref='-586' />
+<nd ref='-587' />
+<nd ref='-588' />
+<nd ref='-589' />
+<nd ref='-586' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_2874982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-591' lon='-72.6250177969' lat='18.5250196107' />
+<node id='-592' lon='-72.5999772584' lat='18.5250196107' />
+<node id='-593' lon='-72.5999772584' lat='18.4999790722' />
+<node id='-594' lon='-72.6250177969' lat='18.4999790722' />
+<way id='-595'>
+<nd ref='-591' />
+<nd ref='-592' />
+<nd ref='-593' />
+<nd ref='-594' />
+<nd ref='-591' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_6124972010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-596' lon='-72.4000190135' lat='18.5750198394' />
+<node id='-597' lon='-72.3749784749' lat='18.5750198394' />
+<node id='-598' lon='-72.3749784749' lat='18.5499793009' />
+<node id='-599' lon='-72.4000190135' lat='18.5499793009' />
+<way id='-600'>
+<nd ref='-596' />
+<nd ref='-597' />
+<nd ref='-598' />
+<nd ref='-599' />
+<nd ref='-596' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_3874982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-601' lon='-72.277241772' lat='18.6239802682' />
+<node id='-602' lon='-72.1972849743' lat='18.6239802682' />
+<node id='-603' lon='-72.1972849743' lat='18.5982637474' />
+<node id='-604' lon='-72.277241772' lat='18.5982637474' />
+<way id='-605'>
+<nd ref='-601' />
+<nd ref='-602' />
+<nd ref='-603' />
+<nd ref='-604' />
+<nd ref='-601' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_611122W072_2372632010011700000000MS02_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-606' lon='-72.3500187848' lat='18.5500197251' />
+<node id='-607' lon='-72.3249782462' lat='18.5500197251' />
+<node id='-608' lon='-72.3249782462' lat='18.5249791865' />
+<node id='-609' lon='-72.3500187848' lat='18.5249791865' />
+<way id='-610'>
+<nd ref='-606' />
+<nd ref='-607' />
+<nd ref='-608' />
+<nd ref='-609' />
+<nd ref='-606' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_3374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-611' lon='-72.2500183274' lat='18.5750198394' />
+<node id='-612' lon='-72.2249777888' lat='18.5750198394' />
+<node id='-613' lon='-72.2249777888' lat='18.5499793009' />
+<node id='-614' lon='-72.2500183274' lat='18.5499793009' />
+<way id='-615'>
+<nd ref='-611' />
+<nd ref='-612' />
+<nd ref='-613' />
+<nd ref='-614' />
+<nd ref='-611' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_2374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-616' lon='-72.6000199283' lat='18.5250196107' />
+<node id='-617' lon='-72.5749793898' lat='18.5250196107' />
+<node id='-618' lon='-72.5749793898' lat='18.4999790722' />
+<node id='-619' lon='-72.6000199283' lat='18.4999790722' />
+<way id='-620'>
+<nd ref='-616' />
+<nd ref='-617' />
+<nd ref='-618' />
+<nd ref='-619' />
+<nd ref='-616' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_512499W072_5874992010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-621' lon='-72.2750184417' lat='18.5000194964' />
+<node id='-622' lon='-72.2499779032' lat='18.5000194964' />
+<node id='-623' lon='-72.2499779032' lat='18.4749789578' />
+<node id='-624' lon='-72.2750184417' lat='18.4749789578' />
+<way id='-625'>
+<nd ref='-621' />
+<nd ref='-622' />
+<nd ref='-623' />
+<nd ref='-624' />
+<nd ref='-621' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_487499W072_2624982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-626' lon='-72.3500187848' lat='18.5750198394' />
+<node id='-627' lon='-72.3249782462' lat='18.5750198394' />
+<node id='-628' lon='-72.3249782462' lat='18.5499793009' />
+<node id='-629' lon='-72.3500187848' lat='18.5499793009' />
+<way id='-630'>
+<nd ref='-626' />
+<nd ref='-627' />
+<nd ref='-628' />
+<nd ref='-629' />
+<nd ref='-626' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_562499W072_3374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-631' lon='-72.3250186704' lat='18.5000194964' />
+<node id='-632' lon='-72.2999781319' lat='18.5000194964' />
+<node id='-633' lon='-72.2999781319' lat='18.4749789578' />
+<node id='-634' lon='-72.3250186704' lat='18.4749789578' />
+<way id='-635'>
+<nd ref='-631' />
+<nd ref='-632' />
+<nd ref='-633' />
+<nd ref='-634' />
+<nd ref='-631' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_487499W072_3124982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-636' lon='-72.2495781528' lat='18.5254373273' />
+<node id='-637' lon='-72.1972827285' lat='18.5254373273' />
+<node id='-638' lon='-72.1972827285' lat='18.4850266143' />
+<node id='-639' lon='-72.2495781528' lat='18.4850266143' />
+<way id='-640'>
+<nd ref='-636' />
+<nd ref='-637' />
+<nd ref='-638' />
+<nd ref='-639' />
+<nd ref='-636' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_505231W072_2234302010011700000000MS01_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-641' lon='-72.2500183274' lat='18.5500197251' />
+<node id='-642' lon='-72.2249777888' lat='18.5500197251' />
+<node id='-643' lon='-72.2249777888' lat='18.5249791865' />
+<node id='-644' lon='-72.2500183274' lat='18.5249791865' />
+<way id='-645'>
+<nd ref='-641' />
+<nd ref='-642' />
+<nd ref='-643' />
+<nd ref='-644' />
+<nd ref='-641' />
+<tag k='orig:location' v='/storage/data/haiti/processed/noaa/aerial-17-2/AE00N18_537499W072_2374982010011800000000MS00_GG001002003.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+</osm>

@@ -40,8 +40,9 @@ Ext.onReady(function() {
         var z = this.map.getZoom();
         var limit = Math.pow(2, z);
     
+        if (z > 19) { return "404.png"; }
         if (y < 0 || y >= limit) {
-            return OpenLayers.Util.getImagesLocation() + "404.png";
+            return "404.png";
         } else {
             x = ((x % limit) + limit) % limit;
             return this.url + z + "/" + x + "/" + y + "." + this.type;
@@ -132,7 +133,7 @@ Ext.onReady(function() {
         }
     );
     dglobe_layers.push(dg_crisis_tc);
-
+    /*
     var worldview_011510_tc = new OpenLayers.Layer.XYZ(
         "DG WorldView (2010/01/15) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100115-900913/${z}/${x}/${y}.jpg",
@@ -141,7 +142,7 @@ Ext.onReady(function() {
             visibility: false
         }
     );
-    dglobe_layers.push(worldview_011510_tc);
+    dglobe_layers.push(worldview_011510_tc); */
     var qbird_011510_tc = new OpenLayers.Layer.XYZ(
         "DG Quickbird (2010/01/15) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/quickbird-20100115-900913/${z}/${x}/${y}.jpg",
@@ -180,6 +181,15 @@ Ext.onReady(function() {
         }
     );
     dglobe_layers.push(worldview_011810_tc);
+    var qbird_012010_tc = new OpenLayers.Layer.XYZ(
+        "DG Quickbird (2010/01/20) (TC)",
+        "http://hypercube.telascience.org/tiles/1.0.0/quickbird-20100120-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false
+        }
+    );
+    dglobe_layers.push(qbird_012010_tc);
 
     map.addLayers(dglobe_layers);
     
@@ -324,20 +334,8 @@ Ext.onReady(function() {
     // NOAA Image Layers ////////////////
     /////////////////////////////////////
     var noaa_layers = [];
-    var noaa_011810_wms = new OpenLayers.Layer.WMS(
-        "NOAA Aerial (2010/01/18) (WMS)",
-        "http://hypercube.telascience.org/cgi-bin/mapserv?",
-        {
-            map: '/home/racicot/haiti/mapfiles/basedata.map',
-            layers: 'noaa-01-18',
-            transparent: 'TRUE',
-            'sphericalMercator': true
-        },
-        {'reproject': false, 'isBaseLayer': false, 'visibility': false}
-    );
-    noaa_layers.push(noaa_011810_wms);
     var noaa_011810_tc = new OpenLayers.Layer.XYZ(
-        "NOAA Aerial (2010/01/18) (TC)",
+        "NOAA Aerial (2010/01/17)",
         "http://hypercube.telascience.org/tiles/1.0.0/noaa-20100118-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -394,7 +392,7 @@ Ext.onReady(function() {
         {
             buffer: 0, isBaseLayer: false,
             'sphericalMercator': true,
-            visibility: false
+            visibility: false, numZoomLevels: 20 
         }
     );
     var osm_overlay = new OpenLayers.Layer.XYZ(
@@ -402,7 +400,7 @@ Ext.onReady(function() {
         "http://live.openstreetmap.nl/mapnik-line/${z}/${x}/${y}.png",
         {
             isBaseLayer: false, buffer:0,
-            visibility: true
+            visibility: true, numZoomLevels: 20
         }
     );
 
@@ -668,14 +666,14 @@ Ext.onReady(function() {
         root: layerRoot,
         rootVisible: false,
         border: false,
-	autoScroll:true,
+        autoScroll:true,
         region:'center'
     });
 
     var west = new Ext.Panel({
         region: 'west',
         id: 'west-panel',
-	title:'&nbsp',
+        title:'&nbsp',
         //split:true,
         width: 300,
         minSize: 175,
@@ -689,15 +687,15 @@ Ext.onReady(function() {
         items: [
             {
                 contentEl: 'address_div',
-		title: "Tools",
+                title: "Tools",
                 region:'north',
                 border:false
             },
-	    {
-		region: "center",
-		title: "",
-		layout: 'fit',
-		items: [layerTree]
+            {
+                region: "center",
+                title: "",
+                layout: 'fit',
+                items: [layerTree]
             }]
     });
 

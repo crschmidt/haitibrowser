@@ -1,0 +1,86 @@
+<osm version='0.5'>
+<node id='-1' lon='-72.7414484486' lat='18.3919465138' />
+<node id='-2' lon='-72.6191754178' lat='18.3919465138' />
+<node id='-3' lon='-72.6191754178' lat='18.3096548823' />
+<node id='-4' lon='-72.7414484486' lat='18.3096548823' />
+<way id='-5'>
+<nd ref='-1' />
+<nd ref='-2' />
+<nd ref='-3' />
+<nd ref='-4' />
+<nd ref='-1' />
+<tag k='orig:location' v='/storage/data/haiti/processed/geoeye/ikonos-17-2/po_397422_rgb_0000000.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-6' lon='-73.6551047937' lat='18.3956638533' />
+<node id='-7' lon='-73.5233353698' lat='18.3956638533' />
+<node id='-8' lon='-73.5233353698' lat='18.3245188475' />
+<node id='-9' lon='-73.6551047937' lat='18.3245188475' />
+<way id='-10'>
+<nd ref='-6' />
+<nd ref='-7' />
+<nd ref='-8' />
+<nd ref='-9' />
+<nd ref='-6' />
+<tag k='orig:location' v='/storage/data/haiti/processed/geoeye/ikonos-17-2/po_397449_rgb_0000000.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-11' lon='-73.9517928658' lat='18.4865638534' />
+<node id='-12' lon='-73.8187404819' lat='18.4865638534' />
+<node id='-13' lon='-73.8187404819' lat='18.4045949153' />
+<node id='-14' lon='-73.9517928658' lat='18.4045949153' />
+<way id='-15'>
+<nd ref='-11' />
+<nd ref='-12' />
+<nd ref='-13' />
+<nd ref='-14' />
+<nd ref='-11' />
+<tag k='orig:location' v='/storage/data/haiti/processed/geoeye/ikonos-17-2/po_397455_rgb_0000000.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-16' lon='-72.0742047313' lat='19.042215704' />
+<node id='-17' lon='-71.9390820891' lat='19.042215704' />
+<node id='-18' lon='-71.9390820891' lat='18.8804088695' />
+<node id='-19' lon='-72.0742047313' lat='18.8804088695' />
+<way id='-20'>
+<nd ref='-16' />
+<nd ref='-17' />
+<nd ref='-18' />
+<nd ref='-19' />
+<nd ref='-16' />
+<tag k='orig:location' v='/storage/data/haiti/processed/geoeye/ikonos-17-2/po_397415_rgb_0000000.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-21' lon='-74.3734324562' lat='18.5884043453' />
+<node id='-22' lon='-74.2288729317' lat='18.5884043453' />
+<node id='-23' lon='-74.2288729317' lat='18.4272907955' />
+<node id='-24' lon='-74.3734324562' lat='18.4272907955' />
+<way id='-25'>
+<nd ref='-21' />
+<nd ref='-22' />
+<nd ref='-23' />
+<nd ref='-24' />
+<nd ref='-21' />
+<tag k='orig:location' v='/storage/data/haiti/processed/geoeye/ikonos-17-2/po_397459_rgb_0000000.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-26' lon='-72.0709697573' lat='18.6048782714' />
+<node id='-27' lon='-71.9336918317' lat='18.6048782714' />
+<node id='-28' lon='-71.9336918317' lat='18.441359821' />
+<node id='-29' lon='-72.0709697573' lat='18.441359821' />
+<way id='-30'>
+<nd ref='-26' />
+<nd ref='-27' />
+<nd ref='-28' />
+<nd ref='-29' />
+<nd ref='-26' />
+<tag k='orig:location' v='/storage/data/haiti/processed/geoeye/ikonos-17-2/po_397418_rgb_0000000.tif_warped.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+</osm>

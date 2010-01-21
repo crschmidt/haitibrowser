@@ -118,24 +118,24 @@ LAYER
   TYPE RASTER
   OFFSITE 0 0 0
 END
-#LAYER
-#  NAME "worldview-01-17-4326"
-#  GROUP "haiti-best"
-#  METADATA
-#    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
-#    wms_title "GeoEye Ikonos 2010-01-14"
-#  END  
-#  STATUS ON
-#  TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-17/4326.shp"
-#  TILEITEM "location"
-#  TYPE RASTER
-#  OFFSITE 0 0 0
-#END
+LAYER
+  NAME "worldview-01-17-4326"
+  GROUP "haiti-best"
+  METADATA
+    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
+    wms_title "GeoEye Ikonos 2010-01-14"
+  END  
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-17/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
 LAYER
   NAME "noaa-01-18-4326"
   GROUP "haiti-best"
   STATUS ON
-  TILEINDEX "/mnt/geodata/haiti/noaa/20100118/4326.shp"
+  TILEINDEX "/storage/data/haiti/processed/noaa/aerial-17-2/4326.shp"
   TILEITEM "location"
   TYPE RASTER
   OFFSITE 0 0 0
@@ -148,7 +148,7 @@ LAYER
     wms_title "GeoEye Ikonos 2010-01-14"
   END  
   STATUS ON
-  TILEINDEX "/mnt/geodata/haiti/dglobe/worldview-18/4326.shp"
+  TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-18/4326.shp"
   TILEITEM "location"
   TYPE RASTER
   OFFSITE 0 0 0
@@ -189,5 +189,18 @@ LAYER
   TILEINDEX "/storage/data/haiti/processed/google/aerial-17/4326.shp"
   TILEITEM "location"
   TYPE RASTER
+END
+LAYER
+  NAME "quickbird-01-20-4326"
+  GROUP "haiti-best"
+  METADATA
+    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
+    wms_title "GeoEye Ikonos 2010-01-14"
+  END  
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/dglobe/quickbird-20/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
 END
 END
