@@ -637,7 +637,7 @@ Ext.onReady(function() {
     HAITI.store_lyrs = [];
     HAITI.lyrs = []
 
-    map.addControl(new OpenLayers.Control.MousePosition());
+    map.addControl(new OpenLayers.Control.MGRSMousePosition());
     map.addControl(new OpenLayers.Control.Scale());
 
     map.events.register('changebaselayer', map, function(e) {
