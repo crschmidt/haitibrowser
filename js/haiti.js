@@ -89,7 +89,7 @@ Ext.onReady(function() {
             transparent: true,
             format: "image/png"
         }, {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         });
     map.addLayers([enclyr]);
@@ -97,43 +97,57 @@ Ext.onReady(function() {
     /////////////////////////////////////
     // Digital Globe Image Layers ///////
     /////////////////////////////////////
+    var dglobe_layers = [];
     var dg_crisis_tc = new OpenLayers.Layer.XYZ(
         "DG Crisis Event Service (TC)",
         "http://maps.nypl.org/tilecache/1/dg_crisis/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
+    dglobe_layers.push(dg_crisis_tc);
 
     var worldview_011510_tc = new OpenLayers.Layer.XYZ(
         "DG WorldView (2010/01/15) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100115-900913/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
-
+    dglobe_layers.push(worldview_011510_tc);
     var qbird_011510_tc = new OpenLayers.Layer.XYZ(
         "DG Quickbird (2010/01/15) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/quickbird-20100115-900913/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
+    dglobe_layers.push(qbird_011510_tc);
+    var worldview_011710_tc = new OpenLayers.Layer.XYZ(
+        "DG WorldView (2010/01/17) (TC)",
+        "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100117-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false,
+            buffer:0
+        }
+    );
+    dglobe_layers.push(worldview_011710_tc);
 
     var worldview_011810_tc = new OpenLayers.Layer.XYZ(
         "DG WorldView (2010/01/18) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100118-900913/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
+    dglobe_layers.push(worldview_011810_tc);
 
-    map.addLayers([worldview_011810_tc,qbird_011510_tc,worldview_011510_tc,dg_crisis_tc]);
+    map.addLayers(dglobe_layers);
     
     /////////////////////////////////////
     // SPOT Image Layers ///////
@@ -142,7 +156,7 @@ Ext.onReady(function() {
         "Spot (2010/01/14) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/spot-20100114-900913/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
@@ -150,7 +164,7 @@ Ext.onReady(function() {
         "Spot (2010/01/15) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/spot-20100114-900913/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
@@ -163,7 +177,7 @@ Ext.onReady(function() {
         "Google Aerial (2010/01/17) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/google-20100117-900913/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
@@ -185,7 +199,7 @@ Ext.onReady(function() {
         "Event Imagery Extended (TC)",
         "http://maps.nypl.org/tilecache/1/geoeye/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
@@ -204,7 +218,7 @@ Ext.onReady(function() {
         "Ikonos (2010/01/14-15) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/geoeye-ikonos-20100115-900913/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
@@ -223,7 +237,7 @@ Ext.onReady(function() {
         "GeoEye1 (2010/01/16) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/geoeye-geoeye-20100116-900913/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
@@ -242,7 +256,7 @@ Ext.onReady(function() {
         "Ikonos (2010/01/17) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/geoeye-ikonos-20100117-900913/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
@@ -250,7 +264,7 @@ Ext.onReady(function() {
         "GeoEye1 (2010/01/18) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/geoeye-geoeye-20100118-900913/${z}/${x}/${y}.jpg?rand=1",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
@@ -276,7 +290,7 @@ Ext.onReady(function() {
         "NOAA Aerial (2010/01/18) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/noaa-20100118-900913/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
@@ -290,7 +304,7 @@ Ext.onReady(function() {
         "Haiti Collarless 1:50k (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/haiti-tlm-50/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
@@ -309,7 +323,7 @@ Ext.onReady(function() {
         "PAP Collared 1:12.5k (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/haiti-city/${z}/${x}/${y}.jpg",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: false
         }
     );
@@ -333,7 +347,7 @@ Ext.onReady(function() {
         "Roads Overlay Live (TC)",
         "http://live.openstreetmap.nl/mapnik-line/${z}/${x}/${y}.png",
         {
-            isBaseLayer: false,
+            isBaseLayer: false, buffer:0,
             visibility: true
         }
     );
@@ -359,7 +373,7 @@ Ext.onReady(function() {
     var dg_store = new GeoExt.data.LayerStore({
         map: map,
         initDir: 0,
-        layers: [worldview_011810_tc,qbird_011510_tc,worldview_011510_tc,dg_crisis_tc]
+        layers: dglobe_layers 
     });
     // Actually add to the tree...
     layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
@@ -460,6 +474,7 @@ Ext.onReady(function() {
     HAITI.lyrs = []
 
     map.addControl(new OpenLayers.Control.MousePosition());
+    map.addControl(new OpenLayers.Control.Permalink());
     map.addControl(new OpenLayers.Control.Scale());
 
     map.events.register('changebaselayer', map, function(e) {
