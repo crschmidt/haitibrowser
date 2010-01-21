@@ -5,9 +5,7 @@ Ext.onReady(function() {
     var enable_gmaps = true;
     
     Ext.DomHelper.append(document.body,
-                         {tag: 'div',id: 'basicTools',cls: 'olControlEditingToolbar'});
-
-
+                         {tag: 'div',id: 'address2'});
 
     var osm_getTileURL = function(bounds) {
         var res = this.map.getResolution();
@@ -505,7 +503,7 @@ Ext.onReady(function() {
         },
         items: [
             {
-                contentEl: 'basicTools',
+                contentEl: 'address_div',
 		title: "Tools",
                 region:'north',
                 border:false
@@ -534,3 +532,4 @@ Ext.onReady(function() {
     setMapCenter();
 
 });
+

@@ -28,11 +28,32 @@ toGeRVUtow"></script>
     </script>
 
     <script type="text/javascript" src="./js/haiti.js"></script> 
+
     <script type="text/javascript">
       function setMapCenter() {
         HAITI.map.setCenter(new OpenLayers.LonLat(-72.2, 19.0).transform(new OpenLayers.Projection("EPSG:4326"),
                           new OpenLayers.Projection("EPSG:900913")),9);
       }
+
+      function osmGaz (search) {
+          var s = document.createElement("script");
+          s.src="http://nominatim.openstreetmap.org/haiti/?viewbox=-76.24%2C21%2C-69.2%2C17&format=json&json_callback=handleOsmLoc&q="+encodeURIComponent(search);
+          document.body.appendChild(s);
+      }
+      function handleOsmLoc(data) {
+          if (data.length) {
+          var go = confirm("Zoom to " + data[0].display_name + " (" + data[0].lon + ", " + data[0].lat +")?");
+              if (go) {
+                  var lonlat = new OpenLayers.LonLat(data[0].lon, data[0].lat);
+                  lonlat.transform(HAITI.map.displayProjection, HAITI.map.getProjectionObject());
+                  var zoom = HAITI.map.getZoom() > 15 ? HAITI.map.getZoom() : 15;
+                  HAITI.map.setCenter(lonlat, zoom);
+              }     
+          } else {
+              alert("No search results found");
+          } 
+      }
+
     </script> 
 
 
@@ -55,11 +76,13 @@ toGeRVUtow"></script>
         <div id="west-panel"></div>
         <div id="description"></div>
 	<div id="query-win" class="x-hidden">
-	  <div class="x-window-header">Query Results</div>
-
-	    <div id="query-tree">
-	      </div>
-	      </div>
+        <div class="x-window-header">Query Results</div>
+        <div id="query-tree">
+        </div>
+        </div>
+        <div id="address_div">
+    Address: <input type="text" id="address" /><input type="submit" onclick="osmGaz($('address').value); return false;" onsubmit="osmGaz($('address').value); return false;" value="Show Location"/>(Powered by OSM.)
+        </div>
 
 
 
