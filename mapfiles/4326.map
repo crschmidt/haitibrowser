@@ -1,0 +1,193 @@
+MAP
+PROJECTION "+init=epsg:4326" END
+extent -74 17 -71 19
+size 256 256
+TRANSPARENT TRUE
+WEB 
+  IMAGEPATH "/var/run/mapserv"
+  METADATA
+    wms_srs "epsg:4326 epsg:900913"
+    wms_title "Supporting Layers for Haiti Recovery Efforts"
+  END
+END
+LAYER
+ NAME "spot-01-14-4326"
+ TYPE RASTER
+ STATUS ON
+ CONNECTION "http://spotgis.spotimage.com/arcgis/services/2010_01_14_Haiti/MapServer/WMSServer?styles=&"
+ CONNECTIONTYPE WMS
+ METADATA
+   "wms_srs" "EPSG:4326"
+   "wms_name" "0"
+   "wms_server_version" "1.1.1"
+   "wms_format" "image/jpeg"
+   "wms_styles" ""
+ END
+ OFFSITE 0 0 0
+ DEBUG ON
+ PROJECTION "+init=epsg:4326" END
+END 
+LAYER
+ NAME "spot-01-15-4326"
+ TYPE RASTER
+ STATUS ON
+ CONNECTION "http://spotgis.spotimage.com/arcgis/services/2010_01_15_Haiti/MapServer/WMSServer?styles=&"
+ CONNECTIONTYPE WMS
+ METADATA
+   "wms_srs" "EPSG:4326"
+   "wms_name" "0"
+   "wms_server_version" "1.1.1"
+   "wms_format" "image/jpeg"
+   "wms_styles" ""
+ END
+ OFFSITE 0 0 0
+ DEBUG ON
+ PROJECTION "+init=epsg:4326" END
+END 
+LAYER
+  NAME "ikonos-01-14-4326"
+  GROUP "haiti-best"
+  METADATA
+    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
+    wms_title "GeoEye Ikonos 2010-01-14"
+  END  
+  STATUS ON
+  TILEINDEX "/mnt/geodata/haiti/geoeye/ikonos-1415/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
+LAYER
+  NAME "worldview-01-15-4326"
+  GROUP "haiti-best"
+  METADATA
+    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
+    wms_title "GeoEye Ikonos 2010-01-14"
+  END  
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-15/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
+LAYER
+  NAME "quickbird-01-15-4326"
+  GROUP "haiti-best"
+  STATUS ON
+  TILEINDEX "/mnt/geodata/haiti/dglobe/quickbird-15/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
+LAYER
+  NAME "geoeye-01-16-4326"
+  GROUP "haiti-best"
+  METADATA
+    wms_abstract "GeoEye GeoEye1 Flight, photos taken 2010-01-16 over Port Au Prince. Copyright GeoEye 2010." 
+    wms_title "GeoEye GeoEye1 2010-01-16"
+  END  
+  STATUS ON
+  TILEINDEX "/mnt/geodata/haiti/geoeye/ge1-16/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
+LAYER
+  NAME "quickbird-01-17-4326"
+  GROUP "haiti-best"
+  METADATA
+    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
+    wms_title "GeoEye Ikonos 2010-01-14"
+  END  
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/dglobe/quickbird-17/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
+LAYER
+  NAME "ikonos-01-17-4326"
+  GROUP "haiti-best"
+  METADATA
+    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
+    wms_title "GeoEye Ikonos 2010-01-14"
+  END  
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/geoeye/ikonos-17-2/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
+#LAYER
+#  NAME "worldview-01-17-4326"
+#  GROUP "haiti-best"
+#  METADATA
+#    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
+#    wms_title "GeoEye Ikonos 2010-01-14"
+#  END  
+#  STATUS ON
+#  TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-17/4326.shp"
+#  TILEITEM "location"
+#  TYPE RASTER
+#  OFFSITE 0 0 0
+#END
+LAYER
+  NAME "noaa-01-18-4326"
+  GROUP "haiti-best"
+  STATUS ON
+  TILEINDEX "/mnt/geodata/haiti/noaa/20100118/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
+LAYER
+  NAME "worldview-01-18-4326"
+  GROUP "haiti-best"
+  METADATA
+    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
+    wms_title "GeoEye Ikonos 2010-01-14"
+  END  
+  STATUS ON
+  TILEINDEX "/mnt/geodata/haiti/dglobe/worldview-18/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
+LAYER
+  NAME "geoeye-01-18-4326"
+  GROUP "haiti-best"
+  METADATA
+    wms_abstract "GeoEye GeoEye1 Flight, photos taken 2010-01-16 over Port Au Prince. Copyright GeoEye 2010." 
+    wms_title "GeoEye GeoEye1 2010-01-16"
+  END  
+  STATUS ON
+  PROCESSING "SCALE_1=0,60"
+  PROCESSING "SCALE_2=0,60"
+  PROCESSING "SCALE_3=0,100"
+  TILEINDEX "/storage/data/haiti/processed/geoeye/ge1-18/ge1-18/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
+LAYER
+  NAME "quickbird-01-18-4326"
+  GROUP "haiti-best"
+  METADATA
+    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
+    wms_title "GeoEye Ikonos 2010-01-14"
+  END  
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/dglobe/quickbird-18/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
+LAYER
+  NAME "google-01-17-4326"
+  #GROUP "haiti-best"
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/google/aerial-17/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+END
+END

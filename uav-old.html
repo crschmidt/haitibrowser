@@ -1,0 +1,332 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Haiti - UAV Flights</title>
+        <script src='http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAjpkAC9ePGem0lIq5XcMiuhR47L9og-HSYk0UoXCUW6-5fDOYwxSxq7h8RIm-n4C3Nw6WtoGeRVUtow'></script>
+    <link rel="stylesheet" href="http://openlayers.org/dev/theme/default/style.css" type="text/css" />
+    <link rel="stylesheet" href="http://openlayers.org/dev/examples/style.css" type="text/css" />
+
+    <style type="text/css">
+        #map {
+            width: 100%;
+            height: 80%;
+            border: 1px solid black;
+        }
+        .olPopup p { margin:0px; font-size: .9em;}
+        .olPopup h2 { font-size:1.2em; }
+        .olControlMousePosition { top: 5px; right: 5px; color:red; width: 200px; height: 10px; text-align: right; }
+    </style>
+    <script src="http://openlayers.org/dev/OpenLayers.js"></script>
+    <script type="text/javascript">
+        var lon = 5;
+        var lat = 40;
+        var zoom = 5;
+        var map, select;
+        function unosatVis (evt) {
+            if (this.visibility) {
+               $("mapcontainer").style.marginLeft = "360px";
+               $("unosatlegend").style.display = "block";
+            } else {
+               $("mapcontainer").style.marginLeft = "0px";
+               $("unosatlegend").style.display = "none";
+            }    
+            map.updateSize();
+        }
+        function onPopupClose(evt) {
+            select.unselectAll();
+        }
+        function onKmlFeatureSelect(event) {
+            var feature = event.feature;
+            var selectedFeature = feature;
+            var popup = new OpenLayers.Popup.FramedCloud("chicken", 
+                feature.geometry.getBounds().getCenterLonLat(),
+                new OpenLayers.Size(400,400),
+                feature.attributes.description,
+                null, true, onPopupClose
+            );
+            feature.popup = popup;
+            map.addPopup(popup);
+        }
+        function osmGaz (search) {
+            var s = document.createElement("script");
+            s.src="http://nominatim.openstreetmap.org/haiti/?viewbox=-76.24%2C21%2C-69.2%2C17&format=json&json_callback=handleOsmLoc&q="+encodeURIComponent(search);
+            document.body.appendChild(s);
+        }
+        function handleOsmLoc(data) {
+            if (data.length) {
+            var go = confirm("Zoom to " + data[0].display_name + " (" + data[0].lon + ", " + data[0].lat +")?");
+                if (go) {
+                    var lonlat = new OpenLayers.LonLat(data[0].lon, data[0].lat);
+                    lonlat.transform(map.displayProjection, map.getProjectionObject());
+                    var zoom = map.getZoom() > 15 ? map.getZoom() : 15;
+                    map.setCenter(lonlat, zoom);
+                }     
+            } else {
+                alert("No search results found");
+            } 
+
+        }
+        function onFeatureSelect(event) {
+            var feature = event.feature;
+            var selectedFeature = feature;
+            var url = '';
+            if (feature.layer.base) {
+                url += feature.layer.base;
+            }
+            url += feature.attributes.url;
+            var popup = new OpenLayers.Popup.FramedCloud("chicken", 
+                feature.geometry.getBounds().getCenterLonLat(),
+                new OpenLayers.Size(400,400),
+                "<a target='_blank' href='"+url+"'><img src='" + url+"' /></a>",
+                null, true, onPopupClose
+            );
+            feature.popup = popup;
+            map.addPopup(popup);
+        }
+        function onFeatureUnselect(event) {
+            var feature = event.feature;
+            if(feature.popup) {
+                map.removePopup(feature.popup);
+                feature.popup.destroy();
+                delete feature.popup;
+            }
+        }
+        function osm_getTileURL(bounds) {
+            var res = this.map.getResolution();
+            var x = Math.round((bounds.left - this.maxExtent.left) / (res * this.tileSize.w));
+            var y = Math.round((this.maxExtent.top - bounds.top) / (res * this.tileSize.h));
+            var z = this.map.getZoom();
+            var limit = Math.pow(2, z);
+
+            if (y < 0 || y >= limit) {
+                return OpenLayers.Util.getImagesLocation() + "404.png";
+            } else {
+                x = ((x % limit) + limit) % limit;
+                return this.url + z + "/" + x + "/" + y + "." + this.type;
+            }
+        }
+
+        function init(){
+            OpenLayers.ProxyHost="proxy.cgi?url=";
+            var options = {
+                projection: new OpenLayers.Projection("EPSG:900913"),
+                displayProjection: new OpenLayers.Projection("EPSG:4326"),
+                units: "m",
+                numZoomLevels: 22,
+                maxResolution: 156543.0339,
+                maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34,
+                                                 20037508.34, 20037508.34)
+            };
+            map = new OpenLayers.Map('map', options);
+            var ls = new OpenLayers.Control.LayerSwitcher();
+            map.addControl(ls);
+            ls.maximizeControl();
+            var ge_1001 = new OpenLayers.Layer.XYZ(
+                "GeoEye Event Imagery",
+                "http://maps.nypl.org/tilecache/1/geoeye/${z}/${x}/${y}.jpg"
+            );
+
+            var dg_crisis = new OpenLayers.Layer.XYZ(
+                "DigitalGlobe Crisis Event Service",
+                "http://maps.nypl.org/tilecache/1/dg_crisis/${z}/${x}/${y}.jpg"
+        );
+            var tlm = new OpenLayers.Layer.XYZ(
+                "Haiti TLM50",
+                "http://hypercube.telascience.org/tiles/1.0.0/haiti-tlm-50/${z}/${x}/${y}.jpg"
+        );
+            var spot_14 = new OpenLayers.Layer.XYZ(
+                "Spot (2010/01/14)",
+                "http://hypercube.telascience.org/tiles/1.0.0/spot-20100114-900913/${z}/${x}/${y}.jpg"
+        );
+            var spot_15 = new OpenLayers.Layer.XYZ(
+                "Spot (2010/01/15)",
+                "http://hypercube.telascience.org/tiles/1.0.0/spot-20100115-900913/${z}/${x}/${y}.jpg"
+        );
+            var ikonos_15 = new OpenLayers.Layer.XYZ(
+                "GeoEye - Ikonos (2010/01/14-2010/01/15)",
+                "http://hypercube.telascience.org/tiles/1.0.0/geoeye-ikonos-20100115-900913/${z}/${x}/${y}.jpg"
+        );
+            var worldview_15 = new OpenLayers.Layer.XYZ(
+                "DigitalGlobe - WorldView (2010/01/15)",
+                "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100115-900913/${z}/${x}/${y}.jpg"
+        );
+            var quickbird_15 = new OpenLayers.Layer.XYZ(
+                "DigitalGlobe - Quickbird (2010/01/15)",
+                "http://hypercube.telascience.org/tiles/1.0.0/quickbird-20100115-900913/${z}/${x}/${y}.jpg"
+        );
+            var quickbird_17 = new OpenLayers.Layer.XYZ(
+                "DigitalGlobe - Quickbird (2010/01/17)",
+                "http://hypercube.telascience.org/tiles/1.0.0/quickbird-20100117-900913/${z}/${x}/${y}.jpg"
+        );
+            var quickbird_18 = new OpenLayers.Layer.XYZ(
+                "DigitalGlobe - Quickbird (2010/01/18)",
+                "http://hypercube.telascience.org/tiles/1.0.0/quickbird-20100118-900913/${z}/${x}/${y}.jpg"
+        );
+            var geoeye_16 = new OpenLayers.Layer.XYZ(
+                "GeoEye - GeoEye1 (2010/01/16)",
+                "http://hypercube.telascience.org/tiles/1.0.0/geoeye-geoeye-20100116-900913/${z}/${x}/${y}.jpg"
+        );
+            var geoeye_18 = new OpenLayers.Layer.XYZ(
+                "GeoEye - GeoEye1 (2010/01/18)",
+                "http://hypercube.telascience.org/tiles/1.0.0/geoeye-geoeye-20100118-900913/${z}/${x}/${y}.jpg?rand=1"
+        );
+            var ikonos_17 = new OpenLayers.Layer.XYZ(
+                "GeoEye - Ikonos (2010/01/17)",
+                "http://hypercube.telascience.org/tiles/1.0.0/geoeye-ikonos-20100117-900913/${z}/${x}/${y}.jpg"
+        );
+            var google_17 = new OpenLayers.Layer.XYZ(
+                "Google Aerial (2010/01/17)",
+                "http://hypercube.telascience.org/tiles/1.0.0/google-20100117-900913/${z}/${x}/${y}.jpg"
+        );
+            var noaa_18 = new OpenLayers.Layer.XYZ(
+                "NOAA Aerial (2010/01/18)",
+                "http://hypercube.telascience.org/tiles/1.0.0/noaa-20100118-900913/${z}/${x}/${y}.jpg"
+        );
+            var worldview_18 = new OpenLayers.Layer.XYZ(
+                "DigitalGLobe WorldView (2010/01/18)",
+                "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100118-900913/${z}/${x}/${y}.jpg"
+        );
+            var city = new OpenLayers.Layer.XYZ(
+                "Port-au-Prince 1:12.5k Topos",
+                "http://hypercube.telascience.org/tiles/1.0.0/haiti-city/${z}/${x}/${y}.jpg"
+        );
+
+            var osm_overlay = new OpenLayers.Layer.XYZ(
+                "OpenStreetMap (Overlay)",
+                "http://live.openstreetmap.nl/mapnik-line/${z}/${x}/${y}.png",
+                {'isBaseLayer': false}
+        );
+            var mapnik = new OpenLayers.Layer.TMS(
+                "OpenStreetMap (Haiti)",
+                "http://live.openstreetmap.nl/haiti/",
+                {
+                    type: 'png', getURL: osm_getTileURL,
+                    displayOutsideMaxExtent: true,
+                    attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
+                }
+            );
+            var sundials = new OpenLayers.Layer.Vector("UAV", {
+                projection: map.displayProjection,
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                styleMap: new OpenLayers.StyleMap({'fillColor': 'blue', pointRadius: 6, opacity: 0.5, fillOpacity: 0.8, strokeColor: 'red', 'strokeWidth': 1}),
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "out.json",
+                    format: new OpenLayers.Format.GeoJSON({
+                        extractStyles: true,
+                        extractAttributes: true
+                    })
+                }),
+                'base': 'apan/'
+            });
+            var unosat = new OpenLayers.Layer.Vector("UNOSAT KML", {
+                projection: map.displayProjection,
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "kml/UNOSAT/doc.kml",
+                    format: new OpenLayers.Format.KML({
+                        extractStyles: true,
+                        extractAttributes: true
+                    })
+                }),
+                visibility: false
+            });
+            unosat.setVisibility(false);
+            
+        
+            var p3 = new OpenLayers.Layer.Vector('Navy P3 Orion', {
+                projection: map.displayProjection,
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                styleMap: new OpenLayers.StyleMap({'fillColor': 'white', pointRadius: 6, opacity: 0.5, fillOpacity: 0.8, strokeColor: 'red', 'strokeWidth': 1}),
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "p3/photos/p3.json",
+                    format: new OpenLayers.Format.GeoJSON({
+                        extractStyles: true,
+                        extractAttributes: true
+                    })
+                }),
+                'base': 'p3/photos/'
+            });
+            var buildings = new OpenLayers.Layer.Vector("Collapsed Buildings", {
+                projection: map.displayProjection,
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                styleMap: new OpenLayers.StyleMap({'strokeColor': 'red', pointRadius: 3, fillColor: 'orange'}),
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "buildings.osm",
+                    format: new OpenLayers.Format.OSM({
+                        extractStyles: true,
+                        extractAttributes: true
+                    })
+                }),
+                visibility: false
+            });
+
+            map.addLayers([dg_crisis, ge_1001, tlm, spot_14,spot_15,worldview_15, ikonos_15, quickbird_15, geoeye_16, ikonos_17, google_17, quickbird_17, noaa_18, worldview_18, geoeye_18, city, quickbird_18, mapnik, osm_overlay, sundials, p3, buildings, unosat]);
+
+
+            select = new OpenLayers.Control.SelectFeature([sundials, p3,unosat]);
+            
+            sundials.events.on({
+                "featureselected": onFeatureSelect,
+                "featureunselected": onFeatureUnselect
+            });
+            unosat.events.on({
+                "featureselected": onKmlFeatureSelect,
+                "featureunselected": onFeatureUnselect,
+                "visibilitychanged": unosatVis,
+                scope: unosat
+            });
+            p3.events.on({
+                "featureselected": onFeatureSelect,
+                "featureunselected": onFeatureUnselect
+            });
+  
+            map.addControl(select);
+            select.activate();   
+
+            map.addControl(new OpenLayers.Control.Permalink());
+            map.addControl(new OpenLayers.Control.MousePosition());
+            if (!map.getCenter()) {
+                map.setCenter(new OpenLayers.LonLat(-8028945.4735608, 2095234.2782381),10);   
+            }    
+            var params = OpenLayers.Util.getParameters();
+            if (params.q) {
+                osmGaz(params.q);
+            }    
+
+        }
+/*        function getYahooAddress(address) {
+            OpenLayers.Request.GET({
+                url: "http://local.yahooapis.com/MapsService/V1/geocode?appid=YD-9G7bey8_JXxQP6rxl.fBFGgCdNjoDMACQA--&",
+                'params': {'location':address},
+                callback: function(req) { console.log(req); alert(req.responseText); }
+            });   
+                
+        }*/
+  function showAddress(address) {
+      var geocoder = new GClientGeocoder();
+      if (geocoder) {
+        geocoder.getLatLng(
+          address,
+          function(point) {
+            if (!point) {
+              alert(address + " not found");
+            } else {
+        map.setCenter(new OpenLayers.LonLat(point.x,point.y).transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913")),15);
+          
+            }
+          }
+        );
+      }
+   }
+
+    </script>
+  </head>
+  <body onload="init()">
+ <img src="http://hypercube.telascience.org/haiti/kml/UNOSAT/files/legend.png" style="display:none;float:left" id="unosatlegend" />
+ <div style="margin-left: 0px" id="mapcontainer" style="height: 98%">
+    <div id="map" style="width: 100%; height: 80%;"></div>
+ </div>  
+ <div style="margin-left: 350px">
+    Address: <input type="text" id="address" /><input type="submit" onclick="showAddress($('address').value); return false;" onsubmit="osmGaz($('address').value); return false" value="Show Location"/><br /> (Powered by OSM.)
+    </div>
+  </body>
+</html>
