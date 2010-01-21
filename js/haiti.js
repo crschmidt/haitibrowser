@@ -7,6 +7,31 @@ Ext.onReady(function() {
     Ext.DomHelper.append(document.body,
                          {tag: 'div',id: 'address2'});
     Ext.get('address_div').show();
+        function onFeatureSelect(event) {
+            var feature = event.feature;
+            var selectedFeature = feature;
+            var url = '';
+            if (feature.layer.base) {
+                url += feature.layer.base;
+            }
+            url += feature.attributes.url;
+            var popup = new OpenLayers.Popup.FramedCloud("chicken", 
+                feature.geometry.getBounds().getCenterLonLat(),
+                new OpenLayers.Size(400,400),
+                '<a target="_blank" href="'+url+'"><img src="' + url+'" /></a>',
+                null, true 
+            );
+            feature.popup = popup;
+            map.addPopup(popup);
+        }
+        function onFeatureUnselect(event) {
+            var feature = event.feature;
+            if(feature.popup) {
+                map.removePopup(feature.popup);
+                feature.popup.destroy();
+                delete feature.popup;
+            }
+        }
 
     var osm_getTileURL = function(bounds) {
         var res = this.map.getResolution();
@@ -191,7 +216,7 @@ Ext.onReady(function() {
         "http://hypercube.telascience.org/tiles/1.0.0/google-20100117-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
-            visibility: false
+            visibility: false, attribution: "Google 2010"
         }
     );
     google_layers.push(google_011710_tc);
@@ -237,7 +262,7 @@ Ext.onReady(function() {
         "http://hypercube.telascience.org/tiles/1.0.0/geoeye-ikonos-20100115-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
-            visibility: false
+            visibility: false, attribution: "GeoEye 2010"
         }
     );
     geoeye_layers.push(ikonos_011510_tc);
@@ -396,6 +421,108 @@ Ext.onReady(function() {
     //);
 
 
+    var overlays = [];
+    var p3_je1 = new OpenLayers.Layer.Vector('P-3 - JE17JJ (2010/01/17) ', {
+        projection: map.displayProjection,
+        strategies: [new OpenLayers.Strategy.Fixed()],
+        styleMap: new OpenLayers.StyleMap({'fillColor': 'white', pointRadius: 6, opacity: 0.5, fillOpacity: 0.8, strokeColor: 'red', 'strokeWidth': 1}),
+        protocol: new OpenLayers.Protocol.HTTP({
+            url: "p3-json/p3-JE17JJ.json",
+            format: new OpenLayers.Format.GeoJSON({
+                extractStyles: true,
+                extractAttributes: true
+            })
+        }),
+        visibility: false,
+        'base': '/haiti/data/source/Navy/P3/JE17JJ/Images/'
+    });
+    p3_je1.events.on({
+        "featureselected": onFeatureSelect,
+        "featureunselected": onFeatureUnselect
+    });
+    overlays.push(p3_je1);
+    var p3_je18 = new OpenLayers.Layer.Vector('P-3 - JE18 (2010/01/18) ', {
+        projection: map.displayProjection,
+        strategies: [new OpenLayers.Strategy.Fixed()],
+        styleMap: new OpenLayers.StyleMap({'fillColor': 'white', pointRadius: 6, opacity: 0.5, fillOpacity: 0.8, strokeColor: 'red', 'strokeWidth': 1}),
+        protocol: new OpenLayers.Protocol.HTTP({
+            url: "p3-json/je18.json",
+            format: new OpenLayers.Format.GeoJSON({
+                extractStyles: true,
+                extractAttributes: true
+            })
+        }),
+        visibility: false,
+        'base':"/haiti/data/source/Navy/P3/JE18Photo's/"
+    });
+    p3_je18.events.on({
+        "featureselected": onFeatureSelect,
+        "featureunselected": onFeatureUnselect
+    });
+    overlays.push(p3_je18);
+    var p3_je19ss = new OpenLayers.Layer.Vector('P-3  (2010/01/19 ss) ', {
+        projection: map.displayProjection,
+        strategies: [new OpenLayers.Strategy.Fixed()],
+        styleMap: new OpenLayers.StyleMap({'fillColor': 'white', pointRadius: 6, opacity: 0.5, fillOpacity: 0.8, strokeColor: 'red', 'strokeWidth': 1}),
+        protocol: new OpenLayers.Protocol.HTTP({
+            url: "p3-json/je19ss.json",
+            format: new OpenLayers.Format.GeoJSON({
+                extractStyles: true,
+                extractAttributes: true
+            })
+        }),
+        visibility: false,
+        'base': '/haiti/data/source/Navy/P3/JE19SS/'
+    });
+    p3_je19ss.events.on({
+        "featureselected": onFeatureSelect,
+        "featureunselected": onFeatureUnselect
+    });
+    overlays.push(p3_je19ss);
+    var p3_je19 = new OpenLayers.Layer.Vector('P-3  (2010/01/19 ) ', {
+        projection: map.displayProjection,
+        strategies: [new OpenLayers.Strategy.Fixed()],
+        styleMap: new OpenLayers.StyleMap({'fillColor': 'white', pointRadius: 6, opacity: 0.5, fillOpacity: 0.8, strokeColor: 'red', 'strokeWidth': 1}),
+        protocol: new OpenLayers.Protocol.HTTP({
+            url: "p3-json/je19.json",
+            format: new OpenLayers.Format.GeoJSON({
+                extractStyles: true,
+                extractAttributes: true
+            })
+        }),
+        visibility: false,
+        'base': '/haiti/data/source/Navy/P3/JE19QQ/'
+    });
+    p3_je19.events.on({
+        "featureselected": onFeatureSelect,
+        "featureunselected": onFeatureUnselect
+    });
+    overlays.push(p3_je19);
+    var p3_je20tt = new OpenLayers.Layer.Vector('P-3  (2010/01/20 TT) ', {
+        projection: map.displayProjection,
+        strategies: [new OpenLayers.Strategy.Fixed()],
+        styleMap: new OpenLayers.StyleMap({'fillColor': 'white', pointRadius: 6, opacity: 0.5, fillOpacity: 0.8, strokeColor: 'red', 'strokeWidth': 1}),
+        protocol: new OpenLayers.Protocol.HTTP({
+            url: "p3-json/je20tt.json",
+            format: new OpenLayers.Format.GeoJSON({
+                extractStyles: true,
+                extractAttributes: true
+            })
+        }),
+        visibility: false,
+        'base': '/haiti/data/source/Navy/P3/JE20TT/'
+    });
+    p3_je20tt.events.on({
+        "featureselected": onFeatureSelect,
+        "featureunselected": onFeatureUnselect
+    });
+    overlays.push(p3_je20tt);
+
+    map.addLayers(overlays);
+    var sf = new OpenLayers.Control.SelectFeature(overlays);
+    map.addControl(sf);
+    sf.activate();
+    
     /////////////////////////////////////
     // Layer Stores      ////////////////
     /////////////////////////////////////
@@ -468,6 +595,17 @@ Ext.onReady(function() {
     layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
         text: "OSM Overlays",
         layerStore: osm_store,
+        expanded: true
+    }));
+    var overlay_store = new GeoExt.data.LayerStore({
+        map: map,
+        initDir: 0,
+        layers: overlays
+    });
+    // Actually add to the tree...
+    layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
+        text: "Other Overlays",
+        layerStore: overlay_store,
         expanded: true
     }));
 
