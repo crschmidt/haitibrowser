@@ -31,8 +31,10 @@ toGeRVUtow"></script>
 
     <script type="text/javascript">
       function setMapCenter() {
+        if (!HAITI.map.getCenter()) {
         HAITI.map.setCenter(new OpenLayers.LonLat(-72.2, 19.0).transform(new OpenLayers.Projection("EPSG:4326"),
                           new OpenLayers.Projection("EPSG:900913")),9);
+        }                  
       }
 
       function osmGaz (search) {
