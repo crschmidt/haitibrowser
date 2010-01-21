@@ -1,0 +1,184 @@
+<osm version='0.5'>
+<node id='-1' lon='-72.277241772' lat='18.6239802682' />
+<node id='-2' lon='-72.1972849743' lat='18.6239802682' />
+<node id='-3' lon='-72.1972849743' lat='18.5982637474' />
+<node id='-4' lon='-72.277241772' lat='18.5982637474' />
+<way id='-5'>
+<nd ref='-1' />
+<nd ref='-2' />
+<nd ref='-3' />
+<nd ref='-4' />
+<nd ref='-1' />
+<tag k='orig:location' v='/mnt/geodata/haiti/noaa/20100118/5.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-6' lon='-72.277888559' lat='18.6427775155' />
+<node id='-7' lon='-72.1970671329' lat='18.6427775155' />
+<node id='-8' lon='-72.1970671329' lat='18.6224643612' />
+<node id='-9' lon='-72.277888559' lat='18.6224643612' />
+<way id='-10'>
+<nd ref='-6' />
+<nd ref='-7' />
+<nd ref='-8' />
+<nd ref='-9' />
+<nd ref='-6' />
+<tag k='orig:location' v='/mnt/geodata/haiti/noaa/20100118/2.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-11' lon='-72.3301839833' lat='18.5247882945' />
+<node id='-12' lon='-72.2463374804' lat='18.5247882945' />
+<node id='-13' lon='-72.2463374804' lat='18.4973447626' />
+<node id='-14' lon='-72.3301839833' lat='18.4973447626' />
+<way id='-15'>
+<nd ref='-11' />
+<nd ref='-12' />
+<nd ref='-13' />
+<nd ref='-14' />
+<nd ref='-11' />
+<tag k='orig:location' v='/mnt/geodata/haiti/noaa/20100118/12.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-16' lon='-72.3299683876' lat='18.5005876808' />
+<node id='-17' lon='-72.2478511417' lat='18.5005876808' />
+<node id='-18' lon='-72.2478511417' lat='18.4839486359' />
+<node id='-19' lon='-72.3299683876' lat='18.4839486359' />
+<way id='-20'>
+<nd ref='-16' />
+<nd ref='-17' />
+<nd ref='-18' />
+<nd ref='-19' />
+<nd ref='-16' />
+<tag k='orig:location' v='/mnt/geodata/haiti/noaa/20100118/14.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-21' lon='-72.2495781528' lat='18.5254373273' />
+<node id='-22' lon='-72.1972827285' lat='18.5254373273' />
+<node id='-23' lon='-72.1972827285' lat='18.4850266143' />
+<node id='-24' lon='-72.2495781528' lat='18.4850266143' />
+<way id='-25'>
+<nd ref='-21' />
+<nd ref='-22' />
+<nd ref='-23' />
+<nd ref='-24' />
+<nd ref='-21' />
+<tag k='orig:location' v='/mnt/geodata/haiti/noaa/20100118/13.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-26' lon='-72.3699456635' lat='18.6239802682' />
+<node id='-27' lon='-72.2735654167' lat='18.6239802682' />
+<node id='-28' lon='-72.2735654167' lat='18.5986971845' />
+<node id='-29' lon='-72.3699456635' lat='18.5986971845' />
+<way id='-30'>
+<nd ref='-26' />
+<nd ref='-27' />
+<nd ref='-28' />
+<nd ref='-29' />
+<nd ref='-26' />
+<tag k='orig:location' v='/mnt/geodata/haiti/noaa/20100118/4.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-31' lon='-72.3731885817' lat='18.5502892197' />
+<node id='-32' lon='-72.2718384056' lat='18.5502892197' />
+<node id='-33' lon='-72.2718384056' lat='18.5228456877' />
+<node id='-34' lon='-72.3731885817' lat='18.5228456877' />
+<way id='-35'>
+<nd ref='-31' />
+<nd ref='-32' />
+<nd ref='-33' />
+<nd ref='-34' />
+<nd ref='-31' />
+<tag k='orig:location' v='/mnt/geodata/haiti/noaa/20100118/10.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-36' lon='-72.2752969194' lat='18.574494325' />
+<node id='-37' lon='-72.1962047502' lat='18.574494325' />
+<node id='-38' lon='-72.1962047502' lat='18.5483466129' />
+<node id='-39' lon='-72.2752969194' lat='18.5483466129' />
+<way id='-40'>
+<nd ref='-36' />
+<nd ref='-37' />
+<nd ref='-38' />
+<nd ref='-39' />
+<nd ref='-36' />
+<tag k='orig:location' v='/mnt/geodata/haiti/noaa/20100118/9.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-41' lon='-72.2750790779' lat='18.6006397913' />
+<node id='-42' lon='-72.1968515372' lat='18.6006397913' />
+<node id='-43' lon='-72.1968515372' lat='18.5725472266' />
+<node id='-44' lon='-72.2750790779' lat='18.5725472266' />
+<way id='-45'>
+<nd ref='-41' />
+<nd ref='-42' />
+<nd ref='-43' />
+<nd ref='-44' />
+<nd ref='-41' />
+<tag k='orig:location' v='/mnt/geodata/haiti/noaa/20100118/7.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-46' lon='-72.3727551446' lat='18.6429976028' />
+<node id='-47' lon='-72.2731342254' lat='18.6429976028' />
+<node id='-48' lon='-72.2731342254' lat='18.6224688527' />
+<node id='-49' lon='-72.3727551446' lat='18.6224688527' />
+<way id='-50'>
+<nd ref='-46' />
+<nd ref='-47' />
+<nd ref='-48' />
+<nd ref='-49' />
+<nd ref='-46' />
+<tag k='orig:location' v='/mnt/geodata/haiti/noaa/20100118/1.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-51' lon='-72.370163505' lat='18.599561813' />
+<node id='-52' lon='-72.2729186297' lat='18.599561813' />
+<node id='-53' lon='-72.2729186297' lat='18.5725494724' />
+<node id='-54' lon='-72.370163505' lat='18.5725494724' />
+<way id='-55'>
+<nd ref='-51' />
+<nd ref='-52' />
+<nd ref='-53' />
+<nd ref='-54' />
+<nd ref='-51' />
+<tag k='orig:location' v='/mnt/geodata/haiti/noaa/20100118/6.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-56' lon='-72.3725417947' lat='18.5742742377' />
+<node id='-57' lon='-72.272056247' lat='18.5742742377' />
+<node id='-58' lon='-72.272056247' lat='18.5483421213' />
+<node id='-59' lon='-72.3725417947' lat='18.5483421213' />
+<way id='-60'>
+<nd ref='-56' />
+<nd ref='-57' />
+<nd ref='-58' />
+<nd ref='-59' />
+<nd ref='-56' />
+<tag k='orig:location' v='/mnt/geodata/haiti/noaa/20100118/8.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+<node id='-61' lon='-72.2744300451' lat='18.550073624' />
+<node id='-62' lon='-72.1977139199' lat='18.550073624' />
+<node id='-63' lon='-72.1977139199' lat='18.5237103162' />
+<node id='-64' lon='-72.2744300451' lat='18.5237103162' />
+<way id='-65'>
+<nd ref='-61' />
+<nd ref='-62' />
+<nd ref='-63' />
+<nd ref='-64' />
+<nd ref='-61' />
+<tag k='orig:location' v='/mnt/geodata/haiti/noaa/20100118/11.tif' />
+<tag k='created_by' v='polyshp2osm' />
+<tag k='area' v='yes' />
+</way>
+</osm>
