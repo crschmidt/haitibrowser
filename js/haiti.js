@@ -30,11 +30,11 @@ Ext.onReady(function() {
         'numZoomLevels' : 22,
         'projection' : new OpenLayers.Projection("EPSG:900913"),
         'displayProjection' : new OpenLayers.Projection("EPSG:4326"),
-        'maxExtent' : new OpenLayers.Bounds(-20037508,-20037508,20037508,20037508)
+        'maxExtent' : new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
         //controls: []
     };
     
-    OpenLayers.IMAGE_RELOAD_ATTEMPTS = 5;
+    OpenLayers.IMAGE_RELOAD_ATTEMPTS = 1;
 
     var map = new OpenLayers.Map('mappanel', map_options);
     HAITI.map = map;
@@ -136,6 +136,15 @@ Ext.onReady(function() {
         }
     );
     dglobe_layers.push(worldview_011710_tc);
+    var qbird_011810_tc = new OpenLayers.Layer.XYZ(
+        "DG Quickbird (2010/01/18) (TC)",
+        "http://hypercube.telascience.org/tiles/1.0.0/quickbird-20100118-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false
+        }
+    );
+    dglobe_layers.push(qbird_011810_tc);
 
     var worldview_011810_tc = new OpenLayers.Layer.XYZ(
         "DG WorldView (2010/01/18) (TC)",
@@ -154,7 +163,7 @@ Ext.onReady(function() {
     /////////////////////////////////////
     var spot_layers = []
     var spot_011410_tc = new OpenLayers.Layer.XYZ(
-        "Spot (2010/01/14) (TC)",
+        "SpotImage (2010/01/14)",
         "http://hypercube.telascience.org/tiles/1.0.0/spot-20100114-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -163,8 +172,8 @@ Ext.onReady(function() {
     );
     spot_layers.push(spot_011410_tc);
     var spot_011510_tc = new OpenLayers.Layer.XYZ(
-        "Spot (2010/01/15) (TC)",
-        "http://hypercube.telascience.org/tiles/1.0.0/spot-20100114-900913/${z}/${x}/${y}.jpg",
+        "SpotImage (2010/01/15)",
+        "http://hypercube.telascience.org/tiles/1.0.0/spot-20100115-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
             visibility: false
@@ -354,15 +363,14 @@ Ext.onReady(function() {
     /////////////////////////////////////
     // OSM Overlay Layers////////////////
     /////////////////////////////////////
-    var osm_camps_wms = new OpenLayers.Layer.WMS(
-        "Damage/Ref Camps Live (WMS)",
-        "http://haiti.dbsgeo.com/?",
+    var osm_camps_wms = new OpenLayers.Layer.XYZ(
+        "Damage/Ref Camps Live",
+        "http://live.openstreetmap.nl/haiti-symbols/${z}/${x}/${y}.png",
         {
-            layers: 'osm_haiti_overlay_900913',
-            transparent: 'TRUE',
-            'sphericalMercator': true
-        },
-        {'reproject': false, 'isBaseLayer': false, 'visibility': false}
+            buffer: 0, isBaseLayer: false,
+            'sphericalMercator': true,
+            visibility: false
+        }
     );
     var osm_overlay = new OpenLayers.Layer.XYZ(
         "Roads Overlay Live (TC)",
@@ -434,7 +442,7 @@ Ext.onReady(function() {
     });
     // Actually add to the tree...
     layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
-        text: "SPOT",
+        text: "CNES/SpotImage",
         layerStore: spot_store,
         expanded: false
     }));
@@ -494,7 +502,6 @@ Ext.onReady(function() {
     HAITI.lyrs = []
 
     map.addControl(new OpenLayers.Control.MousePosition());
-    map.addControl(new OpenLayers.Control.Permalink());
     map.addControl(new OpenLayers.Control.Scale());
 
     map.events.register('changebaselayer', map, function(e) {
@@ -502,7 +509,8 @@ Ext.onReady(function() {
             e.layer.mapObject.checkResize();
             e.layer.moveTo(e.layer.map.getCenter(), e.layer.map.getZoom());
         }
-    });
+    }); 
+    map.addControl(new OpenLayers.Control.Permalink());
 
     var mapPanel = new GeoExt.MapPanel({
         renderTo: 'mappanel',
@@ -510,6 +518,9 @@ Ext.onReady(function() {
         title: 'Map',
         extent: map.getExtent()
     });
+    if (map.getZoom()) {
+        map.zoomTo(map.getZoom() + 1);
+    }
 
 
     var layerTree = new Ext.tree.TreePanel({
