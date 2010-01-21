@@ -6,6 +6,7 @@ Ext.onReady(function() {
     
     Ext.DomHelper.append(document.body,
                          {tag: 'div',id: 'address2'});
+    Ext.get('address_div').show();
 
     var osm_getTileURL = function(bounds) {
         var res = this.map.getResolution();
