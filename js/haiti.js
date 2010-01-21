@@ -152,6 +152,7 @@ Ext.onReady(function() {
     /////////////////////////////////////
     // SPOT Image Layers ///////
     /////////////////////////////////////
+    var spot_layers = []
     var spot_011410_tc = new OpenLayers.Layer.XYZ(
         "Spot (2010/01/14) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/spot-20100114-900913/${z}/${x}/${y}.jpg",
@@ -160,6 +161,7 @@ Ext.onReady(function() {
             visibility: false
         }
     );
+    spot_layers.push(spot_011410_tc);
     var spot_011510_tc = new OpenLayers.Layer.XYZ(
         "Spot (2010/01/15) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/spot-20100114-900913/${z}/${x}/${y}.jpg",
@@ -168,11 +170,13 @@ Ext.onReady(function() {
             visibility: false
         }
     );
-    map.addLayers([spot_011510_tc,spot_011410_tc]);
+    spot_layers.push(spot_011510_tc);
+    map.addLayers(spot_layers);
     
     /////////////////////////////////////
     // GOOGLE Image Layers ///////
     /////////////////////////////////////
+    var google_layers = []
     var google_011710_tc = new OpenLayers.Layer.XYZ(
         "Google Aerial (2010/01/17) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/google-20100117-900913/${z}/${x}/${y}.jpg",
@@ -181,11 +185,13 @@ Ext.onReady(function() {
             visibility: false
         }
     );
-    map.addLayers([google_011710_tc]);
+    google_layers.push(google_011710_tc);
+    map.addLayers(google_layers);
     
     /////////////////////////////////////
     // GeoEye Image Layers //////////////
     /////////////////////////////////////
+    var geoeye_layers = [];
     var ge_011310_wms = new OpenLayers.Layer.WMS(
         "Event Imagery PAP (WMS)",
         "http://maps.nypl.org/relief/maps/wms/32?",
@@ -195,6 +201,7 @@ Ext.onReady(function() {
         },
         {'reproject': false, 'isBaseLayer': false, 'visibility': false}
     );
+    geoeye_layers.push(ge_011310_wms);
     var ge_011310_tc = new OpenLayers.Layer.XYZ(
         "Event Imagery Extended (TC)",
         "http://maps.nypl.org/tilecache/1/geoeye/${z}/${x}/${y}.jpg",
@@ -203,6 +210,7 @@ Ext.onReady(function() {
             visibility: false
         }
     );
+    geoeye_layers.push(ge_011310_tc);
     var ikonos_011510_wms = new OpenLayers.Layer.WMS(
         "Ikonos (2010/01/14-15) (WMS)",
         "http://hypercube.telascience.org/cgi-bin/mapserv?",
@@ -214,6 +222,7 @@ Ext.onReady(function() {
         },
         {'reproject': false, 'isBaseLayer': false, 'visibility': false}
     );
+    geoeye_layers.push(ikonos_011510_wms);
     var ikonos_011510_tc = new OpenLayers.Layer.XYZ(
         "Ikonos (2010/01/14-15) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/geoeye-ikonos-20100115-900913/${z}/${x}/${y}.jpg",
@@ -222,6 +231,7 @@ Ext.onReady(function() {
             visibility: false
         }
     );
+    geoeye_layers.push(ikonos_011510_tc);
     var geoeye_011610_wms = new OpenLayers.Layer.WMS(
         "GeoEye1 (2010/01/16) (WMS)",
         "http://hypercube.telascience.org/cgi-bin/mapserv?",
@@ -233,6 +243,7 @@ Ext.onReady(function() {
         },
         {'reproject': false, 'isBaseLayer': false, 'visibility': false}
     );
+    geoeye_layers.push(geoeye_011610_wms);
     var geoeye_011610_tc = new OpenLayers.Layer.XYZ(
         "GeoEye1 (2010/01/16) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/geoeye-geoeye-20100116-900913/${z}/${x}/${y}.jpg",
@@ -241,6 +252,7 @@ Ext.onReady(function() {
             visibility: false
         }
     );
+    geoeye_layers.push(geoeye_011610_tc);
     var ikonos_011710_wms = new OpenLayers.Layer.WMS(
         "Ikonos (2010/01/17) (WMS)",
         "http://hypercube.telascience.org/cgi-bin/mapserv?",
@@ -252,6 +264,7 @@ Ext.onReady(function() {
         },
         {'reproject': false, 'isBaseLayer': false, 'visibility': false}
     );
+    geoeye_layers.push(ikonos_011710_wms);
     var ikonos_011710_tc = new OpenLayers.Layer.XYZ(
         "Ikonos (2010/01/17) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/geoeye-ikonos-20100117-900913/${z}/${x}/${y}.jpg",
@@ -260,6 +273,7 @@ Ext.onReady(function() {
             visibility: false
         }
     );
+    geoeye_layers.push(ikonos_011710_tc);
     var geoeye_011810_tc = new OpenLayers.Layer.XYZ(
         "GeoEye1 (2010/01/18) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/geoeye-geoeye-20100118-900913/${z}/${x}/${y}.jpg?rand=1",
@@ -268,13 +282,14 @@ Ext.onReady(function() {
             visibility: false
         }
     );
+    geoeye_layers.push(geoeye_011810_tc);
     
-    map.addLayers([geoeye_011810_tc,ikonos_011710_tc,ikonos_011710_wms,geoeye_011610_tc,geoeye_011610_wms,
-                   ikonos_011510_tc,ikonos_011510_wms,ge_011310_tc,ge_011310_wms]);
+    map.addLayers(geoeye_layers);
 
     /////////////////////////////////////
     // NOAA Image Layers ////////////////
     /////////////////////////////////////
+    var noaa_layers = [];
     var noaa_011810_wms = new OpenLayers.Layer.WMS(
         "NOAA Aerial (2010/01/18) (WMS)",
         "http://hypercube.telascience.org/cgi-bin/mapserv?",
@@ -286,6 +301,7 @@ Ext.onReady(function() {
         },
         {'reproject': false, 'isBaseLayer': false, 'visibility': false}
     );
+    noaa_layers.push(noaa_011810_wms);
     var noaa_011810_tc = new OpenLayers.Layer.XYZ(
         "NOAA Aerial (2010/01/18) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/noaa-20100118-900913/${z}/${x}/${y}.jpg",
@@ -294,12 +310,14 @@ Ext.onReady(function() {
             visibility: false
         }
     );
+    noaa_layers.push(noaa_011810_tc);
 
-    map.addLayers([noaa_011810_tc,noaa_011810_wms]);
+    map.addLayers(noaa_layers);
 
     /////////////////////////////////////
     // Topo Layers //////////////////////
     /////////////////////////////////////
+    var topo_layers = [];
     var tlm = new OpenLayers.Layer.XYZ(
         "Haiti Collarless 1:50k (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/haiti-tlm-50/${z}/${x}/${y}.jpg",
@@ -308,6 +326,7 @@ Ext.onReady(function() {
             visibility: false
         }
     );
+    topo_layers.push(tlm); 
     var city_wms = new OpenLayers.Layer.WMS(
         "PAP Collarless 1:12.5k (WMS)",
         "http://hypercube.telascience.org/cgi-bin/mapserv?",
@@ -319,6 +338,7 @@ Ext.onReady(function() {
         },
         {'reproject': false, 'isBaseLayer': false, 'visibility': false}
     );
+    topo_layers.push(city_wms); 
     var city = new OpenLayers.Layer.XYZ(
         "PAP Collared 1:12.5k (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/haiti-city/${z}/${x}/${y}.jpg",
@@ -327,8 +347,9 @@ Ext.onReady(function() {
             visibility: false
         }
     );
+    topo_layers.push(city); 
 
-    map.addLayers([city, city_wms, tlm]);
+    map.addLayers(topo_layers);
 
     /////////////////////////////////////
     // OSM Overlay Layers////////////////
@@ -385,8 +406,7 @@ Ext.onReady(function() {
     var geye_store = new GeoExt.data.LayerStore({
         map: map,
         initDir: 0,
-        layers: [geoeye_011810_tc,ikonos_011710_tc,ikonos_011710_wms,geoeye_011610_tc,geoeye_011610_wms,
-                 ikonos_011510_tc,ikonos_011510_wms,ge_011310_tc,ge_011310_wms]
+        layers:geoeye_layers 
     });
     // Actually add to the tree...
     layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
@@ -398,7 +418,7 @@ Ext.onReady(function() {
     var google_store = new GeoExt.data.LayerStore({
         map: map,
         initDir: 0,
-        layers: [google_011710_tc]
+        layers: google_layers
     });
     // Actually add to the tree...
     layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
@@ -410,7 +430,7 @@ Ext.onReady(function() {
     var spot_store = new GeoExt.data.LayerStore({
         map: map,
         initDir: 0,
-        layers: [spot_011510_tc,spot_011410_tc]
+        layers:spot_layers 
     });
     // Actually add to the tree...
     layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
@@ -422,7 +442,7 @@ Ext.onReady(function() {
     var noaa_store = new GeoExt.data.LayerStore({
         map: map,
         initDir: 0,
-        layers: [noaa_011810_tc,noaa_011810_wms]
+        layers:noaa_layers 
     });
     // Actually add to the tree...
     layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
@@ -446,7 +466,7 @@ Ext.onReady(function() {
     var topo_store = new GeoExt.data.LayerStore({
         map: map,
         initDir: 0,
-        layers: [city, city_wms, tlm]
+        layers: topo_layers 
     });
     // Actually add to the tree...
     layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
