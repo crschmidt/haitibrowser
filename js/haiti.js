@@ -7,39 +7,40 @@ Ext.onReady(function() {
     Ext.DomHelper.append(document.body,
                          {tag: 'div',id: 'address2'});
     Ext.get('address_div').show();
-        function onFeatureSelect(event) {
-            var feature = event.feature;
-            var selectedFeature = feature;
-            var url = '';
-            if (feature.layer.base) {
-                url += feature.layer.base;
-            }
-            url += feature.attributes.url;
-            var popup = new OpenLayers.Popup.FramedCloud("chicken", 
-                feature.geometry.getBounds().getCenterLonLat(),
-                new OpenLayers.Size(400,400),
-                '<a target="_blank" href="'+url+'"><img src="' + url+'" /></a>',
-                null, true 
-            );
-            feature.popup = popup;
-            map.addPopup(popup);
+    function onFeatureSelect(event) {
+        var feature = event.feature;
+        var selectedFeature = feature;
+        var url = '';
+        if (feature.layer.base) {
+            url += feature.layer.base;
         }
-        function onFeatureUnselect(event) {
-            var feature = event.feature;
-            if(feature.popup) {
-                map.removePopup(feature.popup);
-                feature.popup.destroy();
-                delete feature.popup;
-            }
+        url += feature.attributes.url;
+        var popup = new OpenLayers.Popup.FramedCloud("chicken", 
+            feature.geometry.getBounds().getCenterLonLat(),
+            new OpenLayers.Size(400,400),
+            '<a target="_blank" href="'+url+'"><img src="' + url+'" /></a>',
+            null, true);
+        feature.popup = popup;
+        map.addPopup(popup);
+    }
+    function onFeatureUnselect(event) {
+        var feature = event.feature;
+        if(feature.popup) {
+            map.removePopup(feature.popup);
+            feature.popup.destroy();
+            delete feature.popup;
         }
+    }
 
     var osm_getTileURL = function(bounds) {
         var res = this.map.getResolution();
-        var x = Math.round((bounds.left - this.maxExtent.left) / (res * this.tileSize.w));
-        var y = Math.round((this.maxExtent.top - bounds.top) / (res * this.tileSize.h));
+        var x = Math.round((bounds.left - this.maxExtent.left) /
+                           (res * this.tileSize.w));
+        var y = Math.round((this.maxExtent.top - bounds.top) /
+                           (res * this.tileSize.h));
         var z = this.map.getZoom();
         var limit = Math.pow(2, z);
-    
+        
         if (z > 19) { return "404.png"; }
         if (y < 0 || y >= limit) {
             return "404.png";
@@ -56,8 +57,8 @@ Ext.onReady(function() {
         'numZoomLevels' : 22,
         'projection' : new OpenLayers.Projection("EPSG:900913"),
         'displayProjection' : new OpenLayers.Projection("EPSG:4326"),
-        'maxExtent' : new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34)
-        //controls: []
+        'maxExtent' : new OpenLayers.Bounds(-20037508.34,-20037508.34,
+                                            20037508.34,20037508.34)
     };
     
     OpenLayers.IMAGE_RELOAD_ATTEMPTS = 1;
@@ -79,7 +80,8 @@ Ext.onReady(function() {
         {
             type: 'png', getURL: osm_getTileURL,
             displayOutsideMaxExtent: true,
-            attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
+            attribution: '<a href="http://www.openstreetmap.org/">' +
+                'OpenStreetMap</a>'
         }
     );
     map.addLayers([OSM_mapnik]);
@@ -88,10 +90,14 @@ Ext.onReady(function() {
     // Google Base Layers ///////////////
     /////////////////////////////////////
     if (enable_gmaps) {
-        var gphy = new OpenLayers.Layer.Google( "Google Terrain", {type: G_PHYSICAL_MAP, 'sphericalMercator': true} );
-        var gmap = new OpenLayers.Layer.Google( "Google Streets", {'sphericalMercator': true});
-        var ghyb = new OpenLayers.Layer.Google("Google Hybrid", {type: G_HYBRID_MAP, 'sphericalMercator': true} );
-        var gsat = new OpenLayers.Layer.Google("Google Satellite", {type: G_SATELLITE_MAP, 'sphericalMercator': true} );
+        var gphy = new OpenLayers.Layer.Google( "Google Terrain",
+            {type: G_PHYSICAL_MAP, 'sphericalMercator': true} );
+        var gmap = new OpenLayers.Layer.Google( "Google Streets",
+            {'sphericalMercator': true});
+        var ghyb = new OpenLayers.Layer.Google("Google Hybrid",
+            {type: G_HYBRID_MAP, 'sphericalMercator': true} );
+        var gsat = new OpenLayers.Layer.Google("Google Satellite",
+            {type: G_SATELLITE_MAP, 'sphericalMercator': true} );
         map.addLayers([gphy,ghyb,gmap,gsat]);
     }
 
@@ -415,24 +421,16 @@ Ext.onReady(function() {
 
     map.addLayers([osm_camps_wms,osm_overlay]);
 
-    //var dg_crisis_wms = new OpenLayers.Layer.WMS(
-    //    "DG Crisis Event Service",
-    //    "http://maps.nypl.org/relief/maps/wms/32?",
-    //    {
-    //        map: '/home/projects/erma/erma-trunk/mapfile/raster.map',
-    //        transparent: 'TRUE',
-    //        layers: 'NOAA_REGION2and3_RNC_5k',
-    //        'sphericalMercator': true
-    //    },
-    //    {'reproject': false, 'isBaseLayer': false, 'visibility': false}
-    //);
-
-
     var overlays = [];
     var p3_je1 = new OpenLayers.Layer.Vector('P-3 - JE17JJ (2010/01/17) ', {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
-        styleMap: new OpenLayers.StyleMap({'fillColor': 'white', pointRadius: 6, opacity: 0.5, fillOpacity: 0.8, strokeColor: 'red', 'strokeWidth': 1}),
+        styleMap: new OpenLayers.StyleMap({'fillColor': 'white',
+                                           pointRadius: 6,
+                                           opacity: 0.5,
+                                           fillOpacity: 0.8,
+                                           strokeColor: 'red',
+                                           'strokeWidth': 1}),
         protocol: new OpenLayers.Protocol.HTTP({
             url: "p3-json/p3-JE17JJ.json",
             format: new OpenLayers.Format.GeoJSON({
@@ -451,7 +449,12 @@ Ext.onReady(function() {
     var p3_je18 = new OpenLayers.Layer.Vector('P-3 - JE18 (2010/01/18) ', {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
-        styleMap: new OpenLayers.StyleMap({'fillColor': 'white', pointRadius: 6, opacity: 0.5, fillOpacity: 0.8, strokeColor: 'red', 'strokeWidth': 1}),
+        styleMap: new OpenLayers.StyleMap({'fillColor': 'white',
+                                           pointRadius: 6,
+                                           opacity: 0.5,
+                                           fillOpacity: 0.8,
+                                           strokeColor: 'red',
+                                           'strokeWidth': 1}),
         protocol: new OpenLayers.Protocol.HTTP({
             url: "p3-json/je18.json",
             format: new OpenLayers.Format.GeoJSON({
@@ -470,7 +473,12 @@ Ext.onReady(function() {
     var p3_je19ss = new OpenLayers.Layer.Vector('P-3  (2010/01/19 ss) ', {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
-        styleMap: new OpenLayers.StyleMap({'fillColor': 'white', pointRadius: 6, opacity: 0.5, fillOpacity: 0.8, strokeColor: 'red', 'strokeWidth': 1}),
+        styleMap: new OpenLayers.StyleMap({'fillColor': 'white',
+                                           pointRadius: 6,
+                                           opacity: 0.5,
+                                           fillOpacity: 0.8,
+                                           strokeColor: 'red',
+                                           'strokeWidth': 1}),
         protocol: new OpenLayers.Protocol.HTTP({
             url: "p3-json/je19ss.json",
             format: new OpenLayers.Format.GeoJSON({
@@ -489,7 +497,12 @@ Ext.onReady(function() {
     var p3_je19 = new OpenLayers.Layer.Vector('P-3  (2010/01/19 ) ', {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
-        styleMap: new OpenLayers.StyleMap({'fillColor': 'white', pointRadius: 6, opacity: 0.5, fillOpacity: 0.8, strokeColor: 'red', 'strokeWidth': 1}),
+        styleMap: new OpenLayers.StyleMap({'fillColor': 'white',
+                                           pointRadius: 6,
+                                           opacity: 0.5,
+                                           fillOpacity: 0.8,
+                                           strokeColor: 'red',
+                                           'strokeWidth': 1}),
         protocol: new OpenLayers.Protocol.HTTP({
             url: "p3-json/je19.json",
             format: new OpenLayers.Format.GeoJSON({
@@ -508,7 +521,12 @@ Ext.onReady(function() {
     var p3_je20tt = new OpenLayers.Layer.Vector('P-3  (2010/01/20 TT) ', {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
-        styleMap: new OpenLayers.StyleMap({'fillColor': 'white', pointRadius: 6, opacity: 0.5, fillOpacity: 0.8, strokeColor: 'red', 'strokeWidth': 1}),
+        styleMap: new OpenLayers.StyleMap({'fillColor': 'white',
+                                           pointRadius: 6,
+                                           opacity: 0.5,
+                                           fillOpacity: 0.8,
+                                           strokeColor: 'red',
+                                           'strokeWidth': 1}),
         protocol: new OpenLayers.Protocol.HTTP({
             url: "p3-json/je20tt.json",
             format: new OpenLayers.Format.GeoJSON({
@@ -537,8 +555,8 @@ Ext.onReady(function() {
         }, {
             buffer: 0, isBaseLayer: false, visibility: false
         }    
-            
-    );    
+                                          
+                                         );    
     pdf_6k.events.on({
         "visibilitychanged": function() { 
             if (this.visibility) {
@@ -767,4 +785,3 @@ Ext.onReady(function() {
     setMapCenter();
 
 });
-
