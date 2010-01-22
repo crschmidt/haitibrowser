@@ -557,7 +557,7 @@ Ext.onReady(function() {
     map.addControl(sf);
     sf.activate();
     var image_overlays = [];
-    var pdf_6k = new OpenLayers.Layer.WMS("6K Delta State PDF Coverage",
+    var pdf_6k = new OpenLayers.Layer.WMS("6K Delta State PDFs (Click to get link)",
         "http://hypercube.telascience.org/cgi-bin/mapserv", {
             'map':'/geo/haiti/mapfiles/vector.map',
             'layers':'pdf_6k', 'transparent': true
