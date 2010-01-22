@@ -34,7 +34,6 @@ OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {
             }
         }
         html += "</ul>";
-        console.log(html);
         this.w = new Ext.Window({'html':html,
             width: 300,
             'title': 'Results',

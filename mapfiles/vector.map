@@ -14,7 +14,7 @@ END
 LAYER 
     name "pdf_6k"
     TYPE POLYGON
-    DATA /storage/data/haiti/source/deltastate/Indexingdata_shapes/Hait_Image_Atlas_Pages_6k_19Jan2010.shp
+    DATA /storage/data/haiti/source/deltastate/Haiti_DSUImageAtlas_6kpages_19Jan2010
     STATUS ON
     CLASS
         STYLE 
