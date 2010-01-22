@@ -755,6 +755,37 @@ Ext.onReady(function() {
         region:'center'
     });
 
+    var contrib_window = new Ext.Window({
+        applyTo:'contrib-div',
+        layout:'fit',
+        width:500,
+        height:400,
+        closeAction:'hide',
+        plain: true,
+        items: new Ext.TabPanel({
+            activeTab:0,
+            deferredRender:false,
+            border:false,
+            items: [new Ext.Panel({
+		title: 'Personal',
+              	autoLoad: 'contrib/personal_contrib.html'
+	    }),new Ext.Panel({
+		title: 'Corporate',
+              	autoLoad: 'contrib/corp_contrib.html'
+	    }),new Ext.Panel({
+		title: 'Infrastructure',
+              	autoLoad: 'contrib/infra_contrib.html'
+	    })]
+        }),
+
+        buttons: [{
+            text: 'Close',
+            handler: function(){
+                contrib_window.hide();
+            }
+        }]
+    });
+
     var west = new Ext.Panel({
         region: 'west',
         id: 'west-panel',
@@ -797,6 +828,21 @@ Ext.onReady(function() {
                             },
                             scope: this
                         }
+                    }
+                },{
+                    xtype: 'tbseparator'
+                },{
+                    id:'btn_contributers',
+                    text: 'Contributers',
+                    tooltip: '',
+                    minWidth:30,
+                    listeners: {
+                        'click' : {
+                            fn: function(){
+				contrib_window.show();
+                            },
+                            scope: this
+                        }               
                     }}],
         items: [
             {
