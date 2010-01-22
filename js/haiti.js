@@ -2,7 +2,7 @@ var HAITI = {
 }
 
 Ext.onReady(function() {
-    var enable_gmaps = true;
+    var enable_gmaps = false;
     
     Ext.DomHelper.append(document.body,
                          {tag: 'div',id: 'address2'});
@@ -58,7 +58,8 @@ Ext.onReady(function() {
         'projection' : new OpenLayers.Projection("EPSG:900913"),
         'displayProjection' : new OpenLayers.Projection("EPSG:4326"),
         'maxExtent' : new OpenLayers.Bounds(-20037508.34,-20037508.34,
-                                            20037508.34,20037508.34)
+                                            20037508.34,20037508.34),
+        'controls': [new OpenLayers.Control.Navigation(), new OpenLayers.Control.PanZoomBar(), new OpenLayers.Control.Attribution()]                                    
     };
     
     OpenLayers.IMAGE_RELOAD_ATTEMPTS = 1;
@@ -81,7 +82,8 @@ Ext.onReady(function() {
             type: 'png', getURL: osm_getTileURL,
             displayOutsideMaxExtent: true,
             attribution: '<a href="http://www.openstreetmap.org/">' +
-                'OpenStreetMap</a>'
+                'OpenStreetMap</a>',
+            buffer: 0    
         }
     );
     map.addLayers([OSM_mapnik]);
@@ -733,7 +735,6 @@ Ext.onReady(function() {
             e.layer.moveTo(e.layer.map.getCenter(), e.layer.map.getZoom());
         }
     }); 
-    map.addControl(new OpenLayers.Control.Permalink());
 
     var mapPanel = new GeoExt.MapPanel({
         renderTo: 'mappanel',
@@ -741,10 +742,7 @@ Ext.onReady(function() {
         title: 'Map',
         extent: map.getExtent()
     });
-    if (map.getZoom()) {
-        map.zoomTo(map.getZoom() + 1);
-    }
-
+    map.addControl(new OpenLayers.Control.Permalink());
 
     var layerTree = new Ext.tree.TreePanel({
         title: 'Map Layers',

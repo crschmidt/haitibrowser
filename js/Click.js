@@ -29,7 +29,7 @@ OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {
         if (features.length) { 
             for (var i = 0; i < features.length; i++) {
                 var f = features[i];
-                var text = f.attributes.utm_zone + f.attributes.grid_zone+f.attributes.easting + f.attributes.northing; 
+                var text = f.attributes.utm_zone + f.attributes.grid_zone+f.attributes.grid_square+f.attributes.easting + f.attributes.northing; 
                 html += "<li><a href='"+features[i].attributes.url+"'>"+text+"</a></li>";
             }
         }
