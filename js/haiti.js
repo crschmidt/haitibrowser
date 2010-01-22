@@ -196,6 +196,15 @@ Ext.onReady(function() {
         }
     );
     dglobe_layers.push(worldview_011810_tc);
+    var worldview_011910_tc = new OpenLayers.Layer.XYZ(
+        "DG WorldView (2010/01/19) (TC)",
+        "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100119-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false
+        }
+    );
+    dglobe_layers.push(worldview_011910_tc);
     var qbird_012010_tc = new OpenLayers.Layer.XYZ(
         "DG Quickbird (2010/01/20) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/quickbird-20100120-900913/${z}/${x}/${y}.jpg",
@@ -572,6 +581,14 @@ Ext.onReady(function() {
         'scope': pdf_6k
     });    
     image_overlays.push(pdf_6k);
+    var haiti_best = new OpenLayers.Layer.XYZ("Single Layer Overlay",
+        "http://hypercube.telascience.org/tiles/1.0.0/haiti-best-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false
+        }
+    );
+    image_overlays.push(haiti_best);
     map.addLayers(image_overlays);
 
     /////////////////////////////////////

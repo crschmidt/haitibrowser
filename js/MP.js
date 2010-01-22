@@ -16,44 +16,44 @@
  *  - <OpenLayers.Control>
  */
 OpenLayers.Control.MGRSMousePosition = OpenLayers.Class(OpenLayers.Control, {
-    
-    /** 
+
+    /**
      * Property: element
-     * {DOMElement} 
+     * {DOMElement}
      */
     element: null,
-    
-    /** 
+
+    /**
      * APIProperty: prefix
      * {String}
      */
     prefix: '',
-    
-    /** 
+
+    /**
      * APIProperty: separator
      * {String}
      */
     separator: ', ',
-    
-    /** 
+
+    /**
      * APIProperty: suffix
      * {String}
      */
     suffix: '',
-    
-    /** 
+
+    /**
      * APIProperty: numDigits
      * {Integer}
      */
     numDigits: 5,
-    
-    /** 
+
+    /**
      * APIProperty: granularity
-     * {Integer} 
+     * {Integer}
      */
     granularity: 10,
-    
-    /** 
+
+    /**
      * Property: lastXy
      * {<OpenLayers.Pixel>}
      */
@@ -61,14 +61,14 @@ OpenLayers.Control.MGRSMousePosition = OpenLayers.Class(OpenLayers.Control, {
 
     /**
      * APIProperty: displayProjection
-     * {<OpenLayers.Projection>} The projection in which the 
+     * {<OpenLayers.Projection>} The projection in which the
      * mouse position is displayed
      */
-    displayProjection: null, 
-    
+    displayProjection: null,
+
     /**
      * Constructor: OpenLayers.Control.MousePosition
-     * 
+     *
      * Parameters:
      * options - {Object} Options for control.
      */
@@ -89,7 +89,7 @@ OpenLayers.Control.MGRSMousePosition = OpenLayers.Class(OpenLayers.Control, {
     /**
      * Method: draw
      * {DOMElement}
-     */    
+     */
     draw: function() {
         OpenLayers.Control.prototype.draw.apply(this, arguments);
 
@@ -98,13 +98,13 @@ OpenLayers.Control.MGRSMousePosition = OpenLayers.Class(OpenLayers.Control, {
             this.div.top = "";
             this.element = this.div;
         }
-        
+
         this.redraw();
         return this.div;
     },
-   
+
     /**
-     * Method: redraw  
+     * Method: redraw
      */
     redraw: function(evt) {
 
@@ -122,18 +122,18 @@ OpenLayers.Control.MGRSMousePosition = OpenLayers.Class(OpenLayers.Control, {
             }
 
             lonLat = this.map.getLonLatFromPixel(evt.xy);
-            if (!lonLat) { 
+            if (!lonLat) {
                 // map has not yet been properly initialized
                 return;
-            }    
+            }
             if (this.displayProjection) {
-                lonLat.transform(this.map.getProjectionObject(), 
+                lonLat.transform(this.map.getProjectionObject(),
                                  this.displayProjection );
-            }      
+            }
             this.lastXy = evt.xy;
-            
+
         }
-        
+
         var newHtml = this.formatOutput(lonLat);
 
         if (newHtml != this.element.innerHTML) {
@@ -149,26 +149,29 @@ OpenLayers.Control.MGRSMousePosition = OpenLayers.Class(OpenLayers.Control, {
      * lonLat - {<OpenLayers.LonLat>} Location to display
      */
     formatOutput: function(lonLat) {
+		var inches=OpenLayers.INCHES_PER_UNIT;
+		var metersPerPixel = this.map.getResolution()*(inches[this.map.getUnits()]*(1/inches['m']));
+		var mgdigits = parseInt(6-Math.ceil(Math.log(metersPerPixel)/2.302585092994046));
         var digits = parseInt(this.numDigits);
         var mgrs = new USNG2();
-        var mgrsStr = mgrs.fromLonLat(lonLat, 5);
+        var mgrsStr = mgrs.fromLonLat(lonLat, mgdigits);
         var newHtml =
             this.prefix +
             lonLat.lon.toFixed(digits) +
-            this.separator + 
+            this.separator +
             lonLat.lat.toFixed(digits) +
-            " / MGRS: " + mgrsStr + 
+            " / MGRS: " + mgrsStr +
             this.suffix;
         return newHtml;
      },
 
-    /** 
+    /**
      * Method: setMap
      */
     setMap: function() {
         OpenLayers.Control.prototype.setMap.apply(this, arguments);
         this.map.events.register( 'mousemove', this, this.redraw);
-    },     
+    },
 
     CLASS_NAME: "OpenLayers.Control.MousePosition"
 });
