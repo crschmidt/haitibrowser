@@ -1,0 +1,26 @@
+MAP
+PROJECTION "+init=epsg:4326" END
+extent -74 17 -71 19
+size 256 256
+TRANSPARENT TRUE
+
+WEB 
+  IMAGEPATH "/var/run/mapserv"
+  METADATA
+    wms_srs "epsg:4326 epsg:900913"
+    wms_title "Supporting Layers for Haiti Recovery Efforts"
+  END
+END
+LAYER 
+    name "pdf_6k"
+    TYPE POLYGON
+    DATA /storage/data/haiti/source/deltastate/Indexingdata_shapes/Hait_Image_Atlas_Pages_6k_19Jan2010.shp
+    STATUS ON
+    CLASS
+        STYLE 
+            OUTLINECOLOR 255 0 0 
+        END
+    END
+    PROJECTION "+init=epsg:32618" END
+END
+END
