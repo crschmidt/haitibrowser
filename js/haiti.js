@@ -172,6 +172,15 @@ Ext.onReady(function() {
     );
     dglobe_layers.push(qbird_011810_tc);
 
+    var worldview_012010_tc = new OpenLayers.Layer.XYZ(
+        "DG WorldView (2010/01/20) (TC)",
+        "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100120-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false
+        }
+    );
+    dglobe_layers.push(worldview_012010_tc);
     var worldview_011810_tc = new OpenLayers.Layer.XYZ(
         "DG WorldView (2010/01/18) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100118-900913/${z}/${x}/${y}.jpg",
@@ -520,7 +529,33 @@ Ext.onReady(function() {
     var sf = new OpenLayers.Control.SelectFeature(overlays);
     map.addControl(sf);
     sf.activate();
-    
+    var image_overlays = [];
+    var pdf_6k = new OpenLayers.Layer.WMS("6K Delta State PDF Coverage",
+        "http://hypercube.telascience.org/cgi-bin/mapserv", {
+            'map':'/geo/haiti/mapfiles/vector.map',
+            'layers':'pdf_6k', 'transparent': true
+        }, {
+            buffer: 0, isBaseLayer: false, visibility: false
+        }    
+            
+    );    
+    pdf_6k.events.on({
+        "visibilitychanged": function() { 
+            if (this.visibility) {
+                if (!this.control) {
+                    this.control = new OpenLayers.Control.Click();
+                    this.map.addControl(this.control);
+                }
+                this.control.activate();
+            } else {
+                this.control.deactivate();
+            }    
+        },
+        'scope': pdf_6k
+    });    
+    image_overlays.push(pdf_6k);
+    map.addLayers(image_overlays);
+
     /////////////////////////////////////
     // Layer Stores      ////////////////
     /////////////////////////////////////
@@ -607,10 +642,27 @@ Ext.onReady(function() {
         expanded: true
     }));
 
+    var overlay_store = new GeoExt.data.LayerStore({
+        map: map,
+        initDir: 0,
+        layers: overlays
+    });
+    // Actually add to the tree...
+
+    var ioverlay_store = new GeoExt.data.LayerStore({
+        map: map,
+        initDir: 0,
+        layers: image_overlays
+    });
+    layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
+        text: "Image Overlays",
+        layerStore: ioverlay_store,
+        expanded: true
+    }));
     var topo_store = new GeoExt.data.LayerStore({
         map: map,
         initDir: 0,
-        layers: topo_layers 
+        layers: topo_layers
     });
     // Actually add to the tree...
     layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({

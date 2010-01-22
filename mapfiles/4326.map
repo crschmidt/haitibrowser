@@ -203,4 +203,17 @@ LAYER
   TYPE RASTER
   OFFSITE 0 0 0
 END
+LAYER
+  NAME "worldview-01-20-4326"
+  GROUP "haiti-best"
+  METADATA
+    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
+    wms_title "GeoEye Ikonos 2010-01-14"
+  END  
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-20/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
 END
