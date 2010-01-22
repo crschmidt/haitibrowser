@@ -47,9 +47,7 @@ OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {
         var bbox = new OpenLayers.Bounds(lonlat.lon-.00001, lonlat.lat-.00001, lonlat.lon+0.00001, lonlat.lat+.00001).toBBOX();
         OpenLayers.Request.GET({
             url: 'http://www.sharedgeo.org/datasets/shared/maps/usng/pdf.map?VERSION=1.0.0&SERVICE=WFS&&request=GetFeature&typename=wfs_all_maps&bbox='+bbox,
-            callback: OpenLayers.Function.bind(this.response, this),
-
-
+            callback: OpenLayers.Function.bind(this.response, this)
         });    
         this.w = new Ext.Window({'html':"Searching Delta State PDFs, please wait.",
             width: 200,

@@ -559,7 +559,7 @@ Ext.onReady(function() {
     map.addControl(sf);
     sf.activate();
     var image_overlays = [];
-    var pdf_6k = new OpenLayers.Layer.WMS("6K Delta State PDFs (Click to get link)",
+    var pdf_6k = new OpenLayers.Layer.WMS("6K Delta State PDFs (Click for link)",
         "http://hypercube.telascience.org/cgi-bin/mapserv", {
             'map':'/geo/haiti/mapfiles/vector.map',
             'layers':'pdf_6k', 'transparent': true
@@ -769,11 +769,40 @@ Ext.onReady(function() {
         layoutConfig:{
             animate: true
         },
+        tbar:[
+            {xtype: 'tbfill'},
+            {
+                id:'btn_oldmap',
+                text: 'Old UAV Map',
+                tooltip: 'Open new window with old UAV map',
+                minWidth:30,
+                listeners: {
+                    'click' : {
+                        fn: function(){
+                            window.open("uav-old.html");
+                        },
+                        scope: this
+                    }
+                }},{
+                    xtype: 'tbseparator'
+                },{
+                    id:'btn_layerlist',
+                    text: 'Layer List',
+                    tooltip: 'Open new window with layer list',
+                    minWidth:30,
+                    listeners: {
+                        'click' : {
+                            fn: function(){
+                                window.open("layers.html");
+                            },
+                            scope: this
+                        }
+                    }}],
         items: [
             {
                 contentEl: 'address_div',
                 title: "Tools",
-                region:'north',
+                region: "north",
                 border:false
             },
             {
@@ -789,7 +818,7 @@ Ext.onReady(function() {
         items: [{
             region: "north",
             contentEl: "title",
-            height: 50
+            height: 55
         }, {
             region: "center",
             title: "",
@@ -797,6 +826,8 @@ Ext.onReady(function() {
             items: [mapPanel]
         }, west]
     });
+    Ext.DomHelper.append(Ext.get('title'),
+                         {tag: 'img', id: 'title_logo',src: 'images/haiti_logo_telascience.png', height: 58});
     setMapCenter();
 
 });
