@@ -154,7 +154,7 @@ OpenLayers.Control.MGRSMousePosition = OpenLayers.Class(OpenLayers.Control, {
 		var mgdigits = parseInt(6-Math.ceil(Math.log(metersPerPixel)/2.302585092994046));
         var digits = parseInt(this.numDigits);
         var mgrs = new USNG2();
-        var mgrsStr = mgrs.fromLonLat(lonLat, mgdigits);
+        var mgrsStr = mgrs.fromLonLat(lonLat, mgdigits-1);
         var newHtml =
             this.prefix +
             lonLat.lon.toFixed(digits) +

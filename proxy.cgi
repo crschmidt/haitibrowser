@@ -20,7 +20,8 @@ allowedHosts = ['www.openlayers.org', 'openlayers.org',
                 'prototype.openmnnd.org', 'geo.openplans.org',
                 'sigma.openplans.org', 'demo.opengeo.org',
                 'www.openstreetmap.org', 'sample.avencia.com',
-                'v-swe.uni-muenster.de:8080', 'local.yahooapis.com']
+                'v-swe.uni-muenster.de:8080', 'local.yahooapis.com',
+                'www.sharedgeo.org']
 
 method = os.environ["REQUEST_METHOD"]
 
