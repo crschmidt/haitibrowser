@@ -180,15 +180,6 @@ Ext.onReady(function() {
     );
     dglobe_layers.push(qbird_011810_tc);
 
-    var worldview_012010_tc = new OpenLayers.Layer.XYZ(
-        "DG WorldView (2010/01/20) (TC)",
-        "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100120-900913/${z}/${x}/${y}.jpg",
-        {
-            isBaseLayer: false, buffer:0,
-            visibility: false
-        }
-    );
-    dglobe_layers.push(worldview_012010_tc);
     var worldview_011810_tc = new OpenLayers.Layer.XYZ(
         "DG WorldView (2010/01/18) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100118-900913/${z}/${x}/${y}.jpg",
@@ -216,6 +207,15 @@ Ext.onReady(function() {
         }
     );
     dglobe_layers.push(qbird_012010_tc);
+    var worldview_012010_tc = new OpenLayers.Layer.XYZ(
+        "DG WorldView (2010/01/20) (TC)",
+        "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100120-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false
+        }
+    );
+    dglobe_layers.push(worldview_012010_tc);
 
     map.addLayers(dglobe_layers);
     
@@ -726,6 +726,38 @@ Ext.onReady(function() {
     HAITI.store_lyrs = [];
     HAITI.lyrs = []
     ////// Add Control for PDF Selection ///////
+    StreetQuery = OpenLayers.Class(OpenLayers.Control, {
+     /*   initialize: function() { 
+            OpenLayers.Control.prototype.initialize.apply(this, arguments);
+            this.handler = new OpenLayers.Handler.Click(streetQuery, {'click': this.onClick});
+        },
+        onClick: function(evt) {
+            var u = new USNG2();
+            var mgrs = u.fromLonLat(HAITI.map.getLonLatFromPixel(evt.xy).transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326")), 2);
+            
+            OpenLayers.Request.GET({
+                url: 'tools/search_index.cgi?grid='+mgrs,
+                callback: streetQuery.response 
+            });    
+        }, 
+        response: function(req) {
+            var f = new OpenLayers.Format.JSON();
+            var html = "<table><tr>" +
+            "<th>OBJECTID</th><th>NAME</th><th>TYPE</th><th>OSM_ID</th><th>COMMUNE</th><th>SECTION</th><th>E1000</th><th>N1000</th><th>GZD</th><th>GRID100K</th><th>MGRS</th>";
+
+            var data = f.read(req.responseText);
+            for (var id = 0; i < data.length; i++) {
+                var row = "<tr><td>" + data[i].join("</td><td>") + "</td></tr>";
+                html += row;
+            }
+		    var w = new Ext.Window({'html':html,
+		    	width: 600,
+		    	'title': "Street Index"});
+		    w.show();
+        } */
+    });  
+    var streetQuery = new StreetQuery();
+//    var streetQuery = new OpenLayers.Control();
     var selectPdfControl = new OpenLayers.Control();
 	OpenLayers.Util.extend(selectPdfControl, {
 		draw: function () {
@@ -751,7 +783,8 @@ Ext.onReady(function() {
 			this.w = new Ext.Window({'html':html,
 				width: 300,
 				'title': 'Results',
-				height: 200});
+				autoScroll: true,
+                height: 400});
 			this.w.show();
 		},
 		///'projection' : new OpenLayers.Projection("EPSG:900913"),
@@ -770,7 +803,7 @@ Ext.onReady(function() {
 				'title': "Please Wait."});
 			this.w.show();
 		}
-	});
+	}); 
 
 
     ///////////////////////////////////////////
@@ -783,7 +816,16 @@ Ext.onReady(function() {
             e.layer.moveTo(e.layer.map.getCenter(), e.layer.map.getZoom());
         }
     });
-
+    /*
+	var street_query = new GeoExt.Action({
+        text: "Query By Grid",
+        control: streetQuery,
+        map: map,
+        toggleGroup: "draw",
+        allowDepress: false,
+        tooltip: "Click map to query street objects in that MGRS grid",
+        group: "draw"
+    });*/
 	var action = new GeoExt.Action({
         text: "MGRS PDFs",
         control: selectPdfControl,
@@ -812,6 +854,7 @@ Ext.onReady(function() {
     toolbarItems = [];
     toolbarItems.push(nav);
     toolbarItems.push(action);
+//    toolbarItems.push(street_query);
     var mapPanel = new GeoExt.MapPanel({
         renderTo: 'mappanel',
         map: map,
