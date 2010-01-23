@@ -39,6 +39,18 @@ toGeRVUtow"></script>
       }
 
       function osmGaz (search) {
+          try { 
+            var u = new USNG2();
+            var data = u.toLonLat(search);
+            if (data && data.lon && data.lat) {
+                var lonlat = new OpenLayers.LonLat(data.lon, data.lat);
+                var zoom = HAITI.map.getZoom() > 14 ? HAITI.map.getZoom() : 14;
+                HAITI.map.setCenter(lonlat.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913")), zoom);
+                return;
+            }
+          } catch (E) {
+            alert(E);
+          }
           var s = document.createElement("script");
           s.src="http://nominatim.openstreetmap.org/haiti/?viewbox=-76.24%2C21%2C-69.2%2C17&format=json&json_callback=handleOsmLoc&q="+encodeURIComponent(search);
           document.body.appendChild(s);
@@ -82,7 +94,7 @@ toGeRVUtow"></script>
         </div>
         </div>
         <div id="address_div" style="display: none">
-    Address: <input type="text" id="address" /><input type="submit" onclick="osmGaz($('address').value); return false;" onsubmit="osmGaz($('address').value); return false;" value="Show Location"/>(Powered by OSM.)
+    Address: <input type="text" id="address" /> <input type="submit" onclick="osmGaz($('address').value); return false;" onsubmit="osmGaz($('address').value); return false;" value="Show"/> <br />(Powered by OSM, can also enter MGRS.)
         </div>
 
 

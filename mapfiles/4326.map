@@ -74,7 +74,7 @@ LAYER
   NAME "quickbird-01-15-4326"
   GROUP "haiti-best"
   STATUS ON
-  TILEINDEX "/mnt/geodata/haiti/dglobe/quickbird-15/4326.shp"
+  TILEINDEX "/storage/data/haiti/processed/dglobe/quickbird-15/4326.shp"
   TILEITEM "location"
   TYPE RASTER
   OFFSITE 0 0 0
@@ -127,15 +127,6 @@ LAYER
   END  
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-17/4326.shp"
-  TILEITEM "location"
-  TYPE RASTER
-  OFFSITE 0 0 0
-END
-LAYER
-  NAME "noaa-01-18-4326"
-  GROUP "haiti-best"
-  STATUS ON
-  TILEINDEX "/storage/data/haiti/processed/noaa/aerial-17-2/4326.shp"
   TILEITEM "location"
   TYPE RASTER
   OFFSITE 0 0 0
@@ -217,6 +208,15 @@ LAYER
   END  
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-20/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
+LAYER
+  NAME "noaa-01-18-4326"
+  GROUP "haiti-best"
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/noaa/aerial-17-2/4326.shp"
   TILEITEM "location"
   TYPE RASTER
   OFFSITE 0 0 0
