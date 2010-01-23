@@ -750,6 +750,25 @@ Ext.onReady(function() {
     HAITI.store_lyrs = [];
     HAITI.lyrs = []
     ////// Add Control for PDF Selection ///////
+    ShowLoc = OpenLayers.Class(OpenLayers.Control, {
+        initialize: function() { 
+            OpenLayers.Control.prototype.initialize.apply(this, arguments);
+            this.handler = new OpenLayers.Handler.Click(this, {'click': this.onClick, stopClicks: true, stopDown: true});
+        },
+        onClick: function(evt) {
+            var u = new USNG2();
+            var lonlat = HAITI.map.getLonLatFromPixel(evt.xy).transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"))
+            var mgrs = u.fromLonLat(lonlat, 2);
+            var bbox = HAITI.map.getExtent().transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326")) 
+            var w = new Ext.Window({
+                'html': "Latitude: <input type='text' size='10' value='" + lonlat.lat.toFixed(5) + "' />  , Longitude:  <input size='10' type='text' value='" + lonlat.lon.toFixed(5) + "'/><br />MGRS: " + mgrs + "<br /> No DMS Yet <br /> ",
+                'width': 500,
+                'height': 200
+            });
+            w.show();
+        } 
+    }); 
+    var showLoc = new ShowLoc(); 
     StreetQuery = OpenLayers.Class(OpenLayers.Control, {
         initialize: function() { 
             OpenLayers.Control.prototype.initialize.apply(this, arguments);
@@ -770,7 +789,6 @@ Ext.onReady(function() {
             "<td>ID</td><td>Name</td><td>Type</td><td>OSM ID</td><td>Commune</td><td>Section</td><td>E1000</td><td>N1000</td><td>GZD</td><td></td><td>MGRS</td>";
 
             var data = f.read(req.responseText);
-            console.log(data);
             if (!data) { return; }
             for (var id = 0; id < data.results.length; id++) {
                 var row = "<tr><td>" + data.results[id].join("</td><td>") + "</td></tr>";
@@ -842,6 +860,15 @@ Ext.onReady(function() {
             e.layer.moveTo(e.layer.map.getCenter(), e.layer.map.getZoom());
         }
     });
+	var show_loc = new GeoExt.Action({
+        text: "Click to Show Location",
+        control: showLoc,
+        map: map,
+        toggleGroup: "draw",
+        allowDepress: false,
+        tooltip: "Click map to show location in Decimal degrees + DDMMSS",
+        group: "draw"
+    });
 	var street_query = new GeoExt.Action({
         text: "Gazetteer By Grid",
         control: streetQuery,
@@ -880,6 +907,7 @@ Ext.onReady(function() {
     toolbarItems.push(nav);
     toolbarItems.push(action);
     toolbarItems.push(street_query);
+    toolbarItems.push(show_loc);
     var mapPanel = new GeoExt.MapPanel({
         renderTo: 'mappanel',
         map: map,
@@ -888,6 +916,7 @@ Ext.onReady(function() {
         tbar:toolbarItems
     });
     map.addControl(new OpenLayers.Control.Permalink());
+    map.addControl(new OpenLayers.Control.Permalink(null, 'http://openstreetmap.org/edit?tileurl=http://hypercube.telascience.org/tiles/1.0.0/haiti-best-900913/!/!/!.jpg&', {'displayClass': 'editLink'}));
 
     var layerTree = new Ext.tree.TreePanel({
         title: 'Map Layers',
