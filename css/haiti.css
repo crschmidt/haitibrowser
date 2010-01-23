@@ -233,3 +233,7 @@ ol {
     font-weight: normal;
     font-size: 14px;
     }
+.editLink { 
+    bottom:15px;
+    right: 100px;
+}    
