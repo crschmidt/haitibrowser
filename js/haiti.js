@@ -433,6 +433,20 @@ Ext.onReady(function() {
     map.addLayers([osm_camps_wms,osm_overlay]);
 
     var overlays = [];
+    var ose = new OpenLayers.Layer.GML("OpenStreetBugs", 
+        "http://openstreetbugs.appspot.com/getGPX?l=-74.8614387&b=17.555208&r=-69.538562&t=20.432356&open=1",
+        {format: OpenLayers.Format.GPX, projection: new OpenLayers.Projection("EPSG:4326"),
+         styleMap: new OpenLayers.StyleMap({'graphicHeight': 11, graphicWidth: 11, externalGraphic: 'http://ose.petschge.de/client/open_bug_marker.png'}),
+         visibility: false
+        });
+    overlays.push(ose);    
+    var ose = new OpenLayers.Layer.GML("OpenStreetEmergencies", 
+        "http://ose.petschge.de/cgi-bin/getRSSfeed?l=-74.8614387&b=17.555208&r=-69.538562&t=20.432356&open=1",
+        {format: OpenLayers.Format.GeoRSS, projection: new OpenLayers.Projection("EPSG:4326"),
+         styleMap: new OpenLayers.StyleMap({'graphicHeight': 11, graphicWidth: 11, externalGraphic: 'http://ose.petschge.de/client/open_bug_marker.png'}),
+         visibility: false
+        });
+    overlays.push(ose);    
     var p3_je1 = new OpenLayers.Layer.Vector('P-3 - JE17JJ (2010/01/17) ', {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
