@@ -943,9 +943,9 @@ Ext.onReady(function() {
             var bbox = HAITI.map.getExtent().transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326")) 
             var w = new Ext.Window({
                 'html': "<form target='_blank' action='http://spreadsheets.google.com/viewform'>" +
-                    "<input type='hidden' value='dEFCTmsxUWtEanFUb3dIRUNrWVk3U3c6MA' name='formkey' />" +
-                    "Latitude: <input type='text' name='entry_0' size='10' value='" + lonlat.lat.toFixed(5) + "' />  , Longitude:  " + 
-                    "<input size='10' type='text' name='entry_5' value='" + lonlat.lon.toFixed(5) + "'/><br /><input type='submit' value='Save to Ushahidi Spreadsheet' /></form><br />MGRS: " + mgrs + "<br /> No DMS Yet <br />BBOX: " + bbox.toBBOX()+"<br />",
+                    "<input type='hidden' value='txgVFOXJcRXX56lbAHo35yA' name='key' />" +
+                    "Latitude: <input type='text' name='entry_1' size='10' value='" + lonlat.lat.toFixed(5) + "' />  , Longitude:  " + 
+                    "<input size='10' type='text' name='entry_2' value='" + lonlat.lon.toFixed(5) + "'/><input type='hidden' name='entry_3' value='" + lonlat.lat.toFixed(5) + " " + lonlat.lon.toFixed(5) +"' /><br /><input type='submit' value='Save to Ushahidi Spreadsheet' /></form><br />MGRS: " + mgrs + "<br /> No DMS Yet <br />BBOX: " + bbox.toBBOX()+"<br />",
                 'width': 500,
                 'height': 200,
                 'title': 'Save Location'
