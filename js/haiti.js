@@ -761,7 +761,7 @@ Ext.onReady(function() {
             var mgrs = u.fromLonLat(lonlat, 2);
             var bbox = HAITI.map.getExtent().transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326")) 
             var w = new Ext.Window({
-                'html': "Latitude: <input type='text' size='10' value='" + lonlat.lat.toFixed(5) + "' />  , Longitude:  <input size='10' type='text' value='" + lonlat.lon.toFixed(5) + "'/><br />MGRS: " + mgrs + "<br /> No DMS Yet <br /> ",
+                'html': "Latitude: <input type='text' size='10' value='" + lonlat.lat.toFixed(5) + "' />  , Longitude:  <input size='10' type='text' value='" + lonlat.lon.toFixed(5) + "'/><br />MGRS: " + mgrs + "<br /> No DMS Yet <br />BBOX: " + bbox.toBBOX(),
                 'width': 500,
                 'height': 200
             });
