@@ -719,13 +719,61 @@ Ext.onReady(function() {
         layerStore: encstore,
         expanded: false
     }));
-    
+
 
 
     HAITI.stores = [];
     HAITI.store_lyrs = [];
     HAITI.lyrs = []
+    ////// Add Control for PDF Selection ///////
+    var selectPdfControl = new OpenLayers.Control();
+	OpenLayers.Util.extend(selectPdfControl, {
+		draw: function () {
+			// this Handler.Box will intercept the shift-mousedown
+			// before Control.MouseDefault gets to see it
+			this.box = new OpenLayers.Handler.Box( this,
+				{"done": this.getPdf});
+			this.box.activate();
+		},
+		response: function(req) {
+			this.w.destroy();
+			var gml = new OpenLayers.Format.GML();
+			var features = gml.read(req.responseText);
+			var html = features.length + " pdfs. <br /><ul>";
+			if (features.length) {
+				for (var i = 0; i < features.length; i++) {
+					var f = features[i];
+					var text = f.attributes.utm_zone + f.attributes.grid_zone+f.attributes.grid_square+f.attributes.easting + f.attributes.northing;
+					html += "<li><a href='"+features[i].attributes.url+"'>"+text+"</a></li>";
+				}
+			}
+			html += "</ul>";
+			this.w = new Ext.Window({'html':html,
+				width: 300,
+				'title': 'Results',
+				height: 200});
+			this.w.show();
+		},
+		///'projection' : new OpenLayers.Projection("EPSG:900913"),
+        ///'displayProjection' : new OpenLayers.Projection("EPSG:4326"),
+		getPdf: function (bounds) {
+			var ll = map.getLonLatFromPixel(new OpenLayers.Pixel(bounds.left, bounds.bottom)).transform(new OpenLayers.Projection("EPSG:900913"),new OpenLayers.Projection("EPSG:4326"));
+            var ur = map.getLonLatFromPixel(new OpenLayers.Pixel(bounds.right, bounds.top)).transform(new OpenLayers.Projection("EPSG:900913"),new OpenLayers.Projection("EPSG:4326"));
+            var boundsgeog = new OpenLayers.Bounds(ll.lon,ll.lat,ur.lon,ur.lat);
+            bbox=boundsgeog.toBBOX();
+			OpenLayers.Request.GET({
+				url: 'http://www.sharedgeo.org/datasets/shared/maps/usng/pdf.map?VERSION=1.0.0&SERVICE=WFS&&request=GetFeature&typename=wfs_all_maps&bbox='+bbox,
+				callback: OpenLayers.Function.bind(this.response, this),
+			});
+			this.w = new Ext.Window({'html':"Searching Delta State PDFs, please wait.",
+				width: 200,
+				'title': "Please Wait."});
+			this.w.show();
+		}
+	});
 
+
+    ///////////////////////////////////////////
     map.addControl(new OpenLayers.Control.MGRSMousePosition());
     map.addControl(new OpenLayers.Control.Scale());
 
@@ -734,13 +782,42 @@ Ext.onReady(function() {
             e.layer.mapObject.checkResize();
             e.layer.moveTo(e.layer.map.getCenter(), e.layer.map.getZoom());
         }
-    }); 
+    });
 
+	var action = new GeoExt.Action({
+        text: "MGRS PDFs",
+        control: selectPdfControl,
+        map: map,
+         // button options
+        toggleGroup: "draw",
+        allowDepress: false,
+        tooltip: "Select Delta State MGRS Pdfs",
+        // check item options
+        group: "draw"
+    });
+     var nav = new GeoExt.Action({
+        text: "Navigate Map",
+        control: new OpenLayers.Control.Navigation(),
+        map: map,
+        // button options
+        toggleGroup: "draw",
+        allowDepress: false,
+        pressed: true,
+        tooltip: "navigate",
+        // check item options
+        group: "draw",
+        checked: true
+    });
+
+    toolbarItems = [];
+    toolbarItems.push(nav);
+    toolbarItems.push(action);
     var mapPanel = new GeoExt.MapPanel({
         renderTo: 'mappanel',
         map: map,
         title: 'Map',
-        extent: map.getExtent()
+        extent: map.getExtent(),
+        tbar:toolbarItems
     });
     map.addControl(new OpenLayers.Control.Permalink());
 
