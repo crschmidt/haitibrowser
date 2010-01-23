@@ -940,12 +940,19 @@ Ext.onReady(function() {
             var u = new USNG2();
             var lonlat = HAITI.map.getLonLatFromPixel(evt.xy).transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"))
             var mgrs = u.fromLonLat(lonlat, 2);
-            var bbox = HAITI.map.getExtent().transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326")) 
+            var bbox = HAITI.map.getExtent().transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"));
+            var dms = ollonlat2dms(lonlat);
             var w = new Ext.Window({
                 'html': "<form target='_blank' action='http://spreadsheets.google.com/viewform'>" +
                     "<input type='hidden' value='txgVFOXJcRXX56lbAHo35yA' name='key' />" +
                     "Latitude: <input type='text' name='entry_1' size='10' value='" + lonlat.lat.toFixed(5) + "' />  , Longitude:  " + 
-                    "<input size='10' type='text' name='entry_2' value='" + lonlat.lon.toFixed(5) + "'/><input type='hidden' name='entry_3' value='" + lonlat.lat.toFixed(5) + " " + lonlat.lon.toFixed(5) +"' /><br /><input type='submit' value='Save to Ushahidi Spreadsheet' /></form><br />MGRS: " + mgrs + "<br /> No DMS Yet <br />BBOX: " + bbox.toBBOX()+"<br />",
+                    "<input size='10' type='text' name='entry_2' value='" + lonlat.lon.toFixed(5) + "'/>" +
+                    "<input type='hidden' name='entry_3' value='" + lonlat.lat.toFixed(5) + " " + lonlat.lon.toFixed(5) +"' />" +
+                    '<input type="hidden" name="entry_5" value="' + dms[0] + ' ' + dms[1] + '" />' +
+                     '<input type="hidden" name="entry_6" value="' + dms[0] + '" />' +
+                    '<input type="hidden" name="entry_7" value="' + dms[1] + '" />' +
+                    " <br />" + 
+                    "<input type='submit' value='Save to Ushahidi Spreadsheet' /></form><br />MGRS: " + mgrs + "<br /> No DMS Yet <br />BBOX: " + bbox.toBBOX()+"<br />",
                 'width': 500,
                 'height': 200,
                 'title': 'Save Location'
