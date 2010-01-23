@@ -14,6 +14,7 @@ Ext.onReady(function() {
         if (feature.layer.base) {
             url += feature.layer.base;
         }
+	//console.log(feature.attributes);
         url += feature.attributes.url;
 	popupString = '';
 	if(feature.attributes.name) {
@@ -24,6 +25,9 @@ Ext.onReady(function() {
 	}
 	if(feature.attributes.link) {
 		popupString += '<br/><a href="' + feature.attributes.link + '" target="_blank">' + feature.attributes.link + '</a><br/>' 
+	}
+	if(feature.attributes.desc) {
+		popupString += feature.attributes.desc
 	}
 	if(feature.attributes.description) {
 		if(feature.attributes.description.substr(0,7) == 'http://') {
@@ -85,7 +89,7 @@ Ext.onReady(function() {
     
     OpenLayers.IMAGE_RELOAD_ATTEMPTS = 1;
 
-    OpenLayers.ProxyHost = "/ushahidi/proxy.cgi?url=";
+    //OpenLayers.ProxyHost = "/ushahidi/proxy.cgi?url=";
 
     var map = new OpenLayers.Map('mappanel', map_options);
     HAITI.map = map;
@@ -457,22 +461,33 @@ Ext.onReady(function() {
 
     var overlays = [];
     var sfc_overlays = [];
-    var ose = new OpenLayers.Layer.GML("OpenStreetBugs", 
+
+    var osb = new OpenLayers.Layer.GML("OpenStreetBugs", 
         "http://openstreetbugs.appspot.com/getGPX?l=-74.8614387&b=17.555208&r=-69.538562&t=20.432356&open=1",
         {format: OpenLayers.Format.GPX, projection: new OpenLayers.Projection("EPSG:4326"),
          styleMap: new OpenLayers.StyleMap({'graphicHeight': 11, graphicWidth: 11, externalGraphic: 'http://ose.petschge.de/client/open_bug_marker.png'}),
          visibility: false
         });
-    sfc_overlays.push(ose);    
-    overlays.push(ose);    
+    osb.events.on({
+        "featureselected": onFeatureSelect,
+        "featureunselected": onFeatureUnselect
+    });
+    sfc_overlays.push(osb);    
+    overlays.push(osb); 
+   
     var ose = new OpenLayers.Layer.GML("OpenStreetEmergencies", 
         "http://ose.petschge.de/cgi-bin/getRSSfeed?l=-74.8614387&b=17.555208&r=-69.538562&t=20.432356&open=1",
         {format: OpenLayers.Format.GeoRSS, projection: new OpenLayers.Projection("EPSG:4326"),
          styleMap: new OpenLayers.StyleMap({'graphicHeight': 11, graphicWidth: 11, externalGraphic: 'http://ose.petschge.de/client/open_bug_marker.png'}),
          visibility: false
         });
+    ose.events.on({
+        "featureselected": onFeatureSelect,
+        "featureunselected": onFeatureUnselect
+    });
     sfc_overlays.push(ose);    
     overlays.push(ose);    
+
     var p3_je1 = new OpenLayers.Layer.Vector('P-3 - JE17JJ (2010/01/17) ', {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
@@ -616,7 +631,7 @@ Ext.onReady(function() {
     var ushahidi_overlays = [];
 	
 	// Incidents
-	var ushahidiIncidents = new OpenLayers.Layer.Vector("Latest Incidents", {
+	var ushahidiIncidents = new OpenLayers.Layer.Vector("Latest 100 Incidents", {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
 		visibility: false,
