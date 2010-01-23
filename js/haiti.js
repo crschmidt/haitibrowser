@@ -727,9 +727,9 @@ Ext.onReady(function() {
     HAITI.lyrs = []
     ////// Add Control for PDF Selection ///////
     StreetQuery = OpenLayers.Class(OpenLayers.Control, {
-     /*   initialize: function() { 
+        initialize: function() { 
             OpenLayers.Control.prototype.initialize.apply(this, arguments);
-            this.handler = new OpenLayers.Handler.Click(streetQuery, {'click': this.onClick});
+            this.handler = new OpenLayers.Handler.Click(this, {'click': this.onClick, stopClicks: true});
         },
         onClick: function(evt) {
             var u = new USNG2();
@@ -746,15 +746,17 @@ Ext.onReady(function() {
             "<th>OBJECTID</th><th>NAME</th><th>TYPE</th><th>OSM_ID</th><th>COMMUNE</th><th>SECTION</th><th>E1000</th><th>N1000</th><th>GZD</th><th>GRID100K</th><th>MGRS</th>";
 
             var data = f.read(req.responseText);
+            console.log(data);
+            if (!data) { return; }
             for (var id = 0; i < data.length; i++) {
                 var row = "<tr><td>" + data[i].join("</td><td>") + "</td></tr>";
                 html += row;
             }
 		    var w = new Ext.Window({'html':html,
-		    	width: 600,
+		    	width: 900,
 		    	'title': "Street Index"});
 		    w.show();
-        } */
+        }
     });  
     var streetQuery = new StreetQuery();
 //    var streetQuery = new OpenLayers.Control();
@@ -816,7 +818,6 @@ Ext.onReady(function() {
             e.layer.moveTo(e.layer.map.getCenter(), e.layer.map.getZoom());
         }
     });
-    /*
 	var street_query = new GeoExt.Action({
         text: "Query By Grid",
         control: streetQuery,
@@ -825,7 +826,7 @@ Ext.onReady(function() {
         allowDepress: false,
         tooltip: "Click map to query street objects in that MGRS grid",
         group: "draw"
-    });*/
+    });
 	var action = new GeoExt.Action({
         text: "MGRS PDFs",
         control: selectPdfControl,
@@ -854,7 +855,7 @@ Ext.onReady(function() {
     toolbarItems = [];
     toolbarItems.push(nav);
     toolbarItems.push(action);
-//    toolbarItems.push(street_query);
+    toolbarItems.push(street_query);
     var mapPanel = new GeoExt.MapPanel({
         renderTo: 'mappanel',
         map: map,
