@@ -1,7 +1,11 @@
 #!/usr/bin/python
 import sys
+import simplejson
 import cgi
-import sqlite3
+try:
+    import sqlite3
+except ImportError:
+    from pysqlite2 import dbapi2 as sqlite3
 db = sqlite3.connect("index.db")
 cur = db.cursor()
 fs = cgi.FieldStorage()
@@ -15,4 +19,4 @@ if not " " in grid:
 cur.execute("SELECT * FROM csv WHERE MGRS=?", [grid]) 
 print "Content-Type: text/plain"
 print
-print cur.fetchall()
+print simplejson.dumps({'results':cur.fetchall()})

@@ -555,6 +555,16 @@ Ext.onReady(function() {
     overlays.push(p3_je20tt);
 
     map.addLayers(overlays);
+    lookupLayer = new OpenLayers.Layer.Vector("",{
+        styleMap: new OpenLayers.StyleMap({
+            'fillColor': 'red',
+            'pointRadius': 5
+        })
+    });
+    map.addLayer(lookupLayer);
+
+
+
     var sf = new OpenLayers.Control.SelectFeature(overlays);
     map.addControl(sf);
     sf.activate();
@@ -729,7 +739,7 @@ Ext.onReady(function() {
     StreetQuery = OpenLayers.Class(OpenLayers.Control, {
         initialize: function() { 
             OpenLayers.Control.prototype.initialize.apply(this, arguments);
-            this.handler = new OpenLayers.Handler.Click(this, {'click': this.onClick, stopClicks: true});
+            this.handler = new OpenLayers.Handler.Click(this, {'click': this.onClick, stopClicks: true, stopDown: true});
         },
         onClick: function(evt) {
             var u = new USNG2();
@@ -742,32 +752,31 @@ Ext.onReady(function() {
         }, 
         response: function(req) {
             var f = new OpenLayers.Format.JSON();
-            var html = "<table><tr>" +
-            "<th>OBJECTID</th><th>NAME</th><th>TYPE</th><th>OSM_ID</th><th>COMMUNE</th><th>SECTION</th><th>E1000</th><th>N1000</th><th>GZD</th><th>GRID100K</th><th>MGRS</th>";
+            var html = "<table width='100%'><tr>" +
+            "<td>ID</td><td>Name</td><td>Type</td><td>OSM ID</td><td>Commune</td><td>Section</td><td>E1000</td><td>N1000</td><td>GZD</td><td></td><td>MGRS</td>";
 
             var data = f.read(req.responseText);
             console.log(data);
             if (!data) { return; }
-            for (var id = 0; i < data.length; i++) {
-                var row = "<tr><td>" + data[i].join("</td><td>") + "</td></tr>";
+            for (var id = 0; id < data.results.length; id++) {
+                var row = "<tr><td>" + data.results[id].join("</td><td>") + "</td></tr>";
                 html += row;
             }
 		    var w = new Ext.Window({'html':html,
 		    	width: 900,
+                height: 600,
+                autoScroll: true,
 		    	'title': "Street Index"});
 		    w.show();
         }
     });  
     var streetQuery = new StreetQuery();
-//    var streetQuery = new OpenLayers.Control();
-    var selectPdfControl = new OpenLayers.Control();
-	OpenLayers.Util.extend(selectPdfControl, {
+    var SelectPdfControl = OpenLayers.Class(OpenLayers.Control, {
 		draw: function () {
 			// this Handler.Box will intercept the shift-mousedown
 			// before Control.MouseDefault gets to see it
-			this.box = new OpenLayers.Handler.Box( this,
+			this.handler = new OpenLayers.Handler.Box( this,
 				{"done": this.getPdf});
-			this.box.activate();
 		},
 		response: function(req) {
 			this.w.destroy();
@@ -805,7 +814,8 @@ Ext.onReady(function() {
 				'title': "Please Wait."});
 			this.w.show();
 		}
-	}); 
+	});
+    var selectPdfControl = new SelectPdfControl();
 
 
     ///////////////////////////////////////////
@@ -819,7 +829,7 @@ Ext.onReady(function() {
         }
     });
 	var street_query = new GeoExt.Action({
-        text: "Query By Grid",
+        text: "Gazetteer By Grid",
         control: streetQuery,
         map: map,
         toggleGroup: "draw",
