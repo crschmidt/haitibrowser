@@ -749,10 +749,82 @@ Ext.onReady(function() {
 	sfc_overlays.push(foodDistributionCenters);	
 	overlays.push(foodDistributionCenters);	
 
+	/////////////////////////////////////
+    // InRelief Overlays
+    /////////////////////////////////////
+    var inrelief_overlays = [];
+
+	//Hospitals
+	var spotLastLoc = new OpenLayers.Layer.Vector("SPOT Last Location", {
+        projection: map.displayProjection,
+        strategies: [new OpenLayers.Strategy.Fixed()],
+		visibility: false,
+		format: OpenLayers.Format.KML, 
+        protocol: new OpenLayers.Protocol.HTTP({
+            url: "http://hurakan.ucsd.edu/cwid/NspotLastLocation.kml",
+            format: new OpenLayers.Format.KML({
+                extractStyles: true, 
+                extractAttributes: true,
+                maxDepth: 3
+            })
+        }),
+        visibility: false
+	   });
+    spotLastLoc.events.on({
+        "featureselected": onFeatureSelect,
+        "featureunselected": onFeatureUnselect
+    });
+	inrelief_overlays.push(spotLastLoc);	
+	sfc_overlays.push(spotLastLoc);	
+	var spotMessage = new OpenLayers.Layer.Vector("SPOT Message", {
+        projection: map.displayProjection,
+        strategies: [new OpenLayers.Strategy.Fixed()],
+		visibility: false,
+		format: OpenLayers.Format.KML, 
+        protocol: new OpenLayers.Protocol.HTTP({
+            url: "http://hurakan.ucsd.edu/cwid/NspotMessage.kml",
+            format: new OpenLayers.Format.KML({
+                extractStyles: true, 
+                extractAttributes: true,
+                maxDepth: 3
+            })
+        }),
+        visibility: false
+	   });
+    spotMessage.events.on({
+        "featureselected": onFeatureSelect,
+        "featureunselected": onFeatureUnselect
+    });
+	inrelief_overlays.push(spotMessage);	
+	sfc_overlays.push(spotMessage);	
+	
+    var latitude = new OpenLayers.Layer.Vector("SPOT Latitude", {
+        projection: map.displayProjection,
+        strategies: [new OpenLayers.Strategy.Fixed()],
+		visibility: false,
+		format: OpenLayers.Format.KML, 
+        protocol: new OpenLayers.Protocol.HTTP({
+            url: "http://hurakan.ucsd.edu/cwid/Latitude.kml",
+            format: new OpenLayers.Format.KML({
+                extractStyles: true, 
+                extractAttributes: true,
+                maxDepth: 3
+            })
+        }),
+        visibility: false
+	   });
+    latitude.events.on({
+        "featureselected": onFeatureSelect,
+        "featureunselected": onFeatureUnselect
+    });
+	inrelief_overlays.push(latitude);	
+	sfc_overlays.push(latitude);	
+	
 
 
     map.addLayers(ushahidi_overlays);
     map.addLayers(sahana_overlays);
+    map.addLayers(inrelief_overlays);
     map.addLayers(overlays);
 
     var sf = new OpenLayers.Control.SelectFeature(sfc_overlays);
@@ -872,6 +944,19 @@ Ext.onReady(function() {
         text: "Sahana Overlays",
         layerStore: sahana_overlay_store,
         expanded: true
+    }));
+
+    var inrelief_overlay_store = new GeoExt.data.LayerStore({
+        map: map,
+        initDir: 0,
+        layers: inrelief_overlays
+    });
+    console.log(inrelief_overlays);
+
+    // Actually add to the tree...
+    layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
+        text: "InRelief Overlays",
+        layerStore: inrelief_overlay_store
     }));
 
     var overlay_store = new GeoExt.data.LayerStore({
