@@ -665,7 +665,7 @@ Ext.onReady(function() {
                 extractAttributes: true
             })
         }),
-        visibility: false,
+        visibility: false
 	   });
     ushahidiIncidents.events.on({
         "featureselected": onFeatureSelect,
@@ -694,7 +694,7 @@ Ext.onReady(function() {
                 extractAttributes: true
             })
         }),
-        visibility: false,
+        visibility: false
 	   });
     sahanaHospitals.events.on({
         "featureselected": onFeatureSelect,
@@ -717,7 +717,7 @@ Ext.onReady(function() {
                 extractAttributes: true
             })
         }),
-        visibility: false,
+        visibility: false
 	   });
     sahanaOffices.events.on({
         "featureselected": onFeatureSelect,
@@ -740,7 +740,7 @@ Ext.onReady(function() {
                 extractAttributes: true
             })
         }),
-        visibility: false,
+        visibility: false
 	   });
     foodDistributionCenters.events.on({
         "featureselected": onFeatureSelect,
@@ -1033,7 +1033,7 @@ Ext.onReady(function() {
             bbox=boundsgeog.toBBOX();
 			OpenLayers.Request.GET({
 				url: 'http://www.sharedgeo.org/datasets/shared/maps/usng/pdf.map?VERSION=1.0.0&SERVICE=WFS&&request=GetFeature&typename=wfs_all_maps&bbox='+bbox,
-				callback: OpenLayers.Function.bind(this.response, this),
+				callback: OpenLayers.Function.bind(this.response, this)
 			});
 			this.w = new Ext.Window({'html':"Searching Delta State PDFs, please wait.",
 				width: 200,
