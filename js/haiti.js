@@ -87,7 +87,7 @@ Ext.onReady(function() {
         'controls': [new OpenLayers.Control.Navigation(), new OpenLayers.Control.PanZoomBar(), new OpenLayers.Control.Attribution()]                                    
     };
     
-    OpenLayers.IMAGE_RELOAD_ATTEMPTS = 1;
+    OpenLayers.IMAGE_RELOAD_ATTEMPTS = 2;
 
     //OpenLayers.ProxyHost = "/ushahidi/proxy.cgi?url=";
 
