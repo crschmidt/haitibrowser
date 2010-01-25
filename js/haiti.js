@@ -114,6 +114,14 @@ Ext.onReady(function() {
         }
     );
     map.addLayers([OSM_mapnik]);
+    var haiti_best = new OpenLayers.Layer.XYZ("Satellite/Aerial Imagery",
+        "http://hypercube.telascience.org/tiles/1.0.0/haiti-best-900913/${z}/${x}/${y}.jpg",
+        {
+            buffer:0,
+            visibility: false
+        }
+    );
+    map.addLayer(haiti_best);
 
     /////////////////////////////////////
     // Google Base Layers ///////////////
@@ -776,14 +784,6 @@ Ext.onReady(function() {
         'scope': pdf_6k
     });    
     image_overlays.push(pdf_6k);
-    var haiti_best = new OpenLayers.Layer.XYZ("Single Layer Overlay",
-        "http://hypercube.telascience.org/tiles/1.0.0/haiti-best-900913/${z}/${x}/${y}.jpg",
-        {
-            isBaseLayer: false, buffer:0,
-            visibility: false
-        }
-    );
-    image_overlays.push(haiti_best);
     map.addLayers(image_overlays);
 
     /////////////////////////////////////
