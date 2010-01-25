@@ -178,6 +178,15 @@ Ext.onReady(function() {
         }
     );
     dglobe_layers.push(worldview_011510_tc); */
+    var qbird_pre_tc = new OpenLayers.Layer.XYZ(
+        "DG Quickbird (Pre-Event) (TC)",
+        "http://hypercube.telascience.org/tiles/1.0.0/quickbird-pre-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false
+        }
+    );
+    dglobe_layers.push(qbird_pre_tc);
     var qbird_011510_tc = new OpenLayers.Layer.XYZ(
         "DG Quickbird (2010/01/15) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/quickbird-20100115-900913/${z}/${x}/${y}.jpg",
@@ -271,9 +280,9 @@ Ext.onReady(function() {
     map.addLayers(spot_layers);
     
     /////////////////////////////////////
-    // GOOGLE Image Layers ///////
+    // High Res Aerial Image Layers ///////
     /////////////////////////////////////
-    var google_layers = []
+    var hires_layers = []
     var google_011710_tc = new OpenLayers.Layer.XYZ(
         "Google Aerial (2010/01/17) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/google-20100117-900913/${z}/${x}/${y}.jpg",
@@ -282,8 +291,27 @@ Ext.onReady(function() {
             visibility: false, attribution: "Google 2010"
         }
     );
-    google_layers.push(google_011710_tc);
-    map.addLayers(google_layers);
+    hires_layers.push(google_011710_tc);
+    var noaa_011810_tc = new OpenLayers.Layer.XYZ(
+        "NOAA Aerial (2010/01/17)",
+        "http://hypercube.telascience.org/tiles/1.0.0/noaa-20100118-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false
+        }
+    );
+    hires_layers.push(noaa_011810_tc);
+    var worldbank_012110_tc = new OpenLayers.Layer.XYZ(
+        "Worldbank (2010/01/21)",
+        "http://hypercube.telascience.org/tiles/1.0.0/worldbank-21-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false
+        }
+    );
+    hires_layers.push(worldbank_012110_tc);
+
+    map.addLayers(hires_layers);
     
     /////////////////////////////////////
     // GeoEye Image Layers //////////////
@@ -383,21 +411,6 @@ Ext.onReady(function() {
     
     map.addLayers(geoeye_layers);
 
-    /////////////////////////////////////
-    // NOAA Image Layers ////////////////
-    /////////////////////////////////////
-    var noaa_layers = [];
-    var noaa_011810_tc = new OpenLayers.Layer.XYZ(
-        "NOAA Aerial (2010/01/17)",
-        "http://hypercube.telascience.org/tiles/1.0.0/noaa-20100118-900913/${z}/${x}/${y}.jpg",
-        {
-            isBaseLayer: false, buffer:0,
-            visibility: false
-        }
-    );
-    noaa_layers.push(noaa_011810_tc);
-
-    map.addLayers(noaa_layers);
 
     /////////////////////////////////////
     // Topo Layers //////////////////////
@@ -800,15 +813,15 @@ Ext.onReady(function() {
         expanded: false
     }));
 
-    var google_store = new GeoExt.data.LayerStore({
+    var hires_store = new GeoExt.data.LayerStore({
         map: map,
         initDir: 0,
-        layers: google_layers
+        layers: hires_layers
     });
     // Actually add to the tree...
     layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
-        text: "Google Image",
-        layerStore: google_store,
+        text: "Hi Res Aerials Image",
+        layerStore: hires_store,
         expanded: false
     }));
 
@@ -824,17 +837,6 @@ Ext.onReady(function() {
         expanded: false
     }));
 
-    var noaa_store = new GeoExt.data.LayerStore({
-        map: map,
-        initDir: 0,
-        layers:noaa_layers 
-    });
-    // Actually add to the tree...
-    layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
-        text: "NOAA Images",
-        layerStore: noaa_store,
-        expanded: false
-    }));
 
     var osm_store = new GeoExt.data.LayerStore({
         map: map,

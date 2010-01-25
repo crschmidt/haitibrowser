@@ -11,6 +11,15 @@ WEB
   END
 END
 LAYER
+  NAME "quickbird-pre-4326"
+  GROUP "haiti-best"
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/dglobe/quickbird-pre/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
+LAYER
  NAME "spot-01-14-4326"
  TYPE RASTER
  STATUS ON
@@ -228,5 +237,14 @@ LAYER
   TILEINDEX "/storage/data/haiti/processed/google/aerial-17/4326.shp"
   TILEITEM "location"
   TYPE RASTER
+END
+LAYER
+  NAME "worldbank-21-4326"
+  GROUP "haiti-best"
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/worldbank/21/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
 END
 END
