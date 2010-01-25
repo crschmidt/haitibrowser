@@ -23,7 +23,7 @@ allowedHosts = ['www.openlayers.org', 'openlayers.org',
                 'v-swe.uni-muenster.de:8080', 'local.yahooapis.com',
                 'ispatial.t-sciences.com','haiti.sahanafoundation.org',
                 'haiti.ushahidi.com','ose.petschge.de','openstreetbugs.appspot.com',
-		'www.sharedgeo.org']
+		'www.sharedgeo.org', 'hurakan.ucsd.edu']
 
 method = os.environ["REQUEST_METHOD"]
 
