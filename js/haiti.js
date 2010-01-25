@@ -185,6 +185,15 @@ Ext.onReady(function() {
         }
     );
     dglobe_layers.push(worldview_011510_tc); */
+    var wv_pre_tc = new OpenLayers.Layer.XYZ(
+        "DG Worldview (Pre-Event) (TC)",
+        "http://hypercube.telascience.org/tiles/1.0.0/worldview-pre-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false
+        }
+    );
+    dglobe_layers.push(wv_pre_tc);
     var qbird_pre_tc = new OpenLayers.Layer.XYZ(
         "DG Quickbird (Pre-Event) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/quickbird-pre-900913/${z}/${x}/${y}.jpg",

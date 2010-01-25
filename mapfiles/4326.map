@@ -29,6 +29,15 @@ LAYER
   OFFSITE 0 0 0
 END
 LAYER
+  NAME "worldview-pre-4326"
+  GROUP "haiti-best"
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-pre/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+END
+LAYER
  NAME "spot-01-14-4326"
  TYPE RASTER
  STATUS ON
@@ -255,5 +264,11 @@ LAYER
   TILEITEM "location"
   TYPE RASTER
   OFFSITE 0 0 0
+END
+LAYER
+    TYPE RASTER
+    name "hillshade"
+    data "/home/hobu/Haiti_1m_hillshade.tif"
+    status on
 END
 END
