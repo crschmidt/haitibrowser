@@ -14,7 +14,6 @@ Ext.onReady(function() {
         if (feature.layer.base) {
             url += feature.layer.base;
         }
-	//console.log(feature.attributes);
         url += feature.attributes.url;
 	popupString = '';
 	if(feature.attributes.name) {
@@ -763,7 +762,6 @@ Ext.onReady(function() {
         protocol: new OpenLayers.Protocol.HTTP({
             url: "http://hurakan.ucsd.edu/cwid/NspotLastLocation.kml",
             format: new OpenLayers.Format.KML({
-                extractStyles: true, 
                 extractAttributes: true,
                 maxDepth: 3
             })
@@ -784,7 +782,6 @@ Ext.onReady(function() {
         protocol: new OpenLayers.Protocol.HTTP({
             url: "http://hurakan.ucsd.edu/cwid/NspotMessage.kml",
             format: new OpenLayers.Format.KML({
-                extractStyles: true, 
                 extractAttributes: true,
                 maxDepth: 3
             })
@@ -806,7 +803,6 @@ Ext.onReady(function() {
         protocol: new OpenLayers.Protocol.HTTP({
             url: "http://hurakan.ucsd.edu/cwid/Latitude.kml",
             format: new OpenLayers.Format.KML({
-                extractStyles: true, 
                 extractAttributes: true,
                 maxDepth: 3
             })
@@ -951,7 +947,6 @@ Ext.onReady(function() {
         initDir: 0,
         layers: inrelief_overlays
     });
-    console.log(inrelief_overlays);
 
     // Actually add to the tree...
     layerRoot.appendChild(new GeoExt.tree.OverlayLayerContainer({
