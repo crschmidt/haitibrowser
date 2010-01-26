@@ -5,9 +5,9 @@
         },
         onClick: function(evt) {
             var u = new USNG2();
-            var lonlat = HAITI.map.getLonLatFromPixel(evt.xy).transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"))
+            var lonlat = HAITI.HAITI.map.getLonLatFromPixel(evt.xy).transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"))
             var mgrs = u.fromLonLat(lonlat, 2);
-            var bbox = HAITI.map.getExtent().transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"));
+            var bbox = HAITI.HAITI.map.getExtent().transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"));
             var dms = ollonlat2dms(lonlat);
             var w = new Ext.Window({
                 'html': "<form target='_blank' action='http://spreadsheets.google.com/viewform'>" +
@@ -35,7 +35,7 @@
         },
         onClick: function(evt) {
             var u = new USNG2();
-            var mgrs = u.fromLonLat(HAITI.map.getLonLatFromPixel(evt.xy).transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326")), 2);
+            var mgrs = u.fromLonLat(HAITI.HAITI.map.getLonLatFromPixel(evt.xy).transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326")), 2);
             
             OpenLayers.Request.GET({
                 url: 'tools/search_index.cgi?grid='+mgrs,
@@ -77,7 +77,9 @@
 				for (var i = 0; i < features.length; i++) {
 					var f = features[i];
 					var text = f.attributes.utm_zone + f.attributes.grid_zone+f.attributes.grid_square+f.attributes.easting + f.attributes.northing;
-					html += "<li><a href='"+features[i].attributes.url+"'>"+text+"</a></li>";
+                    var url = features[i].attributes.url;
+                    url = url.replace('Haiti_6Kscale_lettersize_GeopdfimageAtlas_vDSU20100119/Haiti_6K_scale_letter_size_geopdf_image_Atlas_vDSU20100119-1_', "Haiti_6Kscale_8511A4size_Geopdfimage_Atlas_vDSU20100123/Haiti_6Kscale_8511A4size_Geopdfimage_Atlas_vDSU20100123_");
+					html += "<li><a href='"+url+"'>"+text+"</a></li>";
 				}
 			}
 			html += "</ul>";
@@ -91,8 +93,8 @@
 		///'projection' : new OpenLayers.Projection("EPSG:900913"),
         ///'displayProjection' : new OpenLayers.Projection("EPSG:4326"),
 		getPdf: function (bounds) {
-			var ll = map.getLonLatFromPixel(new OpenLayers.Pixel(bounds.left, bounds.bottom)).transform(new OpenLayers.Projection("EPSG:900913"),new OpenLayers.Projection("EPSG:4326"));
-            var ur = map.getLonLatFromPixel(new OpenLayers.Pixel(bounds.right, bounds.top)).transform(new OpenLayers.Projection("EPSG:900913"),new OpenLayers.Projection("EPSG:4326"));
+			var ll = HAITI.map.getLonLatFromPixel(new OpenLayers.Pixel(bounds.left, bounds.bottom)).transform(new OpenLayers.Projection("EPSG:900913"),new OpenLayers.Projection("EPSG:4326"));
+            var ur = HAITI.map.getLonLatFromPixel(new OpenLayers.Pixel(bounds.right, bounds.top)).transform(new OpenLayers.Projection("EPSG:900913"),new OpenLayers.Projection("EPSG:4326"));
             var boundsgeog = new OpenLayers.Bounds(ll.lon,ll.lat,ur.lon,ur.lat);
             bbox=boundsgeog.toBBOX();
 			OpenLayers.Request.GET({
