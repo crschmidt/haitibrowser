@@ -77,8 +77,6 @@ Ext.onReady(function() {
         map: map,
         expanded: true
     }));
-    lookupLayer = new OpenLayers.Layer.Vector("", {styleMap: new OpenLayers.StyleMap({'pointRadius': 4, 'fillColor': 'red'})});
-    map.addLayer(lookupLayer);
 
     /////////////////////////////////////
     // ENC Layers ///////////////////////
@@ -947,6 +945,17 @@ Ext.onReady(function() {
             e.layer.moveTo(e.layer.map.getCenter(), e.layer.map.getZoom());
         }
     });
+	var edit = new GeoExt.Action({
+        text: "Edit Layer",
+        control: new H.Edit(),
+        map: map,
+         // button options
+        toggleGroup: "draw",
+        allowDepress: false,
+        tooltip: "Draw Custom Layer",
+        // check item options
+        group: "draw"
+    });
 	var show_loc = new GeoExt.Action({
         text: "Click to Show Location",
         control: showLoc,
@@ -990,11 +999,7 @@ Ext.onReady(function() {
         checked: true
     });
 
-    toolbarItems = [];
-    toolbarItems.push(nav);
-    toolbarItems.push(action);
-    toolbarItems.push(street_query);
-    toolbarItems.push(show_loc);
+    toolbarItems = [nav, action, street_query, show_loc, edit];
     var mapPanel = new GeoExt.MapPanel({
         renderTo: 'mappanel',
         map: map,
@@ -1004,7 +1009,7 @@ Ext.onReady(function() {
     });
     map.addControl(new H.ArgParser());
     map.addControl(new H.Permalink());
-    map.addControl(new OpenLayers.Control.Permalink(null, 'http://openstreetmap.org/edit?tileurl=http://hypercube.telascience.org/tiles/1.0.0/haiti-best-900913/!/!/!.jpg&', {'displayClass': 'editLink'}));
+    map.addControl(new H.Permalink(null, 'http://openstreetmap.org/edit?tileurl=http://hypercube.telascience.org/tiles/1.0.0/haiti-best-900913/!/!/!.jpg&', {'displayClass': 'editLink'}));
 
     var layerTree = new Ext.tree.TreePanel({
         title: 'Map Layers',
