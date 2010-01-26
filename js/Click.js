@@ -30,7 +30,9 @@ OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {
             for (var i = 0; i < features.length; i++) {
                 var f = features[i];
                 var text = f.attributes.utm_zone + f.attributes.grid_zone+f.attributes.grid_square+f.attributes.easting + f.attributes.northing; 
-                html += "<li><a href='"+features[i].attributes.url+"'>"+text+"</a></li>";
+                var url = features[i].attributes.url;
+                url = url.replace('Haiti_6Kscale_lettersize_GeopdfimageAtlas_vDSU20100119/Haiti_6K_scale_letter_size_geopdf_image_Atlas_vDSU20100119-1_', "Haiti_6Kscale_8511A4size_Geopdfimage_Atlas_vDSU20100123/Haiti_6Kscale_8511A4size_Geopdfimage_Atlas_vDSU20100123_");
+                html += "<li><a href='"+url+"'>"+text+"</a></li>";
             }
         }
         html += "</ul>";
