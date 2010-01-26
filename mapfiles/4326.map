@@ -247,6 +247,7 @@ LAYER
   TILEITEM "location"
   TYPE RASTER
   OFFSITE 0 0 0
+  MAXSCALE 500000
 END
 LAYER
   NAME "google-01-17-4326"
@@ -255,6 +256,7 @@ LAYER
   TILEINDEX "/storage/data/haiti/processed/google/aerial-17/4326.shp"
   TILEITEM "location"
   TYPE RASTER
+  MAXSCALE 500000
 END
 LAYER
   NAME "worldbank-21-4326"
@@ -264,11 +266,22 @@ LAYER
   TILEITEM "location"
   TYPE RASTER
   OFFSITE 0 0 0
+  MAXSCALE 500000
 END
 LAYER
     TYPE RASTER
     name "hillshade"
     data "/home/hobu/Haiti_1m_hillshade.tif"
     status on
+END
+LAYER
+  NAME "noaa-01-22-4326"
+  GROUP "haiti-best"
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/noaa/aerial-22/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  MAXSCALE 500000
+  OFFSITE 0 0 0
 END
 END
