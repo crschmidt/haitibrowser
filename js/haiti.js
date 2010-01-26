@@ -1052,7 +1052,12 @@ Ext.onReady(function() {
             }
         }]
     });
-
+    ltPanel = new Ext.Panel({
+                region: "center",
+                title: "",
+                layout: 'fit',
+                items: [layerTree]
+            });
     var west = new Ext.Panel({
         region: 'west',
         id: 'west-panel',
@@ -1117,13 +1122,8 @@ Ext.onReady(function() {
                 title: "Tools",
                 region: "north",
                 border:false
-            },
-            {
-                region: "center",
-                title: "",
-                layout: 'fit',
-                items: [layerTree]
-            }]
+            }, ltPanel
+            ]
     });
 
     new Ext.Viewport({
