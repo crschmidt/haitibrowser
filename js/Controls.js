@@ -5,9 +5,9 @@
         },
         onClick: function(evt) {
             var u = new USNG2();
-            var lonlat = HAITI.HAITI.map.getLonLatFromPixel(evt.xy).transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"))
+            var lonlat = HAITI.map.getLonLatFromPixel(evt.xy).transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"))
             var mgrs = u.fromLonLat(lonlat, 2);
-            var bbox = HAITI.HAITI.map.getExtent().transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"));
+            var bbox = HAITI.map.getExtent().transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"));
             var dms = ollonlat2dms(lonlat);
             var w = new Ext.Window({
                 'html': "<form target='_blank' action='http://spreadsheets.google.com/viewform'>" +
@@ -35,7 +35,7 @@
         },
         onClick: function(evt) {
             var u = new USNG2();
-            var mgrs = u.fromLonLat(HAITI.HAITI.map.getLonLatFromPixel(evt.xy).transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326")), 2);
+            var mgrs = u.fromLonLat(HAITI.map.getLonLatFromPixel(evt.xy).transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326")), 2);
             
             OpenLayers.Request.GET({
                 url: 'tools/search_index.cgi?grid='+mgrs,
