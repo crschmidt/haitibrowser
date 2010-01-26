@@ -253,7 +253,7 @@ Ext.onReady(function() {
     );
     hires_layers.push(noaa_011810_tc);
     var worldbank_012110_tc = new OpenLayers.Layer.XYZ(
-        "Worldbank (2010/01/21)",
+        "Worldbank (2010/01/21-22)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldbank-21-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
