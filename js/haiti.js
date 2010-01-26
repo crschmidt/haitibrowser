@@ -77,7 +77,8 @@ Ext.onReady(function() {
         map: map,
         expanded: true
     }));
-
+    lookupLayer = new OpenLayers.Layer.Vector("", {styleMap: new OpenLayers.StyleMap({'pointRadius': 4, 'fillColor': 'red'})});
+    map.addLayer(lookupLayer);
 
     /////////////////////////////////////
     // ENC Layers ///////////////////////

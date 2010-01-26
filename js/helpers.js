@@ -37,12 +37,12 @@
 		popupString,
             null, true);
         feature.popup = popup;
-        map.addPopup(popup);
+        HAITI.map.addPopup(popup);
     }
     function onFeatureUnselect(event) {
         var feature = event.feature;
         if(feature.popup) {
-            map.removePopup(feature.popup);
+            HAITI.map.removePopup(feature.popup);
             feature.popup.destroy();
             delete feature.popup;
         }
