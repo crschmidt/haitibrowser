@@ -249,6 +249,15 @@ Ext.onReady(function() {
         }
     );
     hires_layers.push(noaa_011810_tc);
+    var noaa_012010_tc = new OpenLayers.Layer.XYZ(
+        "NOAA Aerial (2010/01/21)",
+        "http://hypercube.telascience.org/tiles/1.0.0/noaa-20100120-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false, linkId: 'noaa17'
+        }
+    );
+    hires_layers.push(noaa_012010_tc);
     var noaa_012210_tc = new OpenLayers.Layer.XYZ(
         "NOAA Aerial (2010/01/22)",
         "http://hypercube.telascience.org/tiles/1.0.0/noaa-20100122-900913/${z}/${x}/${y}.jpg",
@@ -267,6 +276,15 @@ Ext.onReady(function() {
         }
     );
     hires_layers.push(worldbank_012110_tc);
+    var worldbank_012310_tc = new OpenLayers.Layer.XYZ(
+        "Worldbank (2010/01/23)",
+        "http://hypercube.telascience.org/tiles/1.0.0/worldbank-23-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false, linkId: 'wb23'
+        }
+    );
+    hires_layers.push(worldbank_012310_tc);
 
     map.addLayers(hires_layers);
     

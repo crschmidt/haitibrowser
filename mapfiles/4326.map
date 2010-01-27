@@ -259,14 +259,14 @@ LAYER
   MAXSCALE 500000
 END
 LAYER
-  NAME "worldbank-21-4326"
+  NAME "noaa-01-20-4326"
   GROUP "haiti-best"
   STATUS ON
-  TILEINDEX "/storage/data/haiti/processed/worldbank/21/4326.shp"
+  TILEINDEX "/storage/data/haiti/processed/noaa/aerial-20/4326.shp"
   TILEITEM "location"
   TYPE RASTER
-  OFFSITE 0 0 0
   MAXSCALE 500000
+  OFFSITE 0 0 0
 END
 LAYER
     TYPE RASTER
@@ -283,5 +283,25 @@ LAYER
   TYPE RASTER
   MAXSCALE 500000
   OFFSITE 0 0 0
+END
+LAYER
+  NAME "worldbank-21-4326"
+  GROUP "haiti-best"
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/worldbank/21/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+  MAXSCALE 500000
+END
+LAYER
+  NAME "worldbank-23-4326"
+  GROUP "haiti-best"
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/worldbank/23/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+  MAXSCALE 500000
 END
 END
