@@ -35,7 +35,6 @@ Ext.onReady(function() {
 
     var map = new OpenLayers.Map('mappanel', map_options);
     HAITI.map = map;
-
     var layerRoot = new Ext.tree.TreeNode({
         text: "All Layers",
         expanded: true
@@ -263,8 +262,26 @@ Ext.onReady(function() {
         }
     );
     hires_layers.push(noaa_011810_tc);
+    var noaa_012010_tc = new OpenLayers.Layer.XYZ(
+        "NOAA Aerial (2010/01/21)",
+        "http://hypercube.telascience.org/tiles/1.0.0/noaa-20100120-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false, linkId: 'noaa17'
+        }
+    );
+    hires_layers.push(noaa_012010_tc);
+    var noaa_012210_tc = new OpenLayers.Layer.XYZ(
+        "NOAA Aerial (2010/01/22)",
+        "http://hypercube.telascience.org/tiles/1.0.0/noaa-20100122-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false, linkId: 'noaa22'
+        }
+    );
+    hires_layers.push(noaa_012210_tc);
     var worldbank_012110_tc = new OpenLayers.Layer.XYZ(
-        "Worldbank (2010/01/21)",
+        "Worldbank (2010/01/21-22)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldbank-21-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -272,6 +289,15 @@ Ext.onReady(function() {
         }
     );
     hires_layers.push(worldbank_012110_tc);
+    var worldbank_012310_tc = new OpenLayers.Layer.XYZ(
+        "Worldbank (2010/01/23)",
+        "http://hypercube.telascience.org/tiles/1.0.0/worldbank-23-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false, linkId: 'wb23'
+        }
+    );
+    hires_layers.push(worldbank_012310_tc);
     map.addLayers(hires_layers);
     
     /////////////////////////////////////
@@ -793,6 +819,8 @@ Ext.onReady(function() {
     });    
     image_overlays.push(pdf_6k);
     map.addLayers(image_overlays);
+    lookupLayer = new OpenLayers.Layer.Vector("", {styleMap: new OpenLayers.StyleMap({'pointRadius': 4, 'fillColor': 'red'})});
+    map.addLayer(lookupLayer);
 
 
     /////////////////////////////////////
