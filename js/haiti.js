@@ -94,7 +94,7 @@ Ext.onReady(function() {
     /////////////////////////////////////
     var dglobe_layers = [];
     var dg_crisis_tc = new OpenLayers.Layer.XYZ(
-        "DG Crisis Event Service (TC)",
+        "DG Crisis Event Service",
         "http://maps.nypl.org/tilecache/1/dg_crisis/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -103,7 +103,7 @@ Ext.onReady(function() {
     );
     dglobe_layers.push(dg_crisis_tc);
     var wv_pre_tc = new OpenLayers.Layer.XYZ(
-        "DG Worldview (Pre-Event) (TC)",
+        "DG Worldview (Pre-Event)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldview-pre-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -113,7 +113,7 @@ Ext.onReady(function() {
     );
     dglobe_layers.push(wv_pre_tc);
     var qbird_pre_tc = new OpenLayers.Layer.XYZ(
-        "DG Quickbird (Pre-Event) (TC)",
+        "DG Quickbird (Pre-Event)",
         "http://hypercube.telascience.org/tiles/1.0.0/quickbird-pre-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -122,7 +122,7 @@ Ext.onReady(function() {
     );
     dglobe_layers.push(qbird_pre_tc);
     var qbird_011510_tc = new OpenLayers.Layer.XYZ(
-        "DG Quickbird (2010/01/15) (TC)",
+        "DG Quickbird (2010/01/15)",
         "http://hypercube.telascience.org/tiles/1.0.0/quickbird-20100115-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -131,7 +131,7 @@ Ext.onReady(function() {
     );
     dglobe_layers.push(qbird_011510_tc);
     var worldview_011710_tc = new OpenLayers.Layer.XYZ(
-        "DG WorldView (2010/01/17) (TC)",
+        "DG WorldView (2010/01/17)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100117-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -141,7 +141,7 @@ Ext.onReady(function() {
     );
     dglobe_layers.push(worldview_011710_tc);
     var qbird_011810_tc = new OpenLayers.Layer.XYZ(
-        "DG Quickbird (2010/01/18) (TC)",
+        "DG Quickbird (2010/01/18)",
         "http://hypercube.telascience.org/tiles/1.0.0/quickbird-20100118-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -151,7 +151,7 @@ Ext.onReady(function() {
     dglobe_layers.push(qbird_011810_tc);
 
     var worldview_011810_tc = new OpenLayers.Layer.XYZ(
-        "DG WorldView (2010/01/18) (TC)",
+        "DG WorldView (2010/01/18)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100118-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -160,7 +160,7 @@ Ext.onReady(function() {
     );
     dglobe_layers.push(worldview_011810_tc);
     var worldview_011910_tc = new OpenLayers.Layer.XYZ(
-        "DG WorldView (2010/01/19) (TC)",
+        "DG WorldView (2010/01/19)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100119-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -169,7 +169,7 @@ Ext.onReady(function() {
     );
     dglobe_layers.push(worldview_011910_tc);
     var qbird_012010_tc = new OpenLayers.Layer.XYZ(
-        "DG Quickbird (2010/01/20) (TC)",
+        "DG Quickbird (2010/01/20)",
         "http://hypercube.telascience.org/tiles/1.0.0/quickbird-20100120-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -178,7 +178,7 @@ Ext.onReady(function() {
     );
     dglobe_layers.push(qbird_012010_tc);
     var worldview_012010_tc = new OpenLayers.Layer.XYZ(
-        "DG WorldView (2010/01/20) (TC)",
+        "DG WorldView (2010/01/20)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100120-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -217,7 +217,7 @@ Ext.onReady(function() {
     /////////////////////////////////////
     var hires_layers = []
     var google_011710_tc = new OpenLayers.Layer.XYZ(
-        "Google Aerial (2010/01/17) (TC)",
+        "Google Aerial (2010/01/17)",
         "http://hypercube.telascience.org/tiles/1.0.0/google-20100117-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -315,7 +315,7 @@ Ext.onReady(function() {
     );
     geoeye_layers.push(ge_011310_wms);
     var ge_011310_tc = new OpenLayers.Layer.XYZ(
-        "Event Imagery Extended (TC)",
+        "Event Imagery Extended",
         "http://maps.nypl.org/tilecache/1/geoeye/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -323,21 +323,8 @@ Ext.onReady(function() {
         }
     );
     geoeye_layers.push(ge_011310_tc);
-    var ikonos_011510_wms = new OpenLayers.Layer.WMS(
-        "Ikonos (2010/01/14-15) (WMS)",
-        "http://hypercube.telascience.org/cgi-bin/mapserv?",
-        {
-            map: '/home/racicot/haiti/mapfiles/basedata.map',
-            layers: 'ikonos-01-15',
-            transparent: 'TRUE',
-            'sphericalMercator': true
-        },
-        {'reproject': false, 'isBaseLayer': false, 'visibility': false,
-         linkId: 'ik15'}
-    );
-    geoeye_layers.push(ikonos_011510_wms);
     var ikonos_011510_tc = new OpenLayers.Layer.XYZ(
-        "Ikonos (2010/01/14-15) (TC)",
+        "Ikonos (2010/01/14-15)",
         "http://hypercube.telascience.org/tiles/1.0.0/geoeye-ikonos-20100115-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -347,7 +334,7 @@ Ext.onReady(function() {
     );
     geoeye_layers.push(ikonos_011510_tc);
     var geoeye_011610_tc = new OpenLayers.Layer.XYZ(
-        "GeoEye1 (2010/01/16) (TC)",
+        "GeoEye1 (2010/01/16)",
         "http://hypercube.telascience.org/tiles/1.0.0/geoeye-geoeye-20100116-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -356,7 +343,7 @@ Ext.onReady(function() {
     );
     geoeye_layers.push(geoeye_011610_tc);
     var ikonos_011710_tc = new OpenLayers.Layer.XYZ(
-        "Ikonos (2010/01/17) (TC)",
+        "Ikonos (2010/01/17)",
         "http://hypercube.telascience.org/tiles/1.0.0/geoeye-ikonos-20100117-900913/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -365,7 +352,7 @@ Ext.onReady(function() {
     );
     geoeye_layers.push(ikonos_011710_tc);
     var geoeye_011810_tc = new OpenLayers.Layer.XYZ(
-        "GeoEye1 (2010/01/18) (TC)",
+        "GeoEye1 (2010/01/18)",
         "http://hypercube.telascience.org/tiles/1.0.0/geoeye-geoeye-20100118-900913/${z}/${x}/${y}.jpg?rand=1",
         {
             isBaseLayer: false, buffer:0,
@@ -381,7 +368,7 @@ Ext.onReady(function() {
     /////////////////////////////////////
     var topo_layers = [];
     var tlm = new OpenLayers.Layer.XYZ(
-        "Haiti Collarless 1:50k (TC)",
+        "Haiti Collarless 1:50k",
         "http://hypercube.telascience.org/tiles/1.0.0/haiti-tlm-50/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
@@ -390,7 +377,7 @@ Ext.onReady(function() {
     );
     topo_layers.push(tlm); 
     var city = new OpenLayers.Layer.XYZ(
-        "PAP Collared 1:12.5k (TC)",
+        "PAP Collared 1:12.5k",
         "http://hypercube.telascience.org/tiles/1.0.0/haiti-city/${z}/${x}/${y}.jpg",
         {
             isBaseLayer: false, buffer:0,
