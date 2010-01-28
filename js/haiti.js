@@ -280,6 +280,15 @@ Ext.onReady(function() {
         }
     );
     hires_layers.push(noaa_012210_tc);
+    var noaa_012310_tc = new OpenLayers.Layer.XYZ(
+        "NOAA Aerial (2010/01/23)",
+        "http://hypercube.telascience.org/tiles/1.0.0/noaa-20100123-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false, linkId: 'noaa23'
+        }
+    );
+    hires_layers.push(noaa_012310_tc);
     var worldbank_012110_tc = new OpenLayers.Layer.XYZ(
         "Worldbank (2010/01/21-22)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldbank-21-900913/${z}/${x}/${y}.jpg",
@@ -298,6 +307,25 @@ Ext.onReady(function() {
         }
     );
     hires_layers.push(worldbank_012310_tc);
+    map.addLayers(hires_layers);
+    var worldbank_012410_tc = new OpenLayers.Layer.XYZ(
+        "Worldbank (2010/01/24)",
+        "http://hypercube.telascience.org/tiles/1.0.0/worldbank-24-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false, linkId: 'wb24'
+        }
+    );
+    hires_layers.push(worldbank_012410_tc);
+    var noaa_012410_tc = new OpenLayers.Layer.XYZ(
+        "NOAA Aerial (2010/01/24)",
+        "http://hypercube.telascience.org/tiles/1.0.0/noaa-20100124-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false, linkId: 'noaa24'
+        }
+    );
+    hires_layers.push(noaa_012410_tc);
     map.addLayers(hires_layers);
     
     /////////////////////////////////////
@@ -828,29 +856,29 @@ Ext.onReady(function() {
     /////////////////////////////////////
 
     // This actually determines the order of the groups
-    layer_groups.push({name:'Digital Globe', layers:dglobe_layers,
-                       expanded:false});
-    layer_groups.push({name:'GeoEye', layers:geoeye_layers,
-                       expanded:false});
-    layer_groups.push({name:'Hi Res Aerials Image', layers:hires_layers,
-                       expanded:false});
-    layer_groups.push({name:'CNES/SpotImage', layers:spot_layers,
-                       expanded:false});
     layer_groups.push({name:'OSM Overlays', layers:osm_layers,
+                       expanded:true});
+    layer_groups.push({name:'Image Overlays', layers:image_overlays,
                        expanded:true});
     layer_groups.push({name:'Ushahidi Overlays', layers:ushahidi_overlays,
                        expanded:true});
     layer_groups.push({name:'Sahana Overlays', layers:sahana_overlays,
                        expanded:true});
-    layer_groups.push({name:'InRelief Overlays', layers:inrelief_overlays,
-                       expanded:false});
     layer_groups.push({name:'Other Overlays', layers:overlays,
-                       expanded:true});
-    layer_groups.push({name:'Image Overlays', layers:image_overlays,
                        expanded:true});
     layer_groups.push({name:'Topo Maps', layers:topo_layers,
                        expanded:false});
     layer_groups.push({name:'Charts', layers:enc_layers,
+                       expanded:false});
+    layer_groups.push({name:'Hi Res Aerials Image', layers:hires_layers,
+                       expanded:false});
+    layer_groups.push({name:'Digital Globe', layers:dglobe_layers,
+                       expanded:false});
+    layer_groups.push({name:'GeoEye', layers:geoeye_layers,
+                       expanded:false});
+    layer_groups.push({name:'CNES/SpotImage', layers:spot_layers,
+                       expanded:false});
+    layer_groups.push({name:'InRelief Overlays', layers:inrelief_overlays,
                        expanded:false});
 
     for (var p=0; p<layer_groups.length; p+=1){
