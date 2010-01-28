@@ -776,10 +776,32 @@ Ext.onReady(function() {
     map.addLayers(inrelief_overlays);
     */
 
+    drawing_layers = [];
+    var params = OpenLayers.Util.getParameters();
+    var editingLayer;
+    if (params.editlayers) {
+        var editId = params.editlayers.split(",")[0];
+        editingLayer = new OpenLayers.Layer.GML("Local Layer " + editId, 
+            "http://cmapdemo.labs.metacarta.com/featurestore/layer/" + editId,
+            {'remote_id': parseInt(editId), format: OpenLayers.Format.GeoJSON, editLayer: true}
+        );
+    } else {   
+        editingLayer = new OpenLayers.Layer.Vector("Local Layer", {'editLayer': true});
+    }
+    drawing_layers.push(editingLayer);
+    editingLayer.events.on({
+        "featureselected": onFeatureSelect,
+        "featureunselected": onFeatureUnselect
+    });
+    sfc_overlays.push(editingLayer);
+    map.addLayers(drawing_layers);
+
+
+
     var sf = new OpenLayers.Control.SelectFeature(sfc_overlays);
     map.addControl(sf);
     sf.activate();
-
+    HAITI.sfc = sf;
     var image_overlays = [];
     var pdf_6k = new OpenLayers.Layer.WMS("6K Delta State PDFs (Click for link)",
         "http://hypercube.telascience.org/cgi-bin/mapserv", {
@@ -816,7 +838,7 @@ Ext.onReady(function() {
          visibility: false});
     image_overlays.push(warper_wfp28);
     map.addLayers(image_overlays);
-    
+   
     lookupLayer = new OpenLayers.Layer.Vector("", {styleMap: new OpenLayers.StyleMap({'pointRadius': 4, 'fillColor': 'red'})});
     map.addLayer(lookupLayer);
 
@@ -848,7 +870,7 @@ Ext.onReady(function() {
                        expanded:false});
     /*layer_groups.push({name:'InRelief Overlays', layers:inrelief_overlays,
                        expanded:false});*/
-
+    layer_groups.push({'name': "Local Drawing Layers", layers: drawing_layers, expanded: false});
     for (var p=0; p<layer_groups.length; p+=1){
         var my_layers = layer_groups[p]["layers"];
         var my_store = new GeoExt.data.LayerStore({
@@ -895,7 +917,7 @@ Ext.onReady(function() {
     });
     var edit = new GeoExt.Action({
         text: "Edit Layer",
-        control: new H.Edit(),
+        control: new H.Edit({layer:editingLayer}),
         map: map,
         // button options
         toggleGroup: "draw",
