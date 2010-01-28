@@ -31,7 +31,7 @@ Ext.onReady(function() {
     
     OpenLayers.IMAGE_RELOAD_ATTEMPTS = 2;
 
-    //OpenLayers.ProxyHost = "/ushahidi/proxy.cgi?url=";
+    OpenLayers.ProxyHost = "proxy.cgi?url=";
 
     var map = new OpenLayers.Map('mappanel', map_options);
     HAITI.map = map;

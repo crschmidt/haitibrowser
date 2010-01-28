@@ -1,4 +1,3 @@
-OpenLayers.ProxyHost = "proxy.cgi?url=";
 OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {                
     defaultHandlerOptions: {
         'single': true,
