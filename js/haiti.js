@@ -471,7 +471,7 @@ Ext.onReady(function() {
         }),
         visibility: false,
         linkId: 'p3-1',
-        'base': '/haiti/data/source/Navy/P3/JE17JJ/Images/'
+        'base': 'data/source/Navy/P3/JE17JJ/Images/'
     });
     p3_je1.events.on({
         "featureselected": onFeatureSelect,
@@ -497,7 +497,7 @@ Ext.onReady(function() {
         }),
         visibility: false,
         linkId: 'p3-2',
-        'base':"/haiti/data/source/Navy/P3/JE18Photo's/"
+        'base':"data/source/Navy/P3/JE18Photo's/"
     });
     p3_je18.events.on({
         "featureselected": onFeatureSelect,
@@ -523,7 +523,7 @@ Ext.onReady(function() {
         }),
         visibility: false,
         linkId: 'p3-3',
-        'base': '/haiti/data/source/Navy/P3/JE19SS/'
+        'base': 'data/source/Navy/P3/JE19SS/'
     });
     p3_je19ss.events.on({
         "featureselected": onFeatureSelect,
@@ -549,7 +549,7 @@ Ext.onReady(function() {
         }),
         visibility: false,
         linkId: 'p3-4',
-        'base': '/haiti/data/source/Navy/P3/JE19QQ/'
+        'base': 'data/source/Navy/P3/JE19RR/'
     });
     p3_je19.events.on({
         "featureselected": onFeatureSelect,
@@ -575,7 +575,7 @@ Ext.onReady(function() {
         }),
         visibility: false,
         linkId: 'p3-5',
-        'base': '/haiti/data/source/Navy/P3/JE20TT/'
+        'base': 'data/source/Navy/P3/JE20TT/'
     });
     p3_je20tt.events.on({
         "featureselected": onFeatureSelect,
