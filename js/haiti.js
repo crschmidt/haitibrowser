@@ -27,7 +27,8 @@ Ext.onReady(function() {
         'maxExtent' : new OpenLayers.Bounds(-20037508.34,-20037508.34,
                                             20037508.34,20037508.34),
         'controls': [new OpenLayers.Control.Navigation(), new OpenLayers.Control.PanZoomBar(),
-                     new OpenLayers.Control.Attribution()]    };
+                     new OpenLayers.Control.Attribution()],
+        'theme': 'http://openlayers.org/dev/theme/default/style.css'             };
     
     OpenLayers.IMAGE_RELOAD_ATTEMPTS = 2;
 
