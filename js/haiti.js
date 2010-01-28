@@ -27,7 +27,7 @@ Ext.onReady(function() {
         'maxExtent' : new OpenLayers.Bounds(-20037508.34,-20037508.34,
                                             20037508.34,20037508.34),
         'controls': [new OpenLayers.Control.Navigation(), new OpenLayers.Control.PanZoomBar(),
-                     new OpenLayers.Control.Attribution()]    };
+                     new OpenLayers.Control.Attribution()], theme: null    };
     
     OpenLayers.IMAGE_RELOAD_ATTEMPTS = 2;
 
@@ -806,7 +806,17 @@ Ext.onReady(function() {
         'scope': pdf_6k
     });    
     image_overlays.push(pdf_6k);
+    
+    var warper_wfp28 = new OpenLayers.Layer.WMS("WFP Logistics (01-28)",
+        "http://warper.geothings.net/maps/wms/2013", 
+        {'format': 'image/jpeg'}, 
+        {isBaseLayer: false, 
+         singleTile: true,
+         transitionEffect: 'resize', 
+         visibility: false});
+    image_overlays.push(warper_wfp28);
     map.addLayers(image_overlays);
+    
     lookupLayer = new OpenLayers.Layer.Vector("", {styleMap: new OpenLayers.StyleMap({'pointRadius': 4, 'fillColor': 'red'})});
     map.addLayer(lookupLayer);
 
@@ -993,7 +1003,7 @@ Ext.onReady(function() {
     ltPanel = new Ext.Panel({
         region: "center",
         title: "",
-        layout: 'fit',
+        layout: 'accordion',
         items: [layerTree]
     });
     var west = new Ext.Panel({
