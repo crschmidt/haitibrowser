@@ -19,7 +19,7 @@
  *  - <OpenLayers.Control>
  */
 if (!window.H) { H = {}; };
-H.Permalink = OpenLayers.Class(OpenLayers.Control, {
+H.Permalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
     
     /**
      * APIProperty: argParserClass
@@ -27,91 +27,7 @@ H.Permalink = OpenLayers.Class(OpenLayers.Control, {
      *     control.
      */
     argParserClass: H.ArgParser,
-
-    /** 
-     * Property: element 
-     * {DOMElement}
-     */
-    element: null,
     
-    /** 
-     * APIProperty: base
-     * {String}
-     */
-    base: '',
-
-    /** 
-     * APIProperty: displayProjection
-     * {<OpenLayers.Projection>} Requires proj4js support.  Projection used
-     *     when creating the coordinates in the link. This will reproject the
-     *     map coordinates into display coordinates. If you are using this
-     *     functionality, the permalink which is last added to the map will
-     *     determine the coordinate type which is read from the URL, which
-     *     means you should not add permalinks with different
-     *     displayProjections to the same map. 
-     */
-    displayProjection: null, 
-
-    /**
-     * Constructor: OpenLayers.Control.Permalink
-     *
-     * Parameters: 
-     * element - {DOMElement} 
-     * base - {String} 
-     * options - {Object} options to the control. 
-     */
-    initialize: function(element, base, options) {
-        OpenLayers.Control.prototype.initialize.apply(this, [options]);
-        this.element = OpenLayers.Util.getElement(element);        
-        this.base = base || document.location.href;
-    },
-
-    /**
-     * APIMethod: destroy
-     */
-    destroy: function()  {
-        if (this.element.parentNode == this.div) {
-            this.div.removeChild(this.element);
-        }
-        this.element = null;
-
-        this.map.events.unregister('moveend', this, this.updateLink);
-
-        OpenLayers.Control.prototype.destroy.apply(this, arguments); 
-    },
-
-    /**
-     * Method: setMap
-     * Set the map property for the control. 
-     * 
-     * Parameters:
-     * map - {<OpenLayers.Map>} 
-     */
-    setMap: function(map) {
-        OpenLayers.Control.prototype.setMap.apply(this, arguments);
-
-        //make sure we have an arg parser attached
-        for(var i=0, len=this.map.controls.length; i<len; i++) {
-            var control = this.map.controls[i];
-            if (control.CLASS_NAME == this.argParserClass.CLASS_NAME) {
-                
-                // If a permalink is added to the map, and an ArgParser already
-                // exists, we override the displayProjection to be the one
-                // on the permalink. 
-                if (control.displayProjection != this.displayProjection) {
-                    this.displayProjection = control.displayProjection;
-                }    
-                
-                break;
-            }
-        }
-        if (i == this.map.controls.length) {
-            this.map.addControl(new this.argParserClass(
-                { 'displayProjection': this.displayProjection }));       
-        }
-
-    },
-
     /**
      * Method: draw
      *
@@ -124,7 +40,7 @@ H.Permalink = OpenLayers.Class(OpenLayers.Control, {
         if (!this.element) {
             this.div.className = this.displayClass;
             this.element = document.createElement("a");
-            this.element.innerHTML = OpenLayers.i18n("permalink");
+            this.element.innerHTML = this.text ? this.text : OpenLayers.i18n("permalink");
             this.element.href="";
             this.div.appendChild(this.element);
         }
@@ -142,19 +58,6 @@ H.Permalink = OpenLayers.Class(OpenLayers.Control, {
         return this.div;
     },
    
-    /**
-     * Method: updateLink 
-     */
-    updateLink: function() {
-        var href = this.base;
-        if (href.indexOf('?') != -1) {
-            href = href.substring( 0, href.indexOf('?') );
-        }
-
-        href += '?' + OpenLayers.Util.getParameterString(this.createParams());
-        this.element.href = href;
-    }, 
-    
     /**
      * APIMethod: createParams
      * Creates the parameters that need to be encoded into the permalink url.

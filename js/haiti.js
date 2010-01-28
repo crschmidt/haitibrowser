@@ -90,24 +90,6 @@ Ext.onReady(function() {
     }));
 
     /////////////////////////////////////
-    // ENC Layers
-    /////////////////////////////////////
-    var enc_layers = [];
-    var encwms = "http://ocs-spatial.ncd.noaa.gov/wmsconnector/com.esri.wms.Esrimap/encdirect?";
-    var enclayers = "DEPTH CONTOUR,DEPTH AREA_polygon,SEA AREA_polygon,COASTLINE,LAND AREA_line,ENC INDEX,COVERAGE,FAIRWAY,TRAFFIC SEPARATION ZONE,SEABED AREA_point,RESTRICTED AREA";
-    var enclyr = new OpenLayers.Layer.WMS("NOAA ENC WMS",
-        encwms, {
-            layers: enclayers,
-            transparent: true,
-            format: "image/png"
-        }, {
-            isBaseLayer: false, buffer:0,
-            visibility: false, linkId: 'noaaenc'
-        });
-    enc_layers.push(enclyr);
-    map.addLayers(enc_layers);
-
-    /////////////////////////////////////
     // Digital Globe Image Layers
     /////////////////////////////////////
     var dglobe_layers = [];
@@ -120,16 +102,6 @@ Ext.onReady(function() {
         }
     );
     dglobe_layers.push(dg_crisis_tc);
-    /*
-    var worldview_011510_tc = new OpenLayers.Layer.XYZ(
-        "DG WorldView (2010/01/15) (TC)",
-        "http://hypercube.telascience.org/tiles/1.0.0/worldview-20100115-900913/${z}/${x}/${y}.jpg",
-        {
-            isBaseLayer: false, buffer:0,
-            visibility: false
-        }
-    );
-    dglobe_layers.push(worldview_011510_tc); */
     var wv_pre_tc = new OpenLayers.Layer.XYZ(
         "DG Worldview (Pre-Event) (TC)",
         "http://hypercube.telascience.org/tiles/1.0.0/worldview-pre-900913/${z}/${x}/${y}.jpg",
@@ -458,7 +430,6 @@ Ext.onReady(function() {
     /////////////////////////////////////
     // Overlays Layers
     /////////////////////////////////////
-    var overlays = [];
     var sfc_overlays = [];
 
     var osb = new OpenLayers.Layer.GML("OpenStreetBugs", 
@@ -476,7 +447,7 @@ Ext.onReady(function() {
         "featureunselected": onFeatureUnselect
     });
     sfc_overlays.push(osb);    
-    overlays.push(osb); 
+    osm_layers.push(osb); 
     
     var ose = new OpenLayers.Layer.GML("OpenStreetEmergencies", 
         "http://ose.petschge.de/cgi-bin/getRSSfeed?l=-74.8614387&b=17.555208&r=-69.538562&t=20.432356&open=1",
@@ -491,7 +462,9 @@ Ext.onReady(function() {
         "featureunselected": onFeatureUnselect
     });
     sfc_overlays.push(ose);    
-    overlays.push(ose);    
+    osm_layers.push(ose);    
+    
+    var p3_overlays = [];
 
     var p3_je1 = new OpenLayers.Layer.Vector('P-3 - JE17JJ (2010/01/17) ', {
         projection: map.displayProjection,
@@ -518,7 +491,7 @@ Ext.onReady(function() {
         "featureunselected": onFeatureUnselect
     });
     sfc_overlays.push(p3_je1);
-    overlays.push(p3_je1);
+    p3_overlays.push(p3_je1);
     var p3_je18 = new OpenLayers.Layer.Vector('P-3 - JE18 (2010/01/18) ', {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
@@ -544,7 +517,7 @@ Ext.onReady(function() {
         "featureunselected": onFeatureUnselect
     });
     sfc_overlays.push(p3_je18);
-    overlays.push(p3_je18);
+    p3_overlays.push(p3_je18);
     var p3_je19ss = new OpenLayers.Layer.Vector('P-3  (2010/01/19 ss) ', {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
@@ -570,7 +543,7 @@ Ext.onReady(function() {
         "featureunselected": onFeatureUnselect
     });
     sfc_overlays.push(p3_je19ss);
-    overlays.push(p3_je19ss);
+    p3_overlays.push(p3_je19ss);
     var p3_je19 = new OpenLayers.Layer.Vector('P-3  (2010/01/19 ) ', {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
@@ -596,7 +569,7 @@ Ext.onReady(function() {
         "featureunselected": onFeatureUnselect
     });
     sfc_overlays.push(p3_je19);
-    overlays.push(p3_je19);
+    p3_overlays.push(p3_je19);
     var p3_je20tt = new OpenLayers.Layer.Vector('P-3  (2010/01/20 TT) ', {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
@@ -622,7 +595,7 @@ Ext.onReady(function() {
         "featureunselected": onFeatureUnselect
     });
     sfc_overlays.push(p3_je20tt);
-    overlays.push(p3_je20tt);
+    p3_overlays.push(p3_je20tt);
 
 
 
@@ -714,7 +687,7 @@ Ext.onReady(function() {
     sfc_overlays.push(sahanaOffices);   
 
     //Food Distribution Centers
-    var foodDistributionCenters = new OpenLayers.Layer.Vector("Food Distribution Centers", {
+    /*var foodDistributionCenters = new OpenLayers.Layer.Vector("Food Distribution Centers", {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
         visibility: false,
@@ -736,15 +709,15 @@ Ext.onReady(function() {
         "featureunselected": onFeatureUnselect
     });
     sfc_overlays.push(foodDistributionCenters); 
-    overlays.push(foodDistributionCenters);     
+    overlays.push(foodDistributionCenters);    */ 
 
-    map.addLayers(overlays);
+    map.addLayers(p3_overlays);
     map.addLayers(sahana_overlays);
 
     /////////////////////////////////////
     // InRelief Overlays
     /////////////////////////////////////
-    var inrelief_overlays = [];
+    /*var inrelief_overlays = [];
 
     var spotLastLoc = new OpenLayers.Layer.Vector("SPOT Last Location", {
         projection: map.displayProjection,
@@ -814,7 +787,7 @@ Ext.onReady(function() {
 
 
     map.addLayers(inrelief_overlays);
-
+    */
 
     var sf = new OpenLayers.Control.SelectFeature(sfc_overlays);
     map.addControl(sf);
@@ -864,11 +837,9 @@ Ext.onReady(function() {
                        expanded:true});
     layer_groups.push({name:'Sahana Overlays', layers:sahana_overlays,
                        expanded:true});
-    layer_groups.push({name:'Other Overlays', layers:overlays,
-                       expanded:true});
-    layer_groups.push({name:'Topo Maps', layers:topo_layers,
+    layer_groups.push({name:'Drone-style Overlays', layers:p3_overlays,
                        expanded:false});
-    layer_groups.push({name:'Charts', layers:enc_layers,
+    layer_groups.push({name:'Topo Maps', layers:topo_layers,
                        expanded:false});
     layer_groups.push({name:'Hi Res Aerials Image', layers:hires_layers,
                        expanded:false});
@@ -878,8 +849,8 @@ Ext.onReady(function() {
                        expanded:false});
     layer_groups.push({name:'CNES/SpotImage', layers:spot_layers,
                        expanded:false});
-    layer_groups.push({name:'InRelief Overlays', layers:inrelief_overlays,
-                       expanded:false});
+    /*layer_groups.push({name:'InRelief Overlays', layers:inrelief_overlays,
+                       expanded:false});*/
 
     for (var p=0; p<layer_groups.length; p+=1){
         var my_layers = layer_groups[p]["layers"];
@@ -989,7 +960,7 @@ Ext.onReady(function() {
     });
     map.addControl(new H.ArgParser());
     map.addControl(new H.Permalink());
-    map.addControl(new H.Permalink(null, 'http://openstreetmap.org/edit?tileurl=http://hypercube.telascience.org/tiles/1.0.0/haiti-best-900913/!/!/!.jpg&', {'displayClass': 'editLink'}));
+    map.addControl(new H.Permalink(null, 'http://openstreetmap.org/edit?tileurl=http://hypercube.telascience.org/tiles/1.0.0/haiti-best-900913/!/!/!.jpg&', {'displayClass': 'editLink', 'text': "Edit in OSM"}));
 
     var layerTree = new Ext.tree.TreePanel({
         title: 'Map Layers',
