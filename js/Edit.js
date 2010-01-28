@@ -15,22 +15,46 @@ H.EditToolbar  = OpenLayers.Class(OpenLayers.Control.EditingToolbar, {
                 url: 'http://cmapdemo.labs.metacarta.com/featurestore/layer/',
                 callback: OpenLayers.Function.bind(this.handleNewLayer, this)
             });    
-                
         } else {
-            alert("already saved");
+            for (var i = 0; i < this.layer.features.length; i++) {
+                var f = this.layer.features[i];
+                this.saveFeature(f);
+            }
         }    
+    },
+    saveFeature: function(feature) {
+        var f = new OpenLayers.Format.GeoJSON();
+        feature.attributes.layers = [this.layer.remote_id];
+        var data = f.write([feature]);
+        var url = 'http://cmapdemo.labs.metacarta.com/featurestore/feature/';
+        if (feature.fid) {
+            url += feature.fid + '/';
+        }
+        var req = OpenLayers.Request.POST({
+            url: url,
+            data: data,
+            callback: OpenLayers.Function.bind(this.handleFeature, {feature: feature})
+        });    
+    },
+    handleFeature: function(resp) {
+        var f = new OpenLayers.Format.GeoJSON();
+        var feats = f.read(resp.responseText);
+        this.feature.fid = feats[0].fid;
     },
     handleNewLayer: function(response) {
         var f = new OpenLayers.Format.JSON();
         var data = f.read(response.responseText);
-        layer.remote_id = data.id;
+        this.layer.remote_id = data.id;
+        for (var i = 0; i < this.layer.features.length; i++) {
+            var f = this.layer.features[i];
+            this.saveFeature(f);
+        }
     },
     CLASS_NAME: 'OpenLayers.Control.EditingToolbar'
 });
 H.Edit = OpenLayers.Class(OpenLayers.Control, {
     activate: function() {
-        if (!this.layer) { 
-            this.layer = new OpenLayers.Layer.Vector("Edit Layer", {displayInLayerSwitcher: false});
+        if (!this.store) { 
             // create feature store, binding it to the vector layer
             this.store = new GeoExt.data.FeatureStore({
                 layer: this.layer,
@@ -70,7 +94,6 @@ H.Edit = OpenLayers.Class(OpenLayers.Control, {
                 sm: new GeoExt.grid.FeatureSelectionModel() 
             });
             ltPanel.add(this.gridPanel);
-            this.map.addLayer(this.layer);
         }
         ltPanel.doLayout();
         this.gridPanel.expand()
@@ -79,7 +102,16 @@ H.Edit = OpenLayers.Class(OpenLayers.Control, {
     },
     deactivate: function() {
         ltPanel.items.items[0].expand();
+        for (var i = 0; i < this.toolbar.controls; i++) {
+            this.toolbar.controls[i].deactivate();
+            map.removeControl(this.toolbar.controls[i]);
+            this.toolbar.controls[i].destroy();
+        }
+
         this.map.removeControl(this.toolbar);
+        this.toolbar.destroy();
+        HAITI.sfc.deactivate();
+        HAITI.sfc.activate();
     },
     CLASS_NAME: 'H.Edit'
 });    

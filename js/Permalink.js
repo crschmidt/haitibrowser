@@ -105,9 +105,13 @@ H.Permalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
             //layers        
             layers = layers || this.map.layers;  
             params.layers = '';
-            var activeLayers = []
+            var activeLayers = [];
+            var editLayers = [];
             for (var i=0, len=layers.length; i<len; i++) {
                 var layer = layers[i];
+                if (layer.editLayer && layer.remote_id) {
+                    editLayers.push(layer.remote_id);
+                }    
                 if (!layer.linkId) { continue; }
                 if (layer.isBaseLayer) {
                     if (layer == this.map.baseLayer) {
@@ -120,6 +124,9 @@ H.Permalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
                 }
             }
             params.layers = activeLayers;
+            if (editLayers) {
+                params.editlayers = editLayers; 
+            }
         }
 
         return params;
