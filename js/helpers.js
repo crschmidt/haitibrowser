@@ -31,6 +31,14 @@
                 popupString += '<a target="_blank" href="'+url+'"><img src="' + url+'" /></a>' 
         }
         if (!HAITI.noPopups && popupString) {
+            var id = OpenLayers.Util.createUniqueID("hPopupAdd");
+            window[id] = OpenLayers.Function.bind(function() {
+                var feature = this.feature.clone();
+                feature.style = null;
+                HAITI.editingLayer.addFeatures(feature);
+                return false;
+            }, {feature: feature});
+            popupString += "<a href='#' onclick='return "+id+"()'>Copy</a>"; 
             var popup = new OpenLayers.Popup.FramedCloud("chicken", 
                 feature.geometry.getBounds().getCenterLonLat(),
                 new OpenLayers.Size(400,400),

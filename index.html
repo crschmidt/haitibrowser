@@ -102,7 +102,7 @@
         </div>
         </div>
         <div id="address_div" style="display: none">
-    Address: <input type="text" id="address" /> <input type="submit" onclick="gaz.osmGaz($('address').value); return false;" onsubmit="gaz.osmGaz($('address').value); return false;" value="Show"/> <br />(Powered by OSM, can also enter MGRS.)
+    Address: <form onsubmit="gaz.osmGaz($('address').value); return false;"><input type="text" id="address" /> <input type="submit" onclick="gaz.osmGaz($('address').value); return false;"  value="Show"/> <br />(Powered by OSM, can also enter MGRS.)</form>
         </div>
 
 <script type="text/javascript">
