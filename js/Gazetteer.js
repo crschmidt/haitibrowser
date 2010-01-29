@@ -28,7 +28,7 @@ Gazetteer = OpenLayers.Class({
                 data[i]['lat'] = data[i].lat.toFixed(4);
               html += OpenLayers.String.format('<div class="result" onClick="gaz.go(${lon}, ${lat});"> <span class="name">${display_name}</span> <span class="latlon">Lat/Lon: ${lat}, ${lon}</span> <span class="place_id">${place_id}</span> <span class="type">(${type})</span> </div>', data[i]);
           }       
-        var panel = new Ext.Panel({'title':"Gazetter", html: html})
+        var panel = new Ext.Panel({'title':"Gazetter", html: html, autoScroll: true})
         ltPanel.add(panel);
         ltPanel.doLayout();
         panel.expand();

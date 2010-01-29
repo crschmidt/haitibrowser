@@ -789,6 +789,7 @@ Ext.onReady(function() {
     } else {   
         editingLayer = new OpenLayers.Layer.Vector("Local Layer", {'editLayer': true});
     }
+    HAITI.editingLayer = editingLayer;
     drawing_layers.push(editingLayer);
     editingLayer.events.on({
         "featureselected": onFeatureSelect,
