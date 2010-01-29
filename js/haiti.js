@@ -799,7 +799,7 @@ Ext.onReady(function() {
 
 
 
-    var sf = new OpenLayers.Control.SelectFeature(sfc_overlays);
+    var sf = new OpenLayers.Control.SelectFeature(sfc_overlays, {clickOut: true});
     map.addControl(sf);
     sf.activate();
     HAITI.sfc = sf;
