@@ -784,7 +784,7 @@ Ext.onReady(function() {
         var editId = params.editlayers.split(",")[0];
         editingLayer = new OpenLayers.Layer.GML("Local Layer " + editId, 
             "http://cmapdemo.labs.metacarta.com/featurestore/layer/" + editId,
-            {'remote_id': parseInt(editId), format: OpenLayers.Format.GeoJSON, editLayer: true}
+            {'remote_id': parseInt(editId), format: OpenLayers.Format.GeoJSON, editLayer: true, projection: new OpenLayers.Projection("EPSG:4326"), visibility: false}
         );
     } else {   
         editingLayer = new OpenLayers.Layer.Vector("Local Layer", {'editLayer': true});
@@ -1112,6 +1112,7 @@ Ext.onReady(function() {
     });
     Ext.DomHelper.append(Ext.get('title'),
                          {tag: 'img', id: 'title_logo',src: 'images/haiti_logo_telascience.png', height: 58});
+    editingLayer.setVisibility(true);
     setMapCenter();
 
 });

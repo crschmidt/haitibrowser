@@ -1,6 +1,8 @@
 if (!window.H) { H = {}; }
 H.EditToolbar  = OpenLayers.Class(OpenLayers.Control.EditingToolbar, {
+    geojson: null, 
     initialize: function(layer, options) {
+        this.geojson = new OpenLayers.Format.GeoJSON({'internalProjection': new OpenLayers.Projection("EPSG:900913"), 'externalProjection': new OpenLayers.Projection("EPSG:4326")});
         this.layer = layer;
         OpenLayers.Control.EditingToolbar.prototype.initialize.apply(this, arguments);
         var save = new OpenLayers.Control.Button({
@@ -23,7 +25,7 @@ H.EditToolbar  = OpenLayers.Class(OpenLayers.Control.EditingToolbar, {
         }    
     },
     saveFeature: function(feature) {
-        var f = new OpenLayers.Format.GeoJSON();
+        var f = this.geojson;
         feature.attributes.layers = [this.layer.remote_id];
         var data = f.write([feature]);
         var url = 'http://cmapdemo.labs.metacarta.com/featurestore/feature/';
@@ -37,7 +39,7 @@ H.EditToolbar  = OpenLayers.Class(OpenLayers.Control.EditingToolbar, {
         });    
     },
     handleFeature: function(resp) {
-        var f = new OpenLayers.Format.GeoJSON();
+        var f = this.geojson;
         var feats = f.read(resp.responseText);
         this.feature.fid = feats[0].fid;
     },
