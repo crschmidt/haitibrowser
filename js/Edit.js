@@ -54,6 +54,7 @@ H.EditToolbar  = OpenLayers.Class(OpenLayers.Control.EditingToolbar, {
 });
 H.Edit = OpenLayers.Class(OpenLayers.Control, {
     activate: function() {
+        HAITI.noPopups = true;
         if (!this.store) { 
             // create feature store, binding it to the vector layer
             this.store = new GeoExt.data.FeatureStore({
@@ -102,9 +103,9 @@ H.Edit = OpenLayers.Class(OpenLayers.Control, {
     },
     deactivate: function() {
         ltPanel.items.items[0].expand();
-        for (var i = 0; i < this.toolbar.controls; i++) {
+        for (var i = 0; i < this.toolbar.controls.length; i++) {
             this.toolbar.controls[i].deactivate();
-            map.removeControl(this.toolbar.controls[i]);
+            this.map.removeControl(this.toolbar.controls[i]);
             this.toolbar.controls[i].destroy();
         }
 
@@ -112,6 +113,7 @@ H.Edit = OpenLayers.Class(OpenLayers.Control, {
         this.toolbar.destroy();
         HAITI.sfc.deactivate();
         HAITI.sfc.activate();
+        HAITI.noPopups = false;
     },
     CLASS_NAME: 'H.Edit'
 });    

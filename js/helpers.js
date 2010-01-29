@@ -30,13 +30,15 @@
         if(feature.attributes.url) {
                 popupString += '<a target="_blank" href="'+url+'"><img src="' + url+'" /></a>' 
         }
-        var popup = new OpenLayers.Popup.FramedCloud("chicken", 
-            feature.geometry.getBounds().getCenterLonLat(),
-            new OpenLayers.Size(400,400),
-                popupString,
-            null, true);
-        feature.popup = popup;
-        HAITI.map.addPopup(popup);
+        if (!HAITI.noPopups && popupString) {
+            var popup = new OpenLayers.Popup.FramedCloud("chicken", 
+                feature.geometry.getBounds().getCenterLonLat(),
+                new OpenLayers.Size(400,400),
+                    popupString,
+                null, true);
+            feature.popup = popup;
+            HAITI.map.addPopup(popup);
+        }
     }
     function onFeatureUnselect(event) {
         var feature = event.feature;
