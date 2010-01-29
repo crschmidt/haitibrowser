@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="/media/images/favicon.ico" />
 
     <link href="./css/haiti.css" rel="stylesheet" media="screen" type="text/css" />
+    <link href="./css/gaz.css" rel="stylesheet" media="screen" type="text/css" />
     
     <script type="text/javascript" src="http://extjs.cachefly.net/builds/ext-cdn-2060.js"></script>
     <link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-2.3.0/resources/css/ext-all.css" />
@@ -24,6 +25,7 @@
     <script type="text/javascript" src="js/MP.js"></script> 
     <script type="text/javascript" src="js/Click.js"></script> 
     <script type="text/javascript" src="js/dd2dms.js"></script> 
+    <script type="text/javascript" src="js/Gazetteer.js"></script> 
 
     <!link rel="stylesheet" type="text/css" href="/media/css/nms_ol.css" /> 
     
@@ -100,7 +102,7 @@
         </div>
         </div>
         <div id="address_div" style="display: none">
-    Address: <input type="text" id="address" /> <input type="submit" onclick="osmGaz($('address').value); return false;" onsubmit="osmGaz($('address').value); return false;" value="Show"/> <br />(Powered by OSM, can also enter MGRS.)
+    Address: <input type="text" id="address" /> <input type="submit" onclick="gaz.osmGaz($('address').value); return false;" onsubmit="gaz.osmGaz($('address').value); return false;" value="Show"/> <br />(Powered by OSM, can also enter MGRS.)
         </div>
 
 <script type="text/javascript">
