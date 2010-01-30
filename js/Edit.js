@@ -25,21 +25,24 @@ H.EditToolbar  = OpenLayers.Class(OpenLayers.Control.EditingToolbar, {
         }    
     },
     saveFeature: function(feature) {
-        var f = this.geojson;
-        feature.attributes.layers = [this.layer.remote_id];
-        var data = f.write([feature]);
-        var url = 'http://cmapdemo.labs.metacarta.com/featurestore/feature/';
-        if (feature.fid) {
-            url += feature.fid + '/';
+        if (feature.state == OpenLayers.State.INSERT || feature.state == OpenLayers.State.UPDATE) {
+            var f = this.geojson;
+            feature.attributes.layers = [this.layer.remote_id];
+            var data = f.write([feature]);
+            var url = 'http://cmapdemo.labs.metacarta.com/featurestore/feature/';
+            if (feature.fid) {
+                url += feature.fid + '/';
+            }
+            feature.state = 0;
+            var req = OpenLayers.Request.POST({
+                url: url,
+                data: data,
+                callback: OpenLayers.Function.bind(this.handleFeature, {feature: feature, toolbar: this})
+            });    
         }
-        var req = OpenLayers.Request.POST({
-            url: url,
-            data: data,
-            callback: OpenLayers.Function.bind(this.handleFeature, {feature: feature})
-        });    
     },
     handleFeature: function(resp) {
-        var f = this.geojson;
+        var f = this.toolbar.geojson;
         var feats = f.read(resp.responseText);
         this.feature.fid = feats[0].fid;
     },
@@ -96,6 +99,9 @@ H.Edit = OpenLayers.Class(OpenLayers.Control, {
                 }],
                 sm: new GeoExt.grid.FeatureSelectionModel() 
             });
+            this.gridPanel.on("afteredit", function(edit) {
+                edit.record.data.feature.state = OpenLayers.State.UPDATE;
+            });    
             ltPanel.add(this.gridPanel);
         }
         ltPanel.doLayout();
@@ -104,7 +110,8 @@ H.Edit = OpenLayers.Class(OpenLayers.Control, {
         this.map.addControl(this.toolbar);
     },
     deactivate: function() {
-        this.toolbar.save();
+        if (this.layer.features.length) 
+            this.toolbar.save();
         ltPanel.items.items[0].expand();
         for (var i = 0; i < this.toolbar.controls.length; i++) {
             this.toolbar.controls[i].deactivate();
