@@ -124,7 +124,7 @@ H.Permalink = OpenLayers.Class(OpenLayers.Control.Permalink, {
                 }
             }
             params.layers = activeLayers;
-            if (editLayers) {
+            if (editLayers.length) {
                 params.editlayers = editLayers; 
             }
         }
