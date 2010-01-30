@@ -104,7 +104,8 @@ H.Edit = OpenLayers.Class(OpenLayers.Control, {
         this.map.addControl(this.toolbar);
     },
     deactivate: function() {
-        this.toolbar.save();
+        if (this.layer.features.length) 
+            this.toolbar.save();
         ltPanel.items.items[0].expand();
         for (var i = 0; i < this.toolbar.controls.length; i++) {
             this.toolbar.controls[i].deactivate();
