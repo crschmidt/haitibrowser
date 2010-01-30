@@ -50,6 +50,7 @@ H.EditToolbar  = OpenLayers.Class(OpenLayers.Control.EditingToolbar, {
         var f = new OpenLayers.Format.JSON();
         var data = f.read(response.responseText);
         this.layer.remote_id = data.id;
+        HAITI.link.updateLink();
         for (var i = 0; i < this.layer.features.length; i++) {
             var f = this.layer.features[i];
             this.saveFeature(f);

@@ -980,7 +980,8 @@ Ext.onReady(function() {
         tbar:toolbarItems
     });
     map.addControl(new H.ArgParser());
-    map.addControl(new H.Permalink());
+    HAITI.link = new H.Permalink();
+    map.addControl(HAITI.link);
     map.addControl(new H.Permalink(null, 'http://openstreetmap.org/edit?tileurl=http://hypercube.telascience.org/tiles/1.0.0/haiti-best-900913/!/!/!.jpg&', {'displayClass': 'editLink', 'text': "Edit in OSM"}));
 
     var layerTree = new Ext.tree.TreePanel({
