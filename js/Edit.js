@@ -127,4 +127,25 @@ H.Edit = OpenLayers.Class(OpenLayers.Control, {
         HAITI.noPopups = false;
     },
     CLASS_NAME: 'H.Edit'
-});    
+});   
+window.onbeforeunload = function(e) {
+    var e = e || window.event;
+    var count = 0;
+    for (var i = 0; i < HAITI.editingLayer.features.length; i++) {
+        var f = HAITI.editingLayer.features[i];
+        if (f.state == OpenLayers.State.UPDATE || f.state == OpenLayers.State.INSERT) {
+            count += 1;
+        }    
+    }
+    var retStr = null;
+    if (count) {
+        retStr = "You have " + count + " " + 
+            (count == 1 ? "feature" : "features") + " left unsaved."; 
+    }
+    if (retStr) {
+        if (e) {
+            e.returnValue = retStr;
+        }
+        return retStr;
+    }
+};

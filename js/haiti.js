@@ -421,7 +421,7 @@ Ext.onReady(function() {
     var sfc_overlays = [];
 
     var osb = new OpenLayers.Layer.GML("OpenStreetBugs", 
-        "http://openstreetbugs.appspot.com/getGPX?l=-74.8614387&b=17.555208&r=-69.538562&t=20.432356&open=1",
+        "http://openstreetbugs.schokokeks.org/getGPX?l=-74.8614387&b=17.555208&r=-69.538562&t=20.432356&open=1",
         {
             format: OpenLayers.Format.GPX, 
             projection: new OpenLayers.Projection("EPSG:4326"),
