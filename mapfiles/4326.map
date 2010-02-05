@@ -377,7 +377,7 @@ LAYER
   MINSCALE 10000
 END
 LAYER
-  NAME "worldbank-24-above10k-4326"
+  NAME "worldbank-24-below10k-4326"
   GROUP "worldbank-24-4326"
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/worldbank/24/4326.shp"
