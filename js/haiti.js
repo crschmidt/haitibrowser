@@ -226,6 +226,15 @@ Ext.onReady(function() {
         }
     );
     hires_layers.push(google_011710_tc);
+    var google_012110_tc = new OpenLayers.Layer.XYZ(
+        "Google Aerial (2010/01/21)",
+        "http://hypercube.telascience.org/tiles/1.0.0/goog-20100121-900913/${z}/${x}/${y}.jpg",
+        {
+            isBaseLayer: false, buffer:0,
+            visibility: false, attribution: "Google 2010", 'linkId': 'goog21'
+        }
+    );
+    hires_layers.push(google_012110_tc);
     var noaa_011810_tc = new OpenLayers.Layer.XYZ(
         "NOAA Aerial (2010/01/17)",
         "http://hypercube.telascience.org/tiles/1.0.0/noaa-20100118-900913/${z}/${x}/${y}.jpg",
