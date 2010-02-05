@@ -1,7 +1,7 @@
 MAP
 PROJECTION "+init=epsg:4326" END
 extent -74 17 -71 19
-size 11293 5000 
+SIZE 8678 10000
 TRANSPARENT TRUE
 OUTPUTFORMAT
   NAME GTIFF
@@ -81,10 +81,6 @@ END
 LAYER
   NAME "ikonos-01-14-4326"
   GROUP "haiti-best"
-  METADATA
-    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
-    wms_title "GeoEye Ikonos 2010-01-14"
-  END  
   STATUS ON
   TILEINDEX "/mnt/geodata/haiti/geoeye/ikonos-1415/4326.shp"
   TILEITEM "location"
@@ -94,10 +90,6 @@ END
 LAYER
   NAME "worldview-01-15-4326"
   GROUP "haiti-best"
-  METADATA
-    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
-    wms_title "GeoEye Ikonos 2010-01-14"
-  END  
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-15/4326.shp"
   TILEITEM "location"
@@ -116,10 +108,6 @@ END
 LAYER
   NAME "geoeye-01-16-4326"
   GROUP "haiti-best"
-  METADATA
-    wms_abstract "GeoEye GeoEye1 Flight, photos taken 2010-01-16 over Port Au Prince. Copyright GeoEye 2010." 
-    wms_title "GeoEye GeoEye1 2010-01-16"
-  END  
   STATUS ON
   TILEINDEX "/mnt/geodata/haiti/geoeye/ge1-16/4326.shp"
   TILEITEM "location"
@@ -129,10 +117,6 @@ END
 LAYER
   NAME "quickbird-01-17-4326"
   GROUP "haiti-best"
-  METADATA
-    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
-    wms_title "GeoEye Ikonos 2010-01-14"
-  END  
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/dglobe/quickbird-17/4326.shp"
   TILEITEM "location"
@@ -142,10 +126,6 @@ END
 LAYER
   NAME "ikonos-01-17-4326"
   GROUP "haiti-best"
-  METADATA
-    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
-    wms_title "GeoEye Ikonos 2010-01-14"
-  END  
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/geoeye/ikonos-17-2/4326.shp"
   TILEITEM "location"
@@ -155,10 +135,6 @@ END
 LAYER
   NAME "worldview-01-17-4326"
   GROUP "haiti-best"
-  METADATA
-    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
-    wms_title "GeoEye Ikonos 2010-01-14"
-  END  
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-17/4326.shp"
   TILEITEM "location"
@@ -168,10 +144,6 @@ END
 LAYER
   NAME "worldview-01-18-4326"
   GROUP "haiti-best"
-  METADATA
-    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
-    wms_title "GeoEye Ikonos 2010-01-14"
-  END  
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-18/4326.shp"
   TILEITEM "location"
@@ -181,10 +153,6 @@ END
 LAYER
   NAME "geoeye-01-18-4326"
   GROUP "haiti-best"
-  METADATA
-    wms_abstract "GeoEye GeoEye1 Flight, photos taken 2010-01-16 over Port Au Prince. Copyright GeoEye 2010." 
-    wms_title "GeoEye GeoEye1 2010-01-16"
-  END  
   STATUS ON
   PROCESSING "SCALE_1=0,60"
   PROCESSING "SCALE_2=0,60"
@@ -197,10 +165,6 @@ END
 LAYER
   NAME "quickbird-01-18-4326"
   #GROUP "haiti-best"
-  METADATA
-    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
-    wms_title "GeoEye Ikonos 2010-01-14"
-  END  
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/dglobe/quickbird-18/4326.shp"
   TILEITEM "location"
@@ -210,10 +174,6 @@ END
 LAYER
   NAME "worldview-01-19-4326"
   #GROUP "haiti-best"
-  METADATA
-    wms_abstract "GeoEye Ikonos Flight, photos taken 1910-01-14 -> 1910-01-15 over Port Au Prince. Copyright GeoEye 1910." 
-    wms_title "GeoEye Ikonos 1910-01-14"
-  END  
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-19/4326.shp"
   TILEITEM "location"
@@ -223,10 +183,6 @@ END
 LAYER
   NAME "quickbird-01-20-4326"
   GROUP "haiti-best"
-  METADATA
-    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
-    wms_title "GeoEye Ikonos 2010-01-14"
-  END  
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/dglobe/quickbird-20/4326.shp"
   TILEITEM "location"
@@ -236,10 +192,6 @@ END
 LAYER
   NAME "worldview-01-20-4326"
   GROUP "haiti-best"
-  METADATA
-    wms_abstract "GeoEye Ikonos Flight, photos taken 2010-01-14 -> 2010-01-15 over Port Au Prince. Copyright GeoEye 2010." 
-    wms_title "GeoEye Ikonos 2010-01-14"
-  END  
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/dglobe/worldview-20/4326.shp"
   TILEITEM "location"
@@ -264,6 +216,10 @@ LAYER
   TILEITEM "location"
   TYPE RASTER
   MAXSCALE 200000
+  METADATA 
+   wms_title "Google 17th"
+   wms_abstract "Use Google 21 instead"
+  END 
 END
 LAYER
   NAME "noaa-01-20-4326"
@@ -322,33 +278,134 @@ LAYER
   TYPE RASTER
   MAXSCALE 10000
 END
+# The following two layers make up what used to be
+# the worldbank-21-4326 layer
 LAYER
-  NAME "worldbank-21-4326"
+  NAME "worldbank-21-below10k-4326"
+  GROUP "worldbank-21-4326"
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/worldbank/21/4326.shp"
+  TYPE RASTER
+  MAXSCALE 10000
+  OFFSITE 0 0 0
+  METADATA
+    wms_abstract "Worldbank capture from 2010-01-21; max scale 10000"
+    wms_title "Worldbank 21 sub-10k"
+    wms_group_title "Combined Worldbank 21 layer"
+  END  
+END
+LAYER
+  NAME "worldbank-21-above10k-4326"
+  GROUP "worldbank-21-4326"
+  STATUS ON
+  DATA "/storage/data/haiti/processed/worldbank/21/worldbank-21-low.tif"
+  TYPE RASTER
+  MINSCALE 10000
+  OFFSITE 0 0 0
+  METADATA
+    wms_abstract "Worldbank capture from 2010-01-21; min scale 10000"
+    wms_title "Worldbank 21 above-10k"
+  END  
+END
+# These two layers duplicate the above, but are fore the mosaic 
+LAYER
+  NAME "worldbank-21-below10k-4326-mosaic"
   GROUP "haiti-best"
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/worldbank/21/4326.shp"
   TYPE RASTER
-  MAXSCALE 500000
+  MAXSCALE 10000
   OFFSITE 0 0 0
 END
 LAYER
-  NAME "worldbank-23-4326"
+  NAME "worldbank-21-above10k-4326-mosaic"
+  GROUP "haiti-best"
+  STATUS ON
+  DATA "/storage/data/haiti/processed/worldbank/21/worldbank-21-low.tif"
+  TYPE RASTER
+  MINSCALE 10000
+  OFFSITE 0 0 0
+END
+LAYER
+  NAME "worldbank-23-above10k-4326"
+  GROUP "worldbank-23-4326"
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/worldbank/23/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+  MAXSCALE 10000 
+  METADATA
+    wms_group_title "Combined World Bank 23 (use these two together)"
+  END  
+END
+LAYER
+  NAME "worldbank-23-below10k-4326"
+  GROUP "worldbank-23-4326"
+  STATUS ON
+  DATA "/storage/data/haiti/processed/worldbank/23/worldbank-23-low.tif"
+  TYPE RASTER
+  OFFSITE 0 0 0
+  MINSCALE 10000
+END
+LAYER
+  NAME "worldbank-23-above10k-4326-mosaic"
   GROUP "haiti-best"
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/worldbank/23/4326.shp"
   TILEITEM "location"
   TYPE RASTER
   OFFSITE 0 0 0
-  MAXSCALE 500000
+  MAXSCALE 10000 
 END
 LAYER
-  NAME "worldbank-24-4326"
+  NAME "worldbank-23-below10k-4326-mosaic"
+  GROUP "haiti-best"
+  STATUS ON
+  DATA "/storage/data/haiti/processed/worldbank/23/worldbank-23-low.tif"
+  TYPE RASTER
+  OFFSITE 0 0 0
+  MINSCALE 10000
+END
+LAYER
+  NAME "worldbank-24-above10k-4326"
+  GROUP "worldbank-24-4326"
+  STATUS ON
+  DATA "/storage/data/haiti/processed/worldbank/24/worldbank-24-low.tif"
+  TYPE RASTER
+  OFFSITE 0 0 0
+  MINSCALE 10000
+END
+LAYER
+  NAME "worldbank-24-above10k-4326"
+  GROUP "worldbank-24-4326"
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/worldbank/24/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  OFFSITE 0 0 0
+  MAXSCALE 10000
+  METADATA
+    wms_group_title "Combined World Bank 24 (use these two together)"
+  END  
+END
+LAYER
+  NAME "worldbank-24-above10k-4326-mosaic"
+  GROUP "haiti-best"
+  STATUS ON
+  DATA "/storage/data/haiti/processed/worldbank/24/worldbank-24-low.tif"
+  TYPE RASTER
+  OFFSITE 0 0 0
+  MINSCALE 10000
+END
+LAYER
+  NAME "worldbank-24-below10k-4326-mosaic"
   GROUP "haiti-best"
   STATUS ON
   TILEINDEX "/storage/data/haiti/processed/worldbank/24/4326.shp"
   TILEITEM "location"
   TYPE RASTER
   OFFSITE 0 0 0
-  MAXSCALE 500000
+  MAXSCALE 10000
 END
 END
