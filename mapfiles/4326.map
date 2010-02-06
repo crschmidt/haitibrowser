@@ -2,6 +2,7 @@ MAP
 PROJECTION "+init=epsg:4326" END
 extent -74 17 -71 19
 SIZE 8678 10000
+CONFIG  "MS_ERRORFILE" "stderr"
 TRANSPARENT TRUE
 OUTPUTFORMAT
   NAME GTIFF
@@ -25,6 +26,19 @@ WEB
     wms_srs "epsg:4326 epsg:900913"
     wms_title "Supporting Layers for Haiti Recovery Efforts"
   END
+END
+LAYER
+  NAME "google-01-17-4326"
+  #GROUP "haiti-best"
+  STATUS ON
+  TILEINDEX "/storage/data/haiti/processed/google/aerial-17/4326.shp"
+  TILEITEM "location"
+  TYPE RASTER
+  MAXSCALE 200000
+  METADATA 
+   wms_title "Google 17th"
+   wms_abstract "Use Google 21 instead"
+  END 
 END
 LAYER
   NAME "quickbird-pre-4326"
@@ -109,7 +123,7 @@ LAYER
   NAME "geoeye-01-16-4326"
   GROUP "haiti-best"
   STATUS ON
-  TILEINDEX "/mnt/geodata/haiti/geoeye/ge1-16/4326.shp"
+  TILEINDEX "/storage/data/haiti/processed/geoeye/ge1-16/4326.shp"
   TILEITEM "location"
   TYPE RASTER
   OFFSITE 0 0 0
@@ -209,19 +223,6 @@ LAYER
   MAXSCALE 500000
 END
 LAYER
-  NAME "google-01-17-4326"
-  #GROUP "haiti-best"
-  STATUS ON
-  TILEINDEX "/storage/data/haiti/processed/google/aerial-17/4326.shp"
-  TILEITEM "location"
-  TYPE RASTER
-  MAXSCALE 200000
-  METADATA 
-   wms_title "Google 17th"
-   wms_abstract "Use Google 21 instead"
-  END 
-END
-LAYER
   NAME "noaa-01-20-4326"
   GROUP "haiti-best"
   STATUS ON
@@ -231,36 +232,139 @@ LAYER
   MAXSCALE 500000
   OFFSITE 0 0 0
 END
-LAYER
-  NAME "noaa-01-22-4326"
-  GROUP "haiti-best"
-  STATUS ON
-  TILEINDEX "/storage/data/haiti/processed/noaa/aerial-22/4326.shp"
-  TILEITEM "location"
-  TYPE RASTER
-  MAXSCALE 500000
-  OFFSITE 0 0 0
-END
-LAYER
-  NAME "noaa-01-23-4326"
-  GROUP "haiti-best"
-  STATUS ON
-  TILEINDEX "/storage/data/haiti/processed/noaa/aerial-23/4326.shp"
-  TILEITEM "location"
-  TYPE RASTER
-  MAXSCALE 500000
-  OFFSITE 0 0 0
-END
-LAYER
-  NAME "noaa-01-24-4326"
-  GROUP "haiti-best"
-  STATUS ON
-  TILEINDEX "/storage/data/haiti/processed/noaa/aerial-24/4326.shp"
-  TILEITEM "location"
-  TYPE RASTER
-  MAXSCALE 500000
-  OFFSITE 0 0 0
-END
+
+    LAYER
+      NAME "noaa-01-22-4326-sub10k"
+      GROUP "noaa-01-22-4326"
+      STATUS ON
+      TILEINDEX "/storage/data/haiti/processed/noaa/aerial-22/4326.shp"
+      TILEITEM "location"
+      TYPE RASTER
+      MAXSCALE 10000
+      OFFSITE 0 0 0
+      METADATA
+        wms_group_title "noaa-01-22-4326 combined"
+        wms_group_abstract "Use the sub10k + above10k layers together."
+      END  
+    END
+    LAYER
+      NAME "noaa-01-22-4326-above10k"
+      GROUP "noaa-01-22-4326"
+      STATUS ON
+      DATA "/storage/data/haiti/processed/noaa/aerial-22/noaa-01-22-4326.tif"
+      TYPE RASTER
+      MINSCALE 10000
+      OFFSITE 0 0 0
+    END
+    LAYER
+      NAME "noaa-01-22-4326-sub10k-mosaic"
+      GROUP "haiti-best"
+      STATUS ON
+      TILEINDEX "/storage/data/haiti/processed/noaa/aerial-22/4326.shp"
+      TILEITEM "location"
+      TYPE RASTER
+      MAXSCALE 10000
+      OFFSITE 0 0 0
+    END
+    LAYER
+      NAME "noaa-01-22-4326-above10k-mosaic"
+      GROUP "haiti-best"
+      STATUS ON
+      DATA "/storage/data/haiti/processed/noaa/aerial-22/noaa-01-22-4326.tif"
+      TYPE RASTER
+      MINSCALE 10000
+      OFFSITE 0 0 0
+    END
+
+
+    LAYER
+      NAME "noaa-01-23-4326-sub10k"
+      GROUP "noaa-01-23-4326"
+      STATUS ON
+      TILEINDEX "/storage/data/haiti/processed/noaa/aerial-23/4326.shp"
+      TILEITEM "location"
+      TYPE RASTER
+      MAXSCALE 10000
+      OFFSITE 0 0 0
+      METADATA
+        wms_group_title "noaa-01-23-4326 combined"
+        wms_group_abstract "Use the sub10k + above10k layers together."
+      END  
+    END
+    LAYER
+      NAME "noaa-01-23-4326-above10k"
+      GROUP "noaa-01-23-4326"
+      STATUS ON
+      DATA "/storage/data/haiti/processed/noaa/aerial-23/noaa-01-23-4326.tif"
+      TYPE RASTER
+      MINSCALE 10000
+      OFFSITE 0 0 0
+    END
+    LAYER
+      NAME "noaa-01-23-4326-sub10k-mosaic"
+      GROUP "haiti-best"
+      STATUS ON
+      TILEINDEX "/storage/data/haiti/processed/noaa/aerial-23/4326.shp"
+      TILEITEM "location"
+      TYPE RASTER
+      MAXSCALE 10000
+      OFFSITE 0 0 0
+    END
+    LAYER
+      NAME "noaa-01-23-4326-above10k-mosaic"
+      GROUP "haiti-best"
+      STATUS ON
+      DATA "/storage/data/haiti/processed/noaa/aerial-23/noaa-01-23-4326.tif"
+      TYPE RASTER
+      MINSCALE 10000
+      OFFSITE 0 0 0
+    END
+
+
+    LAYER
+      NAME "noaa-01-24-4326-sub10k"
+      GROUP "noaa-01-24-4326"
+      STATUS ON
+      TILEINDEX "/storage/data/haiti/processed/noaa/aerial-24/4326.shp"
+      TILEITEM "location"
+      TYPE RASTER
+      MAXSCALE 10000
+      OFFSITE 0 0 0
+      METADATA
+        wms_group_title "noaa-01-24-4326 combined"
+        wms_group_abstract "Use the sub10k + above10k layers together."
+      END  
+    END
+    LAYER
+      NAME "noaa-01-24-4326-above10k"
+      GROUP "noaa-01-24-4326"
+      STATUS ON
+      DATA "/storage/data/haiti/processed/noaa/aerial-24/noaa-01-24-4326.tif"
+      TYPE RASTER
+      MINSCALE 10000
+      OFFSITE 0 0 0
+    END
+    LAYER
+      NAME "noaa-01-24-4326-sub10k-mosaic"
+      GROUP "haiti-best"
+      STATUS ON
+      TILEINDEX "/storage/data/haiti/processed/noaa/aerial-24/4326.shp"
+      TILEITEM "location"
+      TYPE RASTER
+      MAXSCALE 10000
+      OFFSITE 0 0 0
+    END
+    LAYER
+      NAME "noaa-01-24-4326-above10k-mosaic"
+      GROUP "haiti-best"
+      STATUS ON
+      DATA "/storage/data/haiti/processed/noaa/aerial-24/noaa-01-24-4326.tif"
+      TYPE RASTER
+      MINSCALE 10000
+      OFFSITE 0 0 0
+    END
+
+
 LAYER
   NAME "google-21-above10k-4326"
   GROUP "haiti-best"
@@ -278,8 +382,6 @@ LAYER
   TYPE RASTER
   MAXSCALE 10000
 END
-# The following two layers make up what used to be
-# the worldbank-21-4326 layer
 LAYER
   NAME "worldbank-21-below10k-4326"
   GROUP "worldbank-21-4326"
@@ -326,6 +428,7 @@ LAYER
   MINSCALE 10000
   OFFSITE 0 0 0
 END
+
 LAYER
   NAME "worldbank-23-above10k-4326"
   GROUP "worldbank-23-4326"
@@ -367,45 +470,23 @@ LAYER
   OFFSITE 0 0 0
   MINSCALE 10000
 END
-LAYER
-  NAME "worldbank-24-above10k-4326"
-  GROUP "worldbank-24-4326"
+LAYER 
+  NAME "worldbank-21-mosaic"
+  GROUP "haiti-best"
   STATUS ON
-  DATA "/storage/data/haiti/processed/worldbank/24/worldbank-24-low.tif"
-  TYPE RASTER
-  OFFSITE 0 0 0
-  MINSCALE 10000
-END
-LAYER
-  NAME "worldbank-24-below10k-4326"
-  GROUP "worldbank-24-4326"
-  STATUS ON
-  TILEINDEX "/storage/data/haiti/processed/worldbank/24/4326.shp"
+  TILEINDEX "/sunstorage/data/haiti/source/worldbank-rit/mosaics/haiti-2010-01-21-1-Mosaics/4326.shp"
   TILEITEM "location"
   TYPE RASTER
   OFFSITE 0 0 0
-  MAXSCALE 10000
-  METADATA
-    wms_group_title "Combined World Bank 24 (use these two together)"
-  END  
-END
-LAYER
-  NAME "worldbank-24-above10k-4326-mosaic"
+END  
+
+LAYER 
+  NAME "worldbank-24-4326"
   GROUP "haiti-best"
   STATUS ON
-  DATA "/storage/data/haiti/processed/worldbank/24/worldbank-24-low.tif"
-  TYPE RASTER
-  OFFSITE 0 0 0
-  MINSCALE 10000
-END
-LAYER
-  NAME "worldbank-24-below10k-4326-mosaic"
-  GROUP "haiti-best"
-  STATUS ON
-  TILEINDEX "/storage/data/haiti/processed/worldbank/24/4326.shp"
+  TILEINDEX "/sunstorage/data/haiti/source/worldbank-rit/mosaics/haiti-2010-01-24-1-Mosaics/4326.shp"
   TILEITEM "location"
   TYPE RASTER
   OFFSITE 0 0 0
-  MAXSCALE 10000
-END
+END  
 END
