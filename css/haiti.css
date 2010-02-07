@@ -237,3 +237,5 @@ ol {
     bottom:15px;
     right: 100px;
 }    
+
+.default-icon-menu { background-image: url(../images/menu_default_icon.gif); }

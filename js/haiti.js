@@ -1002,6 +1002,31 @@ Ext.onReady(function() {
     map.addControl(HAITI.link);
     map.addControl(new H.Permalink(null, 'http://openstreetmap.org/edit?tileurl=http://hypercube.telascience.org/tiles/1.0.0/haiti-best-900913/!/!/!.jpg&', {'displayClass': 'editLink', 'text': "Edit in OSM"}));
 
+    HAITI.openTransparencySlider = function(layer) {
+        var title = 'Transparency - ' + layer.name;
+        var transparency_window = new Ext.Window({
+            title:title,
+            layout:'fit',
+            width:300,
+            height:100,
+            items:[new GeoExt.LayerOpacitySlider({
+                layer: layer,
+                aggressive: true, 
+                width: 200,
+                fieldLabel: 'opacity',
+                plugins: new GeoExt.LayerOpacitySliderTip()
+            })],
+            
+            buttons: [{
+                text: 'Close',
+                handler: function(){
+                    transparency_window.close();
+                }
+            }]
+        });     
+        transparency_window.show();
+    };
+
     var layerTree = new Ext.tree.TreePanel({
         title: 'Map Layers',
         id: 'map_lt',
@@ -1010,7 +1035,59 @@ Ext.onReady(function() {
         rootVisible: false,
         border: false,
         autoScroll:true,
-        region:'center'
+        region:'center',
+        listeners: {
+            contextmenu: function(node, e) {
+                if (node && node.layer) {
+                    node.select();
+                    if (node.layer.isBaseLayer) {
+                        var c = node.getOwnerTree().baseLayerContextMenu;
+                        c.showAt(e.getXY());
+                    } else if (node.layer instanceof OpenLayers.Layer.Vector) {
+                        //var c = node.getOwnerTree().vectorOverlayContextMenu;
+                        //c.showAt(e.getXY());
+                        1+1;
+                    } else {
+                        var c = node.getOwnerTree().rasterOverlayContextMenu;
+                        c.showAt(e.getXY());
+                    }
+                }
+            },
+            scope: this
+        },
+        baseLayerContextMenu: new Ext.menu.Menu({
+            items: [{
+                text: "Adjust Transparency",
+                iconCls: 'default-icon-menu',
+                handler: function() {
+                    var node = layerTree.getSelectionModel().getSelectedNode();
+                    if(node && node.layer) {
+                        HAITI.openTransparencySlider(node.layer);
+                    }
+                },
+                scope: this
+            }]
+        }),
+        rasterOverlayContextMenu: new Ext.menu.Menu({
+            items: [{
+                text: "Adjust Transparency",
+                iconCls: 'default-icon-menu',
+                handler: function() {
+                    var node = layerTree.getSelectionModel().getSelectedNode();
+                    if(node && node.layer) {
+                        HAITI.openTransparencySlider(node.layer);
+                    }
+                },
+                scope: this
+            }]
+        }),
+        vectorOverlayContextMenu: new Ext.menu.Menu({
+            items: [{
+                text: 'Change Vector Color',
+                iconCls: 'default-icon-menu'
+            }]
+        })
+
     });
 
     var contrib_window = new Ext.Window({
