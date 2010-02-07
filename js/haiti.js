@@ -1079,6 +1079,17 @@ Ext.onReady(function() {
                     }
                 },
                 scope: this
+            },{
+                text: "Get Layer URL",
+                iconCls: 'default-icon-menu',
+                handler: function() {
+                    var node = layerTree.getSelectionModel().getSelectedNode();
+                    if(node && node.layer && node.layer.getFullRequestString) {
+			Ext.MessageBox.alert(node.layer.name + ' - ' + node.layer.CLASS_NAME,
+					     node.layer.getFullRequestString());
+                    }
+                },
+                scope: this
             }]
         }),
         vectorOverlayContextMenu: new Ext.menu.Menu({
