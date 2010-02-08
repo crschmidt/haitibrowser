@@ -4,6 +4,7 @@ extent -74 17 -71 19
 SIZE 8678 10000
 CONFIG  "MS_ERRORFILE" "stderr"
 TRANSPARENT TRUE
+DEBUG 4
 OUTPUTFORMAT
   NAME GTIFF
   DRIVER "GDAL/GTiff"
@@ -369,7 +370,7 @@ LAYER
   NAME "google-21-above10k-4326"
   GROUP "haiti-best"
   STATUS ON
-  DATA "/storage/data/haiti/processed/google/21/22000px.tif"
+  DATA "/storage/data/haiti/processed/google/21/ov/22000px.tif"
   TYPE RASTER
   MINSCALE 10000
 END
