@@ -14,6 +14,18 @@ Gazetteer = OpenLayers.Class({
             }
         } catch (E) {
         }
+        var reg = /([\d-.]+),\s*([\d-.]+)/.exec(search);
+        if (reg) {
+            var lon = parseFloat(reg[2]);
+            var lat = parseFloat(reg[1]);
+            if (lon < 0 && lat > 0) { 
+                var lonlat = new OpenLayers.LonLat(lon, lat);
+            } else {
+                var lonlat = new OpenLayers.LonLat(lat, lon);
+            }    
+            var zoom = HAITI.map.getZoom() > 14 ? HAITI.map.getZoom() : 14;
+            HAITI.map.setCenter(lonlat.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913")), zoom);
+        }    
         var s = document.createElement("script");
         s.src="http://nominatim.openstreetmap.org/haiti/?viewbox=-76.24%2C21%2C-69.2%2C17&format=json&json_callback=gazhandleOsmLoc&q="+encodeURIComponent(search);
         document.body.appendChild(s);
