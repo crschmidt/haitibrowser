@@ -27,7 +27,7 @@ Gazetteer = OpenLayers.Class({
             HAITI.map.setCenter(lonlat.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913")), zoom);
         }    
         var s = document.createElement("script");
-        s.src="http://nominatim.openstreetmap.org/haiti/?viewbox=-76.24%2C21%2C-69.2%2C17&format=json&json_callback=gazhandleOsmLoc&q="+encodeURIComponent(search);
+        s.src="http://nominatim.openstreetmap.org/?viewbox=-76.24%2C21%2C-69.2%2C17&format=json&json_callback=gazhandleOsmLoc&q="+encodeURIComponent(search);
         document.body.appendChild(s);
       },
       handleOsmLoc: function(data) {
